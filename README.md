@@ -20,9 +20,9 @@ All internal links are relative, so the same files also work at a project-site U
 - `prompt-kinetic-krylov-safonov.html`: original prompt and research-procedure download.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
-- `assets/files/`: original source ZIP, PDF, research-procedure Markdown, and a plain-text transcription of the prompt.
+- `assets/files/`: original source ZIP, a test PDF at the digestion link, research-procedure Markdown, and a plain-text transcription of the prompt.
 
-The source ZIP, PDF, and research-procedure Markdown are preserved byte for byte. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
+The source ZIP and research-procedure Markdown are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
 
 Source ZIP SHA-256:
 

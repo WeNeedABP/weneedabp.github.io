@@ -1,0 +1,69 @@
+I am attaching `mathematical_research_goal.md`.
+
+Read that file completely and treat it as the governing research procedure.
+The authoritative mathematical problem is the complete LaTeX source between
+the two TARGET\_PROBLEM markers below.
+
+PROJECT\_WINDOW\_BUDGET: 6 hours
+
+\<TARGET\_PROBLEM\_BEGIN>
+```latex
+Fix \(d\geq1\) and \(0<\lambda\leq\Lambda<\infty\), write \(z=(t,x,v)\in\mathbb{R}^{1+2d}\), and set
+\[
+Y=\partial_t+v\cdot\nabla_x.
+\]
+For \(z_0=(t_0,x_0,v_0)\) and \(r>0\), define
+\[
+Q_r(z_0)=\left\{(t,x,v):-r^2<t-t_0\leq0,\ |x-x_0-(t-t_0)v_0|<r^3,\ |v-v_0|<r\right\},
+\]
+and let \(Q_r^\circ(z_0)\) be the same set with \(t-t_0<0\). For \(z_i=(t_i,x_i,v_i)\), define the symmetric kinetic quasi-distance
+\[
+d_{\mathrm{kin}}(z_1,z_2)
+=\min_{w\in\mathbb{R}^d}
+\max\left\{
+|t_1-t_2|^{1/2},
+|v_1-w|,
+|v_2-w|,
+2^{-1/3}|x_1-x_2-(t_1-t_2)w|^{1/3}
+\right\}.
+\]
+For \(0<\alpha<1\) and \(U\subset\mathbb{R}^{1+2d}\), set
+\[
+[u]_{C^\alpha_{\mathrm{kin}}(U)}
+=\sup_{\substack{z,z'\in U\\z\neq z'}}
+\frac{|u(z)-u(z')|}{d_{\mathrm{kin}}(z,z')^\alpha},
+\qquad
+\operatorname{osc}_Uu=\sup_Uu-\inf_Uu.
+\]
+
+Let \(A:Q_r^\circ(z_0)\to\operatorname{Sym}_d\) be any Borel measurable symmetric matrix field satisfying
+\[
+\lambda|\xi|^2\leq\xi^{\mathsf T}A(z)\xi\leq\Lambda|\xi|^2
+\qquad
+\text{for all }z\in Q_r^\circ(z_0)\text{ and }\xi\in\mathbb{R}^d.
+\]
+Let \(u\) be bounded and continuous on \(Q_r(z_0)\), assume that \(Yu\) and \(D_v^2u\) exist and are continuous in \(Q_r^\circ(z_0)\), and suppose that
+\[
+Yu=\operatorname{tr}(A(z)D_v^2u)
+\quad\text{pointwise in }Q_r^\circ(z_0).
+\]
+
+Do there exist \(\alpha=\alpha(d,\lambda,\Lambda)\in(0,1)\) and \(C=C(d,\lambda,\Lambda)<\infty\) such that, simultaneously for every \(r>0\), every center \(z_0\), every such measurable coefficient field \(A\), and every such bounded classical solution \(u\),
+\[
+r^\alpha[u]_{C^\alpha_{\mathrm{kin}}(Q_{r/2}(z_0))}
+\leq
+C\operatorname{osc}_{Q_r(z_0)}u?
+\]
+```
+
+\<TARGET\_PROBLEM\_END>
+
+This is a bounded mathematical research project, not a request for an
+immediate literature-status answer.
+
+Begin the procedure in `mathematical_research_goal.md` now. As the first
+persistence action, create and maintain `checkpoint.md`. Copy the exact marked
+problem into that checkpoint before beginning heavy route work.
+
+Do not terminate except under a stopping condition permitted by
+`mathematical_research_goal.md`.

@@ -20,9 +20,9 @@ All internal links are relative, so the same files also work at a project-site U
 - `prompt-kinetic-krylov-safonov.html`: original prompt and research-procedure download.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
-- `assets/files/`: original source ZIP, PDF, research-procedure Markdown, original RTF, and a plain-text transcription of the prompt.
+- `assets/files/`: original source ZIP, PDF, research-procedure Markdown, and a plain-text transcription of the prompt.
 
-The original uploads are preserved byte for byte. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied RTF.
+The source ZIP, PDF, and research-procedure Markdown are preserved byte for byte. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
 
 Source ZIP SHA-256:
 
@@ -44,4 +44,4 @@ The shared configuration loads before MathJax using ordered `defer` scripts. Mat
 
 ## Visual references
 
-The white background and restrained academic layout follow https://lukasniebel.github.io/. Muted red accents adapt the maroon palette at https://math.uchicago.edu/~luis/. The implementation is original, with system fonts, responsive layouts, keyboard focus indicators, and a skip link.
+The restrained academic layout follows https://lukasniebel.github.io/, with a `#FAF9F9` background. Muted red accents adapt the maroon palette at https://math.uchicago.edu/~luis/. The implementation is original, with system fonts, responsive layouts, keyboard focus indicators, and a skip link.

@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --background: #ffffff;
+  --background: #FAF9F9;
   --text: #24292e;
   --muted: #656568;
   --red: #a34f4f;
@@ -30,7 +30,7 @@ a:focus-visible, summary:focus-visible {
 }
 ::selection { background: #f1dada; color: var(--text); }
 .shell { max-width: 1000px; margin: 0 auto; padding: 0 42px; }
-.skip-link { position: absolute; left: 1rem; top: -6rem; padding: .5rem 1rem; background: white; }
+.skip-link { position: absolute; left: 1rem; top: -6rem; padding: .5rem 1rem; background: var(--background); }
 .skip-link:focus { top: 1rem; z-index: 2; }
 .site-header { padding-top: 54px; }
 .site-title { margin: 0; line-height: 1.25; }

@@ -33,6 +33,7 @@ a:focus-visible, summary:focus-visible {
 .skip-link { position: absolute; left: 1rem; top: -6rem; padding: .5rem 1rem; background: white; }
 .skip-link:focus { top: 1rem; z-index: 2; }
 .site-header { padding-top: 54px; }
+.site-title { margin: 0; line-height: 1.25; }
 .brand { display: inline-block; font-size: 32px; font-weight: 650; letter-spacing: -.035em; line-height: 1.25; text-decoration: none; }
 .tagline { color: var(--muted); margin: 10px 0 27px; font-size: 15px; }
 .site-nav { display: flex; gap: 30px; border-bottom: 1px solid var(--rule); }
@@ -70,10 +71,6 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
 .back-link { display: inline-block; margin-bottom: 24px; font-size: 14px; }
 .prompt { margin: 24px 0 0; padding: 24px; background: var(--pale-red); border: 1px solid var(--rule); white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 4; }
 .prompt code { font-size: 13px; line-height: 1.65; }
-.site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0 28px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); }
-.site-footer p { margin: 0; }
-.site-footer a { text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .shell { padding: 0 22px; }
   .site-header { padding-top: 31px; }
@@ -93,7 +90,7 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
   .team { grid-template-columns: 1fr; }
 }
 @media print {
-  .site-nav, .site-footer, .skip-link, .back-link { display: none; }
+  .site-nav, .skip-link, .back-link { display: none; }
   .shell { max-width: none; padding: 0; }
   .site-header { padding-top: 0; }
   main { padding-top: 20px; }

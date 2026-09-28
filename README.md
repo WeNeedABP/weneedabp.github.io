@@ -1,4 +1,4 @@
-# WeNeedABP
+# We need ABP
 
 A minimal academic website collecting AI-generated results and human digestions in Krylov–Safonov theory.
 
@@ -7,7 +7,7 @@ A minimal academic website collecting AI-generated results and human digestions 
 Intended repository: `WeNeedABP/weneedabp.github.io`.
 Intended public URL: https://weneedabp.github.io/
 
-In **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**. The site is plain HTML and CSS; it requires no build step, JavaScript, package installation, or external fonts. `.nojekyll` tells GitHub Pages to serve these static files directly.
+In **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**. The site is static HTML and CSS with MathJax for formulas; it requires no build step or package installation. `.nojekyll` tells GitHub Pages to serve these static files directly.
 
 All internal links are relative, so the same files also work at a project-site URL before the repository is renamed.
 
@@ -19,6 +19,7 @@ All internal links are relative, so the same files also work at a project-site U
 - `future.html`: future-work introduction.
 - `prompt-kinetic-krylov-safonov.html`: original prompt and research-procedure download.
 - `assets/style.css`: shared styling.
+- `assets/mathjax-config.js`: shared formula-rendering configuration.
 - `assets/files/`: original source ZIP, PDF, research-procedure Markdown, original RTF, and a plain-text transcription of the prompt.
 
 The original uploads are preserved byte for byte. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied RTF.
@@ -34,6 +35,12 @@ Source ZIP SHA-256:
 Copy an existing `<article class="entry">` in `ai.html` or `human.html`, give it a unique `id`, and update its content. Use that ID in links from the corresponding entry on the other page. Put supporting files in `assets/files/`. Add a separate prompt page when publishing a new AI result.
 
 To preview locally, run `python3 -m http.server 8000` from the repository root and visit http://localhost:8000/.
+
+## Writing mathematics
+
+All pages load MathJax 4 from jsDelivr. Use `\( ... \)` or `$ ... $` for inline mathematics, and `\[ ... \]` or `$$ ... $$` for displayed equations in the HTML content. Escape HTML-sensitive characters, such as writing `&lt;` for `<` and `&amp;` for `&`.
+
+The shared configuration loads before MathJax using ordered `defer` scripts. MathJax skips `pre` and `code` blocks, preserving the original prompt and downloadable source text. Formula rendering requires JavaScript and access to the MathJax CDN.
 
 ## Visual references
 

@@ -35,8 +35,8 @@ a:focus-visible, summary:focus-visible {
 .site-header { padding-top: 54px; }
 .site-title { margin: 0; line-height: 1.25; }
 .brand { display: inline-block; font-size: 32px; font-weight: 650; letter-spacing: -.035em; line-height: 1.25; text-decoration: none; }
-.site-nav { display: flex; gap: 30px; margin-top: 24px; border-bottom: 1px solid var(--rule); }
-.site-nav a { padding: 9px 0 11px; color: var(--muted); text-decoration: none; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0 30px; margin-top: 24px; border-bottom: 1px solid var(--rule); }
+.site-nav a { white-space: nowrap; padding: 9px 0 11px; color: var(--muted); text-decoration: none; border-bottom: 3px solid transparent; margin-bottom: -1px; }
 .site-nav a:hover { color: var(--red); }
 .site-nav a[aria-current="page"], .site-nav a[aria-current="true"] { color: var(--red); border-bottom-color: var(--pastel-red); font-weight: 600; }
 main { padding: 40px 0 54px; min-height: 460px; }
@@ -74,7 +74,7 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
   .shell { padding: 0 22px; }
   .site-header { padding-top: 31px; }
   .brand { font-size: 29px; }
-  .site-nav { gap: 28px; margin-top: 20px; }
+  .site-nav { gap: 0 22px; margin-top: 20px; }
   main { padding-top: 30px; padding-bottom: 40px; min-height: 380px; }
   h1 { font-size: 25px; }
   .team { grid-template-columns: repeat(2, 1fr); column-gap: 15px; }
@@ -84,7 +84,7 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
 }
 @media (max-width: 360px) {
   .shell { padding: 0 18px; }
-  .site-nav { gap: 23px; }
+  .site-nav { gap: 0 18px; }
   .team { grid-template-columns: 1fr; }
 }
 @media print {

@@ -18,12 +18,13 @@ All internal links are relative, so the same files also work at a project-site U
 - `ai.html`: source material, currently AI-generated results, separated by horizontal rules.
 - `future.html`: open problems and research directions.
 - `prompt-kinetic-krylov-safonov.html`: kinetic result prompt and research-procedure download.
+- `prompt-pucci-conjecture.html`: Pucci conjecture prompt and research-procedure downloads.
 - `prompt-adjoint-llogl.html`: adjoint L log L prompt and research-procedure downloads.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
 - `assets/files/`: original source ZIPs, a test PDF at the exposition link, research-procedure Markdown files, and plain-text prompts.
 
-The source ZIPs and research-procedure Markdown files are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed.
+The source ZIPs and research-procedure Markdown files are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed. The Pucci entry’s supplied procedure is stored at `assets/files/pucci/mathematical_research_goal.md`, renamed from `attached_research_procedure.md`.
 
 Source ZIP SHA-256 checksums:
 

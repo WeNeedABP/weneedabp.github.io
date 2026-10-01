@@ -43,7 +43,3 @@ To preview locally, run `python3 -m http.server 8000` from the repository root a
 All pages load MathJax 4 from jsDelivr. Use `\( ... \)` or `$ ... $` for inline mathematics, and `\[ ... \]` or `$$ ... $$` for displayed equations in the HTML content. Escape HTML-sensitive characters, such as writing `&lt;` for `<` and `&amp;` for `&`.
 
 The shared configuration loads before MathJax using ordered `defer` scripts. MathJax skips `pre` and `code` blocks, preserving the original prompt and downloadable source text. Formula rendering requires JavaScript and access to the MathJax CDN.
-
-## Visual references
-
-The restrained academic layout follows https://lukasniebel.github.io/, with a `#FAF9F9` background. Muted red accents adapt the maroon palette at https://math.uchicago.edu/~luis/. The implementation is original, with system fonts, responsive layouts, keyboard focus indicators, and a skip link.

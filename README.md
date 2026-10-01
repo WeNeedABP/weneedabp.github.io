@@ -24,7 +24,7 @@ All internal links are relative, so the same files also work at a project-site U
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
 - `assets/files/`: original source ZIPs, a test PDF at the exposition link, research-procedure Markdown files, and plain-text prompts.
 
-The source ZIPs and research-procedure Markdown files are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed. The Pucci entry’s supplied procedure is stored at `assets/files/pucci/mathematical_research_goal.md`, renamed from `attached_research_procedure.md`.
+The source ZIPs and research-procedure Markdown files are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure files are published as `mathematical_research_goal.md` to match their names in the prompts. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed. The Pucci entry’s supplied procedure is stored at `assets/files/pucci/mathematical_research_goal.md`, renamed from `attached_research_procedure.md`.
 
 Source ZIP SHA-256 checksums:
 

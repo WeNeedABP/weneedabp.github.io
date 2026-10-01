@@ -1,6 +1,6 @@
 # We need ABP
 
-A minimal academic website collecting expositions, source material, and open problems in Krylov–Safonov theory.
+A minimal academic website collecting expositions, AI-generated source material, and open problems in Krylov–Safonov theory.
 
 ## GitHub Pages
 

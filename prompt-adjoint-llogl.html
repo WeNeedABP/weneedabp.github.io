@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original prompt and Markdown research procedure used for the adjoint L log L source material.">
+  <meta name="theme-color" content="#FAF9F9">
+  <title>Prompt: adjoint L log L on the Heisenberg group · We need ABP</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/mathjax-config.js"></script>
+  <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="shell">
+    <header class="site-header">
+      <p class="site-title"><a class="brand" href="index.html">We need ABP</a></p>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="human.html">Expositions</a>
+        <a href="ai.html" aria-current="true">Source material</a>
+        <a href="future.html">Open problems</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      <a class="back-link" href="ai.html#krylov-safonov-heisenberg-carnot">← Back to source material</a>
+      <h1>Prompt: Adjoint \(L\log L\) on the Heisenberg group, Carnot step 2, and more</h1>
+      <p class="intro">We used this Markdown research procedure together with the following prompt.</p>
+      <ul class="resource-links" aria-label="Prompt downloads">
+        <li><a href="assets/files/heisenberg/mathematical_research_goal.md" download>mathematical_research_goal.md</a></li>
+        <li><a href="assets/files/heisenberg/prompt.txt" download>Plain text prompt</a></li>
+      </ul>
+      <pre class="prompt"><code>I am attaching `mathematical_research_goal.md`. Read it completely and use it as the research procedure for this task.
+
+Resolve the exact problem below. Seek a complete, rigorous solution, not merely an approach or a literature-status answer. Preserve every hypothesis and quantifier.
+
+EXECUTION_MODE: AUTO PROJECT_WINDOW_BUDGET: 4 hours
+
+Use that window only through genuine long-running execution with observable timing. Otherwise do substantive work in the available execution block and save a resumable checkpoint at its actual boundary. Do not invent elapsed time or background continuation.
+
+&lt;TARGET_PROBLEM_BEGIN&gt;
+```latex
+\paragraph{Problem (subelliptic adjoint $L\log L$ estimate).}
+Let $\Omega\subset\mathbb R^n$ be open and let
+$X_1,\ldots,X_m$ be fixed smooth real vector fields satisfying
+\[
+\operatorname{span}\{Y(x):Y\in\operatorname{Lie}(X_1,\ldots,X_m)\}
+=\mathbb R^n
+\qquad\text{for every }x\in\Omega.
+\]
+Fix $T&gt;0$ and $0&lt;\lambda\le\Lambda&lt;\infty$.
+For a symmetric matrix field $A=(a_{ij})$, define
+\[
+\mathcal L_A\varphi
+:=\frac12\sum_{i,j=1}^m
+a_{ij}(t,x)(X_iX_j+X_jX_i)\varphi.
+\]
+No additional first-order term is included.
+
+Let $(\nu_t)_{0&lt;t&lt;T}$ be a weakly measurable family of
+nonnegative finite Borel measures on $\Omega$, with
+$\nu_t(\Omega)\le1$ for almost every $t$, and set
+$d\nu(t,x)=dt\,d\nu_t(x)$.
+Here weak measurability means that
+$t\mapsto\int_\Omega\psi\,d\nu_t$ is measurable for every
+$\psi\in C_c(\Omega)$.
+Assume that $A$ is Borel measurable and
+\[
+\lambda I_m\le A(t,x)\le\Lambda I_m
+\qquad\text{for }\nu\text{-almost every }(t,x).
+\]
+
+Let $\varepsilon\in[0,1]$ and let $\mu$ be a finite
+nonnegative Borel measure on $(0,T)\times\Omega$.
+Suppose that
+\[
+\partial_t\nu
+=\mathcal L_A^*\nu+\varepsilon\Delta_x\nu-\mu
+\qquad\text{in }\mathcal D'((0,T)\times\Omega),
+\]
+where the adjoint is defined by duality: explicitly,
+\[
+\int_{(0,T)\times\Omega}
+\bigl(\partial_t\varphi+\mathcal L_A\varphi
+      +\varepsilon\Delta_x\varphi\bigr)\,d\nu
+=
+\int_{(0,T)\times\Omega}\varphi\,d\mu
+\]
+for every $\varphi\in C_c^\infty((0,T)\times\Omega)$.
+
+Prove or disprove that $\nu$ necessarily has a nonnegative
+density $p\in L^1((0,T)\times\Omega)$ with respect to $dt\,dx$,
+and that, for every compact $K\Subset\Omega$,
+\[
+\int_0^T\!\int_\Omega p(t,x)\,dx\,dt\le T,
+\qquad
+\int_0^T\!\int_K
+p(t,x)\log\bigl(1+p(t,x)\bigr)\,dx\,dt\le C,
+\]
+where
+\[
+C=C(T,K,\Omega,X_1,\ldots,X_m,\lambda,\Lambda)
+\]
+is independent of $\varepsilon$, $A$, $\nu$, and $\mu$.
+No initial density or initial entropy bound, no continuity
+of $A$, and no smallness of $\Lambda/\lambda$ are assumed.
+```
+
+&lt;TARGET_PROBLEM_END&gt;
+
+First preserve the exact target in `checkpoint.md` when file writing is available. Keep normalization brief, perform a concrete mathematical probe, and then develop the strongest route. Continue beyond setup while resources remain. Distinguish conditional progress from a solution, and audit a complete candidate before claiming a resolution.
+
+Any notes or prior attempts I supply outside the target are context, not extra hypotheses unless I explicitly designate them as such.
+</code></pre>
+    </main>
+  </div>
+</body>
+</html>

@@ -17,12 +17,13 @@ All internal links are relative, so the same files also work at a project-site U
 - `human.html`: expositions, linked to their corresponding source material.
 - `ai.html`: source material, currently AI-generated results, separated by horizontal rules.
 - `future.html`: open problems and research directions.
-- `prompt-kinetic-krylov-safonov.html`: original prompt and research-procedure download.
+- `prompt-kinetic-krylov-safonov.html`: kinetic result prompt and research-procedure download.
+- `prompt-adjoint-llogl.html`: adjoint L log L prompt and research-procedure downloads.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
-- `assets/files/`: original source ZIPs, a test PDF at the exposition link, research-procedure Markdown, and a plain-text transcription of the prompt.
+- `assets/files/`: original source ZIPs, a test PDF at the exposition link, research-procedure Markdown files, and plain-text prompts.
 
-The source ZIPs and research-procedure Markdown are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
+The source ZIPs and research-procedure Markdown files are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed.
 
 Source ZIP SHA-256 checksums:
 

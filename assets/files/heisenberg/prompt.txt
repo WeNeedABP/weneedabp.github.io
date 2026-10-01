@@ -1,0 +1,81 @@
+I am attaching `mathematical_research_goal.md`. Read it completely and use it as the research procedure for this task.
+
+Resolve the exact problem below. Seek a complete, rigorous solution, not merely an approach or a literature-status answer. Preserve every hypothesis and quantifier.
+
+EXECUTION_MODE: AUTO PROJECT_WINDOW_BUDGET: 4 hours
+
+Use that window only through genuine long-running execution with observable timing. Otherwise do substantive work in the available execution block and save a resumable checkpoint at its actual boundary. Do not invent elapsed time or background continuation.
+
+<TARGET_PROBLEM_BEGIN>
+```latex
+\paragraph{Problem (subelliptic adjoint $L\log L$ estimate).}
+Let $\Omega\subset\mathbb R^n$ be open and let
+$X_1,\ldots,X_m$ be fixed smooth real vector fields satisfying
+\[
+\operatorname{span}\{Y(x):Y\in\operatorname{Lie}(X_1,\ldots,X_m)\}
+=\mathbb R^n
+\qquad\text{for every }x\in\Omega.
+\]
+Fix $T>0$ and $0<\lambda\le\Lambda<\infty$.
+For a symmetric matrix field $A=(a_{ij})$, define
+\[
+\mathcal L_A\varphi
+:=\frac12\sum_{i,j=1}^m
+a_{ij}(t,x)(X_iX_j+X_jX_i)\varphi.
+\]
+No additional first-order term is included.
+
+Let $(\nu_t)_{0<t<T}$ be a weakly measurable family of
+nonnegative finite Borel measures on $\Omega$, with
+$\nu_t(\Omega)\le1$ for almost every $t$, and set
+$d\nu(t,x)=dt\,d\nu_t(x)$.
+Here weak measurability means that
+$t\mapsto\int_\Omega\psi\,d\nu_t$ is measurable for every
+$\psi\in C_c(\Omega)$.
+Assume that $A$ is Borel measurable and
+\[
+\lambda I_m\le A(t,x)\le\Lambda I_m
+\qquad\text{for }\nu\text{-almost every }(t,x).
+\]
+
+Let $\varepsilon\in[0,1]$ and let $\mu$ be a finite
+nonnegative Borel measure on $(0,T)\times\Omega$.
+Suppose that
+\[
+\partial_t\nu
+=\mathcal L_A^*\nu+\varepsilon\Delta_x\nu-\mu
+\qquad\text{in }\mathcal D'((0,T)\times\Omega),
+\]
+where the adjoint is defined by duality: explicitly,
+\[
+\int_{(0,T)\times\Omega}
+\bigl(\partial_t\varphi+\mathcal L_A\varphi
+      +\varepsilon\Delta_x\varphi\bigr)\,d\nu
+=
+\int_{(0,T)\times\Omega}\varphi\,d\mu
+\]
+for every $\varphi\in C_c^\infty((0,T)\times\Omega)$.
+
+Prove or disprove that $\nu$ necessarily has a nonnegative
+density $p\in L^1((0,T)\times\Omega)$ with respect to $dt\,dx$,
+and that, for every compact $K\Subset\Omega$,
+\[
+\int_0^T\!\int_\Omega p(t,x)\,dx\,dt\le T,
+\qquad
+\int_0^T\!\int_K
+p(t,x)\log\bigl(1+p(t,x)\bigr)\,dx\,dt\le C,
+\]
+where
+\[
+C=C(T,K,\Omega,X_1,\ldots,X_m,\lambda,\Lambda)
+\]
+is independent of $\varepsilon$, $A$, $\nu$, and $\mu$.
+No initial density or initial entropy bound, no continuity
+of $A$, and no smallness of $\Lambda/\lambda$ are assumed.
+```
+
+<TARGET_PROBLEM_END>
+
+First preserve the exact target in `checkpoint.md` when file writing is available. Keep normalization brief, perform a concrete mathematical probe, and then develop the strongest route. Continue beyond setup while resources remain. Distinguish conditional progress from a solution, and audit a complete candidate before claiming a resolution.
+
+Any notes or prior attempts I supply outside the target are context, not extra hypotheses unless I explicitly designate them as such.

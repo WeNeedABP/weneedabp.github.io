@@ -20,19 +20,21 @@ All internal links are relative, so the same files also work at a project-site U
 - `prompt-kinetic-krylov-safonov.html`: original prompt and research-procedure download.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
-- `assets/files/`: original source ZIP, a test PDF at the exposition link, research-procedure Markdown, and a plain-text transcription of the prompt.
+- `assets/files/`: original source ZIPs, a test PDF at the exposition link, research-procedure Markdown, and a plain-text transcription of the prompt.
 
-The source ZIP and research-procedure Markdown are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
+The source ZIPs and research-procedure Markdown are preserved byte for byte. `assets/files/NewABP2.pdf` is currently a one-page test placeholder containing only “test”. The research-procedure file was renamed to `mathematical_research_goal.md` to match its name in the prompt. The prompt page preserves the text, LaTeX, and literal backslash escapes from the supplied prompt.
 
-Source ZIP SHA-256:
+Source ZIP SHA-256 checksums:
 
-```text
-0d219e420e6d5b1a55eac8f22cd9bbb1fdd8bc978f0941a7b986491921896518
-```
+| File | SHA-256 |
+| --- | --- |
+| `kinetic_holder_general_source.zip` | `0d219e420e6d5b1a55eac8f22cd9bbb1fdd8bc978f0941a7b986491921896518` |
+| `elliptic_maximum_estimates_tex.zip` | `022b05692ecff0fef1a7cdc711760699a0f3503b31686ca0dc0c61aafd359966` |
+| `adjoint_entropy_tex_manuscripts.zip` | `2ee2faf15d5bf621f9862dc5825c8d6d8833fafd5383186a9569c285e42d34f9` |
 
 ## Updating the collection
 
-Copy an existing `<article class="entry">` in `ai.html` or `human.html`, give it a unique `id`, and update its content. Use that ID in links from the corresponding entry on the other page. Put supporting files in `assets/files/`. Add a separate prompt page when publishing a new AI result.
+Copy an existing `<article class="entry">` in `ai.html` or `human.html`, give it a unique `id`, and update its content. Use that ID in links from the corresponding entry on the other page. Put supporting files in `assets/files/`. Add a separate prompt page when prompt text is available for a new AI result.
 
 To preview locally, run `python3 -m http.server 8000` from the repository root and visit http://localhost:8000/.
 

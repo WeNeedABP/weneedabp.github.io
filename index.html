@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="We study the Krylov–Safonov theorem and related results across elliptic, parabolic, kinetic, and hypoelliptic PDEs.">
+  <meta name="description" content="Krylov–Safonov regularity theory, its historical development, and the role of the ABP estimate.">
   <meta name="theme-color" content="#FAF9F9">
   <title>Krylov-Safonov regularity theory</title>
   <link rel="stylesheet" href="assets/style.css">
@@ -26,10 +26,7 @@
     </header>
     <main id="main-content">
       <div class="prose">
-        <p>We study the Krylov–Safonov theorem and related results across elliptic, parabolic, kinetic, and hypoelliptic PDEs.</p>
-
-        <section class="section theory" aria-labelledby="theory-heading">
-          <h2 id="theory-heading">Krylov–Safonov theory</h2>
+        <section class="theory" aria-label="Krylov–Safonov theory">
           <p>The <strong>Krylov–Safonov theory</strong> establishes quantitative regularity for uniformly elliptic equations in nondivergence form with merely measurable coefficients. In the elliptic setting, write</p>
           <div class="math-display" tabindex="0" role="group" aria-label="Elliptic operator and ellipticity assumptions">
             \[
@@ -41,33 +38,31 @@
             \]
           </div>
 
-          <p><strong>Theorem:</strong></p>
-          <p>Every nonnegative suitable solution of \(Lu=0\) in \(B_{2r}\) satisfies</p>
+          <p><strong>Theorem:</strong> <em>Every nonnegative suitable solution of \(Lu=0\) in \(B_{2r}\) satisfies</em></p>
           <div class="math-display" tabindex="0" role="group" aria-label="Harnack inequality">
             \[
-            \begin{gathered}
-            \sup_{B_r}u\le C\inf_{B_r}u,\\
-            C=C(n,\Lambda/\lambda).
-            \end{gathered}
+            \sup_{B_r}u\le C\inf_{B_r}u,
             \]
           </div>
-          <p>Oscillation decay then gives, for solutions of either sign,</p>
+          <p><em>where \(C=C(n,\Lambda/\lambda)&gt;0\).</em></p>
+          <p><em>Oscillation decay then gives, for solutions of either sign,</em></p>
           <div class="math-display" tabindex="0" role="group" aria-label="Hölder estimate">
             \[
             [u]_{C^\alpha(B_r)}
-            \le Cr^{-\alpha}\|u\|_{L^\infty(B_{2r})},
+            \le Cr^{-\alpha}\|u\|_{\mathrm{L}^\infty(B_{2r})},
             \]
           </div>
-          <p>where \(\alpha&gt;0\) also depends only on dimension and ellipticity. The key is that these estimates require <strong>no continuity of \(A\)</strong> and no smallness of its ellipticity ratio. See Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
+          <p><em>where \(\alpha&gt;0\) also depends only on dimension and ellipticity.</em></p>
+          <p>The key is that these estimates require <strong>no continuity of \(A\)</strong> and no smallness of its ellipticity ratio. See Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
 
-          <h3>Historical contributions and the role of ABP</h3>
-          <p>The key ingredient was the <strong>Aleksandrov–Bakelman–Pucci maximum estimate</strong>, developed through works of Aleksandrov (<em>Dokl. Akad. Nauk SSSR</em>, 1960, <a href="https://www.mathnet.ru/eng/dan24126">archive</a>), Bakelman (<em>Sibirsk. Mat. Zh.</em>, 1961, <a href="https://www.mathnet.ru/eng/smj4725">archive</a>), and Pucci (<em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02416445">DOI</a>). For \(Lu=f\) in a bounded domain \(\Omega\), with \(u=0\) on \(\partial\Omega\), its basic form is</p>
+          <h2 class="section-title">Historical contributions and the role of ABP</h2>
+          <p>The key ingredient was the <strong>Aleksandrov–Bakelman–Pucci maximum estimate</strong>, developed through works of Aleksandrov (<em>Dokl. Akad. Nauk SSSR</em>, 1960, <a href="https://www.mathnet.ru/eng/dan24126">archive</a>), Bakelman (<em>Sibirsk. Mat. Zh.</em>, 1961, <a href="https://www.mathnet.ru/eng/smj4725">archive</a>), and Pucci (<em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02416445">DOI</a>). For \(Lu=f\) in a bounded domain \(\Omega\), with \(u=0\) on \(\partial\Omega\),</p>
           <div class="math-display" tabindex="0" role="group" aria-label="Aleksandrov–Bakelman–Pucci maximum estimate">
             \[
-            \|u\|_{L^\infty(\Omega)}
+            \|u\|_{\mathrm{L}^\infty(\Omega)}
             \le \frac{C_n}{\lambda}\,
             \operatorname{diam}(\Omega)\,
-            \|f\|_{L^n(\Omega)}.
+            \|f\|_{\mathrm{L}^n(\Omega)}.
             \]
           </div>
 
@@ -79,7 +74,7 @@
           <ul class="research-problems">
             <li><strong>Kinetic Krylov–Safonov estimates</strong> for equations in nondivergence form with merely measurable coefficients (Silvestre, <em>IMA Vol. Math. Appl.</em>, 2023, §8.2, <a href="https://doi.org/10.1007/978-3-031-34089-5_3">DOI</a>).</li>
             <li><strong>Harnack inequalities on the Heisenberg group</strong> for nondivergence operators with merely measurable coefficients and arbitrary ellipticity ratio (Tralli, <em>Rend. Lincei Mat. Appl.</em>, 2012, <a href="https://doi.org/10.4171/RLM/632">DOI</a>).</li>
-            <li><strong>Pucci’s conjecture</strong> on the sharp \(L^p\)-to-\(L^\infty\) maximum estimate in dimensions \(n\ge3\) (Pucci, <em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02414332">DOI</a>; Trudinger, <em>Indiana Univ. Math. J.</em>, 2020, <a href="https://doi.org/10.1512/iumj.2020.69.8460">DOI</a>).</li>
+            <li><strong>Pucci’s conjecture</strong> on the sharp \(\mathrm{L}^p\)-to-\(\mathrm{L}^\infty\) maximum estimate in dimensions \(n\ge3\) (Pucci, <em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02414332">DOI</a>; Trudinger, <em>Indiana Univ. Math. J.</em>, 2020, <a href="https://doi.org/10.1512/iumj.2020.69.8460">DOI</a>).</li>
           </ul>
         </section>
 

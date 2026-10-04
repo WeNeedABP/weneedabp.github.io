@@ -1,6 +1,6 @@
-# We need ABP
+# Krylov-Safonov regularity theory
 
-A minimal academic website collecting expositions, AI-generated source material, and open problems in Krylov–Safonov theory.
+A minimal academic website organized by elliptic, parabolic, kinetic, and hypoelliptic topics, with expositions and AI-generated source material in Krylov–Safonov regularity theory.
 
 ## GitHub Pages
 
@@ -14,9 +14,12 @@ All internal links are relative, so the same files also work at a project-site U
 ## Pages
 
 - `index.html`: project, team, and invitation to collaborate.
-- `human.html`: expositions, linked to their corresponding source material.
+- `elliptic.html`: ABP without ABP, the existing entropy exposition, and the Pucci conjecture.
+- `parabolic.html`: the parabolic ABP-without-ABP argument.
+- `kinetic.html`: ABP without ABP and the kinetic Krylov–Safonov theorem.
+- `hypoelliptic.html`: ABP without ABP in step-two Carnot groups, Heisenberg, and Grushin settings.
+- `human.html`: redirects old exposition links to the Elliptic topic page.
 - `ai.html`: source material, currently AI-generated results, ordered from oldest to newest and separated by horizontal rules.
-- `future.html`: open problems and research directions.
 - `prompt-kinetic-krylov-safonov.html`: kinetic result prompt and research-procedure download.
 - `prompt-pucci-conjecture.html`: Pucci conjecture prompt and research-procedure downloads.
 - `prompt-pucci-conjecture-d3.html`: dimension-three Pucci conjecture prompt and research-procedure downloads.
@@ -38,7 +41,7 @@ Source ZIP SHA-256 checksums:
 
 ## Updating the collection
 
-Copy an existing `<article class="entry">` in `ai.html` or `human.html`, give it a unique `id`, and update its content. Use that ID in links from the corresponding entry on the other page. Keep entries ordered by date from oldest to newest, with sequential displayed source numbers and stable anchor IDs. Put supporting files in `assets/files/`. Add a separate prompt page when prompt text is available for a new AI result.
+Add explanations and preparation notes under the appropriate topic page using `<section class="topic-section">`. Link to the relevant source entry. To add source material, copy an existing `<article class="entry">` in `ai.html`, give it a unique `id`, and update its content. Keep source entries ordered by date from oldest to newest, with sequential displayed source numbers and stable anchor IDs. Put supporting files in `assets/files/`. Add a separate prompt page when prompt text is available for a new AI result.
 
 To preview locally, run `python3 -m http.server 8000` from the repository root and visit http://localhost:8000/.
 

@@ -23,7 +23,7 @@ body {
 }
 a { color: var(--red); text-underline-offset: .2em; text-decoration-thickness: 1px; }
 a:hover { color: var(--red-hover); }
-a:focus-visible, summary:focus-visible {
+a:focus-visible, summary:focus-visible, .math-display:focus-visible {
   outline: 2px solid var(--red);
   outline-offset: 5px;
   border-radius: 2px;
@@ -47,6 +47,10 @@ h3 { font-size: 17px; margin: 24px 0 8px; }
 p { margin: 0 0 18px; }
 .prose { max-width: 780px; }
 .intro { max-width: 760px; }
+.math-display { max-width: 100%; margin: 18px 0; overflow-x: auto; overflow-y: hidden; }
+.math-display mjx-container[display="true"] { width: max-content; min-width: 100%; margin: .35em 0 !important; padding: .15em 0; }
+.research-problems { padding-left: 1.25rem; }
+.research-problems li + li { margin-top: 14px; }
 .section { margin-top: 36px; }
 .section-title { font-size: 19px; }
 .topic-section { margin-top: 28px; padding: 28px 0; border-top: 1px solid var(--rule); scroll-margin-top: 30px; }

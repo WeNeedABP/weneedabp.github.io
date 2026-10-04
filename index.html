@@ -28,6 +28,61 @@
       <div class="prose">
         <p>We study the Krylov–Safonov theorem and related results across elliptic, parabolic, kinetic, and hypoelliptic PDEs.</p>
 
+        <section class="section theory" aria-labelledby="theory-heading">
+          <h2 id="theory-heading">Krylov–Safonov theory</h2>
+          <p>The <strong>Krylov–Safonov theory</strong> establishes quantitative regularity for uniformly elliptic equations in nondivergence form with merely measurable coefficients. In the elliptic setting, write</p>
+          <div class="math-display" tabindex="0" role="group" aria-label="Elliptic operator and ellipticity assumptions">
+            \[
+            \begin{gathered}
+            Lu=\operatorname{tr}\!\bigl(A(x)D^2u\bigr),\\
+            \lambda I\le A(x)\le\Lambda I,\\
+            0&lt;\lambda\le\Lambda.
+            \end{gathered}
+            \]
+          </div>
+
+          <p><strong>Theorem:</strong></p>
+          <p>Every nonnegative suitable solution of \(Lu=0\) in \(B_{2r}\) satisfies</p>
+          <div class="math-display" tabindex="0" role="group" aria-label="Harnack inequality">
+            \[
+            \begin{gathered}
+            \sup_{B_r}u\le C\inf_{B_r}u,\\
+            C=C(n,\Lambda/\lambda).
+            \end{gathered}
+            \]
+          </div>
+          <p>Oscillation decay then gives, for solutions of either sign,</p>
+          <div class="math-display" tabindex="0" role="group" aria-label="Hölder estimate">
+            \[
+            [u]_{C^\alpha(B_r)}
+            \le Cr^{-\alpha}\|u\|_{L^\infty(B_{2r})},
+            \]
+          </div>
+          <p>where \(\alpha&gt;0\) also depends only on dimension and ellipticity. The key is that these estimates require <strong>no continuity of \(A\)</strong> and no smallness of its ellipticity ratio. See Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
+
+          <h3>Historical contributions and the role of ABP</h3>
+          <p>The key ingredient was the <strong>Aleksandrov–Bakelman–Pucci maximum estimate</strong>, developed through works of Aleksandrov (<em>Dokl. Akad. Nauk SSSR</em>, 1960, <a href="https://www.mathnet.ru/eng/dan24126">archive</a>), Bakelman (<em>Sibirsk. Mat. Zh.</em>, 1961, <a href="https://www.mathnet.ru/eng/smj4725">archive</a>), and Pucci (<em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02416445">DOI</a>). For \(Lu=f\) in a bounded domain \(\Omega\), with \(u=0\) on \(\partial\Omega\), its basic form is</p>
+          <div class="math-display" tabindex="0" role="group" aria-label="Aleksandrov–Bakelman–Pucci maximum estimate">
+            \[
+            \|u\|_{L^\infty(\Omega)}
+            \le \frac{C_n}{\lambda}\,
+            \operatorname{diam}(\Omega)\,
+            \|f\|_{L^n(\Omega)}.
+            \]
+          </div>
+
+          <p>Krylov–Safonov (<em>Dokl. Akad. Nauk SSSR</em>, 1979, <a href="https://www.mathnet.ru/eng/dan42542">archive</a>) used a probabilistic method to establish <strong>quantitative propagation of positivity from sets of positive measure</strong>. Growth estimates and covering arguments convert this mechanism into Harnack’s inequality and Hölder continuity. The full parabolic result appeared in Krylov–Safonov (<em>Math. USSR-Izvestiya</em>, 1981; Russian original 1980, <a href="https://doi.org/10.1070/IM1981v016n01ABEH001283">DOI</a>), alongside the elliptic treatment of Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
+
+          <p>This theory became a central ingredient in fully nonlinear elliptic regularity, notably the \(C^{2,\alpha}\) estimates for uniformly elliptic convex or concave equations established by Evans (<em>Comm. Pure Appl. Math.</em>, 1982, <a href="https://doi.org/10.1002/cpa.3160350303">DOI</a>) and Krylov (<em>Math. USSR-Izvestiya</em>, 1983; Russian original 1982, <a href="https://doi.org/10.1070/IM1983v020n03ABEH001360">DOI</a>).</p>
+
+          <p>We explore Astra’s solution of the following previously open problems.</p>
+          <ul class="research-problems">
+            <li><strong>Kinetic Krylov–Safonov estimates</strong> for equations in nondivergence form with merely measurable coefficients (Silvestre, <em>IMA Vol. Math. Appl.</em>, 2023, §8.2, <a href="https://doi.org/10.1007/978-3-031-34089-5_3">DOI</a>).</li>
+            <li><strong>Harnack inequalities on the Heisenberg group</strong> for nondivergence operators with merely measurable coefficients and arbitrary ellipticity ratio (Tralli, <em>Rend. Lincei Mat. Appl.</em>, 2012, <a href="https://doi.org/10.4171/RLM/632">DOI</a>).</li>
+            <li><strong>Pucci’s conjecture</strong> on the sharp \(L^p\)-to-\(L^\infty\) maximum estimate in dimensions \(n\ge3\) (Pucci, <em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02414332">DOI</a>; Trudinger, <em>Indiana Univ. Math. J.</em>, 2020, <a href="https://doi.org/10.1512/iumj.2020.69.8460">DOI</a>).</li>
+          </ul>
+        </section>
+
         <section class="section" aria-labelledby="team-heading">
           <h2 class="section-title" id="team-heading">Team</h2>
           <ul class="team">

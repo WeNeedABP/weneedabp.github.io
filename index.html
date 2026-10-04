@@ -30,8 +30,7 @@
           <p>The <strong>Krylov–Safonov theory</strong> establishes quantitative regularity for uniformly elliptic equations in nondivergence form with merely measurable coefficients. In the elliptic setting, let \(A=(a_{ij})\) satisfy \(\lambda I\le A(x)\le\Lambda I\) for constants \(0&lt;\lambda\le\Lambda\). We write</p>
           <div class="math-display" tabindex="0" role="group" aria-label="Elliptic operator">
             \[
-            Lu=\sum_{i,j=1}^{n}a_{ij}(x)\,
-            \frac{\partial^2u}{\partial x_i\partial x_j}.
+            Lu=\sum_{i,j=1}^{n}a_{ij}(x)\,\partial_{ij}u.
             \]
           </div>
 
@@ -41,7 +40,7 @@
             \sup_{B_r}u\le C\inf_{B_r}u,
             \]
           </div>
-          <p><em>where \(C=C(n,\Lambda/\lambda)&gt;0\). Oscillation decay then gives, for solutions of either sign,</em></p>
+          <p><em>where \(C=C(n,\Lambda/\lambda)&gt;0\). Moreover, possibly sign-changing solutions satisfy</em></p>
           <div class="math-display" tabindex="0" role="group" aria-label="Hölder estimate">
             \[
             [u]_{C^\alpha(B_r)}
@@ -49,7 +48,7 @@
             \]
           </div>
           <p><em>where \(\alpha&gt;0\) also depends only on dimension and ellipticity.</em></p>
-          <p>The key is that these estimates require <strong>no continuity of \(A\)</strong> and no smallness of its ellipticity ratio. See Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
+          <p>The key is that these estimates require no continuity of \(A\) and no smallness of its ellipticity ratio. See Safonov (<em>J. Soviet Math.</em>, 1983; Russian original 1980, <a href="https://doi.org/10.1007/BF01094448">DOI</a>).</p>
 
           <h2 class="section-title">Historical contributions and the role of ABP</h2>
           <p>The key ingredient was the <strong>Aleksandrov–Bakelman–Pucci estimate</strong>, developed through works of Aleksandrov (<em>Dokl. Akad. Nauk SSSR</em>, 1960, <a href="https://www.mathnet.ru/eng/dan24126">archive</a>), Bakelman (<em>Sibirsk. Mat. Zh.</em>, 1961, <a href="https://www.mathnet.ru/eng/smj4725">archive</a>), and Pucci (<em>Ann. Mat. Pura Appl.</em>, 1966, <a href="https://doi.org/10.1007/BF02416445">DOI</a>). For \(Lu=f\) in a bounded domain \(\Omega\), with \(u=0\) on \(\partial\Omega\),</p>

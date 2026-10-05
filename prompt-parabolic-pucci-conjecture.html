@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The original prompt and Markdown research procedure used for the parabolic Pucci conjecture source material.">
+  <meta name="theme-color" content="#FAF9F9">
+  <title>Prompt: Parabolic Pucci conjecture · We need ABP</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/mathjax-config.js"></script>
+  <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="shell">
+    <header class="site-header">
+      <p class="site-title"><a class="brand" href="index.html">We need ABP</a></p>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="elliptic.html">Elliptic</a>
+        <a href="parabolic.html">Parabolic</a>
+        <a href="kinetic.html">Kinetic</a>
+        <a href="hypoelliptic.html">Hypoelliptic</a>
+        <a href="ai.html" aria-current="true">Source material</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      <a class="back-link" href="ai.html#parabolic-pucci-conjecture">← Back to source material</a>
+      <h1>Prompt: Parabolic Pucci conjecture</h1>
+      <p class="intro">We used this Markdown research procedure together with the following prompt.</p>
+      <ul class="resource-links" aria-label="Prompt downloads">
+        <li><a href="assets/files/parabolic-pucci/mathematical_research_goal.md" download>mathematical_research_goal.md</a></li>
+        <li><a href="assets/files/parabolic-pucci/prompt.txt" download>Plain text prompt</a></li>
+      </ul>
+      <pre class="prompt"><code>I am attaching `mathematical_research_goal.md`.
+Read it completely and use it as the research procedure for this task.
+
+Resolve the exact problem below. Seek a complete, rigorous solution, not merely
+an approach or a literature-status answer. Preserve every hypothesis and quantifier.
+
+EXECUTION_MODE: AUTO
+PROJECT_WINDOW_BUDGET: 10 hours
+
+Use that window only through genuine long-running execution with observable
+timing. Otherwise do substantive work in the available execution block and save
+a resumable checkpoint at its actual boundary. Do not invent elapsed time or
+background continuation.
+
+&lt;TARGET_PROBLEM_BEGIN&gt;
+
+```latex
+\paragraph{Parabolic analogue of Pucci's problem: the sharp integrability range.}
+
+Fix an integer $n\ge2$ and $0&lt;\delta&lt;1/n$.
+Let
+\[
+  B_1=\{x\in\mathbb R^n:|x|&lt;1\},
+  \qquad
+  Q_1=B_1\times(0,1),
+\]
+where $|\cdot|$ is the Euclidean norm, and define the parabolic
+boundary by
+\[
+  \partial_{\mathrm{par}}Q_1
+  =
+  \bigl(\overline{B_1}\times\{0\}\bigr)
+  \cup
+  \bigl(\partial B_1\times[0,1]\bigr).
+\]
+
+Consider all Lebesgue-measurable symmetric matrix fields
+$A=(a_{ij}):Q_1\to\mathbb R^{n\times n}$ satisfying,
+for almost every $(x,t)\in Q_1$,
+\[
+  \operatorname{tr}A(x,t)=1,
+  \qquad
+  \xi^T A(x,t)\xi\ge\delta|\xi|^2
+  \quad\text{for every }\xi\in\mathbb R^n,
+\]
+and define
+\[
+  \mathcal P_Au
+  =
+  \frac{\partial u}{\partial t}
+  -
+  \sum_{i,j=1}^n a_{ij}(x,t)
+  \frac{\partial^2u}{\partial x_i\partial x_j}.
+\]
+
+For $1\le p&lt;\infty$, call $p$ admissible if there exists a finite
+constant $C=C(n,\delta,p)&gt;0$ such that
+\[
+  \max_{(x,t)\in\overline{Q_1}}|u(x,t)|
+  \le
+  C\left(
+    \int_0^1\int_{B_1}
+    |\mathcal P_Au(x,t)|^p\,dx\,dt
+  \right)^{1/p}
+\]
+for every such $A$ and every real-valued
+\[
+  u\in C(\overline{Q_1})\cap C^{2,1}(Q_1)
+\]
+satisfying
+\[
+  u=0\quad\text{on }\partial_{\mathrm{par}}Q_1,
+  \qquad
+  \mathcal P_Au\in L^p(Q_1).
+\]
+Here $C^{2,1}$ means twice continuously differentiable in the
+spatial variables and once continuously differentiable in time;
+$dx\,dt$ is space--time Lebesgue measure.
+The constant is independent of $A$ and $u$.
+
+Set
+\[
+  \mathcal E_{\mathrm{par}}(n,\delta)
+  =
+  \{p\in[1,\infty):p\text{ is admissible}\}.
+\]
+The problem is to
+\[
+  \boxed{
+    \text{determine }\mathcal E_{\mathrm{par}}(n,\delta)
+    \text{ exactly as a function of }n\text{ and }\delta.
+  }
+\]
+
+Equivalently, determine the critical exponent
+\[
+  p_{\mathrm{par}}(n,\delta)
+  :=
+  \inf\mathcal E_{\mathrm{par}}(n,\delta)
+\]
+and settle whether the estimate holds at
+$p=p_{\mathrm{par}}(n,\delta)$.
+Thus the task includes identifying the sharp threshold and
+deciding whether the admissible range is
+\[
+  (p_{\mathrm{par}}(n,\delta),\infty)
+  \qquad\text{or}\qquad
+  [p_{\mathrm{par}}(n,\delta),\infty).
+\]
+
+Sharpness requires showing that for every excluded exponent
+$p\in[1,\infty)$ there are coefficient fields $A_k$ and functions
+$u_k$ satisfying the conditions above such that
+\[
+  \max_{\overline{Q_1}}|u_k|=1,
+  \qquad
+  \|\mathcal P_{A_k}u_k\|_{L^p(Q_1)}\longrightarrow0.
+\]
+```
+
+&lt;TARGET_PROBLEM_END&gt;
+
+First preserve the exact target in `checkpoint.md` when file writing is available.
+Keep normalization brief, perform a concrete mathematical probe, and then develop
+the strongest route. Continue beyond setup while resources remain. Distinguish
+conditional progress from a solution, and audit a complete candidate before
+claiming a resolution.
+
+Any notes or prior attempts I supply outside the target are context, not extra
+hypotheses unless I explicitly designate them as such.
+</code></pre>
+    </main>
+  </div>
+</body>
+</html>

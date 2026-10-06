@@ -59,6 +59,7 @@ a:focus-visible, summary:focus-visible, [tabindex="0"]:focus-visible {
   text-decoration: none; white-space: nowrap;
 }
 .brand:hover { color: var(--accent); }
+.brand-dot { color: var(--accent); }
 .site-nav {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end;
   gap: 6px 30px; font: 13px/1.5 var(--sans);
@@ -123,9 +124,10 @@ mjx-container svg { max-width: none; }
 }
 .team a { color: var(--ink); text-decoration: none; }
 .team a:hover { color: var(--accent); text-decoration: underline; }
-.section[aria-labelledby="collaborate-heading"] { padding: 33px 37px; background: var(--tint); }
-.section[aria-labelledby="collaborate-heading"] h2 { font-size: 29px; margin-bottom: 12px; }
-.section[aria-labelledby="collaborate-heading"] p { color: var(--muted); font-size: 18px; margin-bottom: 0; }
+.section-callout { padding: 33px 37px; background: var(--tint); }
+.section-callout h2 { font-size: 29px; margin-bottom: 12px; }
+.section-callout p { color: var(--muted); font-size: 18px; }
+.section-callout > :last-child { margin-bottom: 0; }
 .collection { margin-top: 43px; }
 .entry {
   max-width: 900px; padding: 35px 0 38px;
@@ -160,8 +162,8 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
 .related-label { display: block; color: var(--muted); font: 10px/1.6 var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
 .resource-box { min-width: 0; break-inside: avoid; }
 .resource-box + .resource-box { margin-top: 16px; }
-.resource-box h3 { margin: 0 0 14px; font-size: 22px; line-height: 1.3; }
-.resource-box .resource-links { margin: 0; }
+.resource-box h3 { margin: 0 0 14px; font-size: inherit; line-height: inherit; }
+.resource-box .resource-links { margin: 0; font: inherit; }
 .resource-box > :last-child { margin-bottom: 0; }
 .back-link { display: inline-block; margin-bottom: 28px; font: 12px/1.6 var(--sans); text-decoration: none; }
 main:has(> .prompt) { max-width: 900px; margin: auto; }
@@ -198,7 +200,7 @@ main:has(> .prompt) .intro { font-size: 19px; }
   .section:has(.team) { grid-template-columns: 1fr; gap: 9px; }
   .section:has(.team) .section-title { margin-bottom: 8px; }
   .team { gap: 12px 20px; font-size: 19px; }
-  .section[aria-labelledby="collaborate-heading"] { padding: 25px 23px; }
+  .section-callout { padding: 25px 23px; }
   .topic-section h2, .entry h2 { font-size: 28px; }
   .metadata { grid-template-columns: 1fr; gap: 2px; }
   .metadata dd { margin-bottom: 10px; }
@@ -219,6 +221,6 @@ main:has(> .prompt) .intro { font-size: 19px; }
   main { padding-top: 20px; }
   .prose, main:has(> .collection), main:has(> .prompt) { max-width: none; }
   a { color: inherit; }
-  .prompt, .related, .theory > .math-display, .section[aria-labelledby="collaborate-heading"] { background: white; }
+  .prompt, .related, .theory > .math-display, .section-callout { background: white; }
   .topic-section, .entry, .section { break-inside: avoid; }
 }

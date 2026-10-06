@@ -93,15 +93,12 @@ strong { font-weight: 600; }
 .theory > p:first-child strong { color: var(--accent); font-weight: 500; }
 .math-display {
   max-width: 100%; min-width: 0; overflow: auto hidden;
-  padding: 10px 2px; margin: 20px 0; font-size: 18px;
+  padding: 2px; margin: 12px 0; font-size: 18px;
 }
 .math-display mjx-container[display="true"] {
-  width: max-content; min-width: 100%; margin: .5em 0 !important; padding: .15em 0;
+  width: max-content; min-width: 100%; margin: .25em 0 !important; padding: 0;
 }
 mjx-container svg { max-width: none; }
-.theory > .math-display {
-  padding: 15px 24px; margin: 25px 0;
-}
 .research-problems { padding-left: 22px; }
 .research-problems li + li { margin-top: 14px; }
 .section { margin-top: 45px; }
@@ -173,6 +170,7 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
 .resource-box + .resource-box { margin-top: 16px; }
 .resource-box h3 { margin: 0 0 14px; font-size: inherit; line-height: inherit; }
 .resource-box .resource-links { margin: 0; font: inherit; }
+.resource-box .resource-links a { display: inline; text-decoration: underline; padding: 0; border-bottom: 0; }
 .resource-box > :last-child { margin-bottom: 0; }
 .back-link { display: inline-block; margin-bottom: 28px; font: 12px/1.6 var(--sans); text-decoration: none; }
 main:has(> .prompt) { max-width: 900px; margin: auto; }
@@ -216,7 +214,6 @@ main:has(> .prompt) .intro { font-size: 19px; }
   .metadata { grid-template-columns: 1fr; gap: 2px; }
   .metadata dd { margin-bottom: 10px; }
   .prompt { padding: 18px; font-size: 12px; }
-  .theory > .math-display { padding: 12px 15px; }
   .related { padding: 19px 20px; }
 }
 @media (max-width: 360px) {

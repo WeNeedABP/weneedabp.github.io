@@ -91,8 +91,7 @@ strong { font-weight: 600; }
 }
 mjx-container svg { max-width: none; }
 .theory > .math-display {
-  padding: 15px 24px; background: var(--tint);
-  border-left: 2px solid var(--accent); margin: 25px 0;
+  padding: 15px 24px; margin: 25px 0;
 }
 .research-problems { padding-left: 22px; }
 .research-problems li + li { margin-top: 14px; }

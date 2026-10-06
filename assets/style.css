@@ -80,7 +80,6 @@ strong { font-weight: 600; }
 .intro { max-width: 730px; color: var(--muted); font-size: 22px; line-height: 1.55; }
 .prose > h1 { padding-bottom: 36px; border-bottom: 1px solid var(--rule); }
 .theory { padding: 14px 0 5px; }
-.theory > p:first-child { font-size: 23px; line-height: 1.6; }
 .theory > p:first-child strong { color: var(--accent); font-weight: 500; }
 .math-display {
   max-width: 100%; min-width: 0; overflow: auto hidden;
@@ -183,7 +182,6 @@ main:has(> .prompt) .intro { font-size: 19px; }
   main { padding: 43px 0 55px; }
   h1 { font-size: 44px; }
   h2 { font-size: 32px; }
-  .theory > p:first-child { font-size: 21px; }
 }
 @media (max-width: 640px) {
   .site-header { flex-direction: column; align-items: flex-start; padding: 27px 0 19px; gap: 17px; }

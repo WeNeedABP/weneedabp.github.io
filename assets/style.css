@@ -158,6 +158,11 @@ mjx-container svg { max-width: none; }
 code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; font-size: .9em; }
 .related { margin: 25px 0 0; padding: 20px 24px; background: var(--tint); border-left: 2px solid var(--accent); font-size: 18px; }
 .related-label { display: block; color: var(--muted); font: 10px/1.6 var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+.resource-box { min-width: 0; break-inside: avoid; }
+.resource-box + .resource-box { margin-top: 16px; }
+.resource-box h3 { margin: 0 0 14px; font-size: 22px; line-height: 1.3; }
+.resource-box .resource-links { margin: 0; }
+.resource-box > :last-child { margin-bottom: 0; }
 .back-link { display: inline-block; margin-bottom: 28px; font: 12px/1.6 var(--sans); text-decoration: none; }
 main:has(> .prompt) { max-width: 900px; margin: auto; }
 main:has(> .prompt) h1 { font-size: clamp(32px, 4vw, 42px); margin-bottom: 22px; }

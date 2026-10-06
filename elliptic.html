@@ -6,7 +6,7 @@
   <meta name="description" content="An entropy approach to elliptic ABP, the Pucci conjecture, and an AI-assisted exposition of an ABP estimate for nonlocal equations.">
   <meta name="theme-color" content="#FAF9F9">
   <title>Elliptic · We need ABP</title>
-  <link rel="stylesheet" href="assets/style.css?v=7fff3c4c">
+  <link rel="stylesheet" href="assets/style.css?v=27e85868">
   <script defer src="assets/mathjax-config.js"></script>
   <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 </head>
@@ -31,10 +31,13 @@
           <h2 id="entropy-proof-abp">An entropy approach to elliptic ABP</h2>
           <p>Astra’s proof of the kinetic Krylov–Safonov theorem is based on a novel approach to the ABP estimate. It derives an entropy estimate for the adjoint equation by regularising along an auxiliary flow and exploiting entropy dissipation.</p>
           <p>In this exposition, we explain this proof in the elliptic case.</p>
-          <ul class="resource-links" aria-label="Exposition resources">
-            <li><a href="https://arxiv.org/">arXiv</a></li>
-          </ul>
-          <p class="related"><span class="related-label">Source material</span><a href="ai.html#kinetic-krylov-safonov">The kinetic Krylov–Safonov theorem</a></p>
+          <div class="related resource-box" data-resource-type="human">
+            <span class="related-label">Human exposition</span>
+            <ul class="resource-links" aria-label="Human exposition resources">
+              <li><a href="https://arxiv.org/">arXiv</a></li>
+            </ul>
+          </div>
+          <div class="related resource-box" data-resource-type="source"><span class="related-label">Source material</span><a href="ai.html#kinetic-krylov-safonov">The kinetic Krylov–Safonov theorem</a></div>
         </section>
         <section class="topic-section" id="pucci-conjecture" aria-labelledby="pucci-heading">
           <h2 id="pucci-heading">Pucci’s conjecture</h2>
@@ -70,7 +73,7 @@
           </div>
 
           <p>This conjecture was solved by Astra, and we are preparing an exposition of the mathematical ideas in its proof.</p>
-          <div class="related">
+          <div class="related resource-box" data-resource-type="source">
             <span class="related-label">Source material</span>
             <ul class="topic-sources">
               <li><a href="ai.html#pucci-conjecture">Elliptic Pucci conjecture (\(d \neq 3\))</a></li>
@@ -82,11 +85,13 @@
           <h2 id="nonlocal-abp-heading">An ABP estimate for nonlocal equations</h2>
           <p>Local diffusion depends on how a function changes near a point. Nonlocal diffusion also compares its values at distant points, through an integral describing possible jumps. The question is whether the adjoint approach can give a maximum estimate in this setting as well.</p>
           <p>The supplied AI manuscript proves an Aleksandrov estimate for a specific class of even kernels. Their coefficients admit a representation using nonnegative spatial densities and bounded jump profiles, with a uniform moment bound; integrable corrections are allowed. An additional feature is that the estimates remain uniform as the order of the equation approaches two. The kernel representation is a substantive hypothesis, and the manuscript includes an example showing that ellipticity alone does not imply it.</p>
-          <p>AI-assisted exposition.</p>
-          <ul class="resource-links" aria-label="Nonlocal exposition resources">
-            <li><a href="assets/files/nonlocal_abp_standalone.pdf">Read the exposition (PDF)</a></li>
-            <li><a href="assets/files/nonlocal_abp_standalone.tex" download>LaTeX source</a></li>
-          </ul>
+          <div class="related resource-box" data-resource-type="ai-assisted">
+            <span class="related-label">AI-assisted exposition</span>
+            <ul class="resource-links" aria-label="Nonlocal exposition resources">
+              <li><a href="assets/files/nonlocal_abp_standalone.pdf">Read the exposition (PDF)</a></li>
+              <li><a href="assets/files/nonlocal_abp_standalone.tex" download>LaTeX source</a></li>
+            </ul>
+          </div>
         </section>
       </div>
     </main>

@@ -41,6 +41,8 @@ Source ZIP SHA-256 checksums:
 
 ## Updating the collection
 
+Each subtopic can contain multiple resource boxes using `<div class="related resource-box">`. Set `data-resource-type` to `human`, `ai-assisted`, or `source`, and use the corresponding label in `<span class="related-label">`: **Human exposition** for arXiv links, **AI-assisted exposition** for PDF and LaTeX downloads, or **Source material** for one or more source links. Repeat a box when a subtopic has several expositions, keeping each exposition's title and links together. Add boxes as resources become available.
+
 Add explanations and preparation notes under the appropriate topic page using `<section class="topic-section">`. Link to the relevant source entry. To add source material, copy an existing `<article class="entry">` in `ai.html`, give it a unique `id`, and update its content. Keep source entries ordered by date from oldest to newest, with sequential displayed source numbers and stable anchor IDs. Put supporting files in `assets/files/`. Add a separate prompt page when prompt text is available for a new AI result.
 
 To preview locally, run `python3 -m http.server 8000` from the repository root and visit http://localhost:8000/.

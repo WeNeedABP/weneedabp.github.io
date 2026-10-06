@@ -1,0 +1,737 @@
+% This file was generated with ChatGPT Astra.
+% The original proof was more complicated. Then we asked the model to match the style and exposition of a kinetic ABP proof that we wrote ourselves. It resulted in this article.
+
+\documentclass{article}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\allowdisplaybreaks[1]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Heis}{\mathbb H^n}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,d}
+\newcommand{\dx}{\,d\xi}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\KK}{\mathcal K}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diver}{div}
+\title{Adjoint ABP estimates on Carnot groups and related subelliptic systems}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We extend the adjoint power-entropy argument to every step-two Carnot group, with arbitrary measurable uniformly elliptic horizontal coefficients and bounded horizontal drift. The exponent is independent of the drift bound. The argument also applies to Grushin systems and, by exact changes of coordinates and frame, locally to contact and constant-Levi-rank corank-one distributions. In arbitrary Carnot step we prove separate results for an explicit commuting class and for small perturbations of constant matrices. We also give a local small-perturbation result for arbitrary smooth H\"ormander fields. We do not assert the unrestricted higher-step or general H\"ormander estimate.
+\end{abstract}
+
+\section{Our goal}
+
+Let $G$ be a fixed step-two Carnot group. Choose bases $Z_1,\ldots,Z_m$ of its first layer and $T_1,\ldots,T_k$ of its second layer, and exponential coordinates $\xi=(x,s)\in\R^m\times\R^k$. Write
+\[
+ [Z_i,Z_j]=\sum_{\alpha=1}^kJ^\alpha_{ij}T_\alpha,
+ \qquad T_\alpha=\partial_{s_\alpha},\qquad Q=m+2k.
+\]
+Each $J^\alpha$ is skew-symmetric; no commutation among these matrices is assumed. Set
+\[
+ \Delta_H=\sum_iZ_i^2,\qquad \Delta_Z=\sum_\alpha T_\alpha^2,
+ \qquad \DD B=\sum_{i,j}Z_iZ_jB_{ij},\qquad
+ \diver_H F=\sum_iZ_iF_i.
+\]
+All fields are divergence-free for Haar measure $d\xi=dx\,ds$. Matrix norms are Frobenius norms. Fix a bounded homogeneous unit ball $B_1$ with $|x|<1$, and put $B_R(\xi_0)=\xi_0\circ\delta_RB_1$, where $\delta_R(x,s)=(Rx,R^2s)$.
+Consider
+\[
+ \LL u=a_{ij}Z_iZ_ju+b_iZ_iu,\qquad
+ A=A^{\mathsf T},\quad \lambda I\leq A\leq\Lambda I,\quad |b|\leq B.
+\]
+The bounds on the measurable coefficients hold almost everywhere.
+
+\begin{theorem}\label{t:main}
+For every fixed $G$ and $0<\lambda\leq\Lambda<\infty$ there exist $1<p<\infty$ and a positive function $C_*$, depending only on $G,\lambda,\Lambda$, such that the following holds. For every $R>0$, $B\geq0$, bounded open $\Omega\subset B_R(\xi_0)$, and coefficients as above, if
+\[
+ u\in C^2(\Omega)\cap C(\overline\Omega),\quad f\in C(\Omega),
+ \qquad -\LL u\leq f\ \hbox{a.e. in }\Omega,
+ \qquad u\leq0\ \hbox{on }\partial\Omega,
+\]
+then
+\begin{equation}\label{e:ABP}
+ \|u_+\|_{L^\infty(\Omega)}
+ \leq C R^{2-Q/p}\|f_+\mathbf1_{\{u>0\}}\|_{L^p(\Omega)}.
+\end{equation}
+Here $C=C_*(RB)$. No coefficient derivatives, modulus of continuity, or boundary regularity enter the constants. The assertion is understood when the right-hand side is finite.
+\end{theorem}
+
+The same assertion holds for $-(\LL+c)u\leq f$ if $c\leq0$: on $\{u>0\}$, removing $c$ improves the inequality. One may also subtract the nonnegative boundary supremum. The abelian case is included by taking $k=0$ and omitting all central corrections. We do not optimize $p$.
+
+\section{The adjoint equation}
+
+Normalize $R=1$, $\xi_0=e$. First take a smooth domain, smooth coefficients, and introduce
+\[
+ \LL_\eps=\LL+\eps\Delta_Z,\qquad \eps>0.
+\]
+This is uniformly elliptic in Euclidean coordinates on the bounded domain. For $g\geq0$ smooth with $\int g=1$, let $v\geq0$ be the adjoint Dirichlet solution
+\[
+ -\DD(Av)+\diver_H(bv)-\eps\Delta_Zv=g,
+ \qquad v|_{\partial\Omega}=0.
+\]
+Positivity follows by duality from the classical maximum principle for $\LL_\eps$. We will prove
+\begin{equation}\label{e:adjoint-bound}
+ \|v\|_{L^r(\Omega)}\leq C(G,\lambda,\Lambda,B),\qquad r>1,
+\end{equation}
+uniformly in $\eps$, coefficient derivatives, and $\Omega\subset B_1$.
+
+Put $a=1+B/\lambda$ and
+\[
+ \Phi=\frac{e^a}{a\lambda}(e^a-e^{a x_1}).
+\]
+Since $Z_ix_1=\delta_{i1}$ and $T_\alpha x_1=0$,
+\[
+ -\LL_\eps\Phi=\frac{e^a}{\lambda}e^{a x_1}(a a_{11}+b_1)\geq1,
+ \qquad 0\leq\Phi\leq M_B:=\frac{e^{2a}-1}{a\lambda}.
+\]
+Testing gives
+\begin{equation}\label{e:mass}
+ M:=\int v\,d\xi\leq M_B.
+\end{equation}
+The boundary contribution is $\Phi\beta$, where
+\[
+ \beta=(\nu_H\cdot A\nu_H+\eps|\nu_Z|^2)\partial_\nu v\leq0,
+ \quad \nu_H=(Z_i\cdot\nu)_i,\quad\nu_Z=(T_\alpha\cdot\nu)_\alpha.
+\]
+There is no drift boundary term because $v=0$ there. Extend $v,g$ by zero and extend $A,b$ preserving their bounds. The same calculation gives
+\begin{equation}\label{e:global}
+ -\DD(Av)+\diver_H(bv)-\eps\Delta_Zv
+ =g+\beta\sigma_{\partial\Omega}\leq g
+ \quad\hbox{on }G.
+\end{equation}
+All unspecified integrals below are over $G$. Define
+\[
+ |DF|_\eps^2=\sum_i|Z_iF|^2+\frac\eps\lambda\sum_\alpha|T_\alpha F|^2,
+ \qquad \HH_\eps=\Delta_H+\frac\eps\lambda\Delta_Z,
+ \qquad H_h=e^{h\HH_\eps}.
+\]
+
+\section{Scalar, vector and tensor regularization}
+
+Let $C_h$ denote central convolution with
+\begin{equation}\label{e:sech}
+ c_h(s)=\prod_{\alpha=1}^k\frac1{2\kappa h}
+ \operatorname{sech}\frac{\pi s_\alpha}{2\kappa h},
+ \qquad \widehat c_h(\tau)=\prod_\alpha\operatorname{sech}(\kappa h\tau_\alpha).
+\end{equation}
+Set $\KK_\alpha B=J^\alpha B-BJ^\alpha$ and
+\begin{equation}\label{e:regularizers}
+ P_h=H_hC_h,\quad
+ U_h=H_hC_he^{2h\sum_\alpha T_\alpha J^\alpha},\quad
+ S_h=H_hC_he^{2h\sum_\alpha T_\alpha\KK_\alpha}.
+\end{equation}
+Each exponential is a single exponential of the sum, not a product of exponentials. Only its product with $C_h$ is intended as an operator.
+
+\begin{lemma}\label{l:intertwining}
+For sufficiently large $\kappa$, these operators are well defined and
+\begin{equation}\label{e:intertwining}
+ \diver_H U_hF=P_h\diver_H F,\qquad
+ \DD S_hB=P_h\DD B,
+\end{equation}
+\[
+ |U_hF|\leq C_G P_h|F|,\qquad
+ |S_hB-P_hB|\leq C_G\kappa^{-1}P_h|B|.
+\]
+The scalar operator preserves positivity and mass, and
+\begin{equation}\label{e:smoothing}
+ \|P_hF\|_\infty\leq C_Gh^{-Q/2}\|F\|_1,
+ \qquad |T_\alpha\log P_hF|\leq\frac\pi{2\kappa h}\quad(F\geq0,\ F\not\equiv0).
+\end{equation}
+Constants are independent of $h,\eps,\kappa$ above a fixed threshold.
+\end{lemma}
+
+\begin{proof}
+Direct expansion gives
+\[
+ [\Delta_H,Z_i]=-2\sum_{\alpha,j}J^\alpha_{ij}T_\alpha Z_j,
+\]
+\[
+ \HH_\eps\diver_H=\diver_H(\HH_\eps+2\sum_\alpha T_\alpha J^\alpha),
+ \qquad
+ \HH_\eps\DD=\DD(\HH_\eps+2\sum_\alpha T_\alpha\KK_\alpha).
+\]
+Exponentiation gives \eqref{e:intertwining}. Here is a kernel justification which does not assume matrix commutation. For fixed real matrices $M_\alpha$ and $0<\rho<1$, Cauchy's formula in the strip $|\operatorname{Im}s_\alpha|<\kappa h$ gives
+\[
+ |\partial^\beta c_h(s)|\leq C_{k,\rho}\beta!
+ (\rho\kappa h)^{-|\beta|}c_h(s).
+\]
+Indeed, on the complex polydisc of radius $\rho\kappa h$ around real $s$, the ratio of the absolute value of the kernel to $c_h(s)$ is bounded, using
+$|\cosh(t+d+i\theta)|\geq\cos\theta\cosh(t+d)$ and
+$\cosh(t+d)\geq e^{-|d|}\cosh t$.
+The kernel of $C_he^{2h\sum T_\alpha M_\alpha}$ is the convergent ordered-word series
+\[
+ \mathsf M_h=c_hI+
+ \sum_{j\geq1}\frac{(2h)^j}{j!}
+ \sum_{\alpha_1,\ldots,\alpha_j}
+ M_{\alpha_1}\cdots M_{\alpha_j}
+ \partial_{\alpha_1}\cdots\partial_{\alpha_j}c_h.
+\]
+With $S=\sum_\alpha\|M_\alpha\|$, its $j$th term is bounded by
+$C_{k,\rho}(2S/(\rho\kappa))^j c_h$, since $\beta!\leq j!$. Consequently
+\begin{equation}\label{e:kernel-error}
+ \|\mathsf M_h-c_hI\|\leq C_G\kappa^{-1}c_h,
+ \qquad \int\mathsf M_h\,ds=I.
+\end{equation}
+The series converges in $L^1$, its Fourier transform is the stated multiplier, and every positive-order derivative has zero integral. Apply it with $M_\alpha=J^\alpha$ or $\KK_\alpha$. The latter maps real symmetric matrices to real symmetric matrices. Exponentiation can first be done on compact central Fourier support; the integrable combined kernels then give the identities for compactly supported distributions.
+
+The fixed Carnot heat bound is $\|e^{h\Delta_H}\|_{1\to\infty}\leq C_Gh^{-Q/2}$. This is the upper estimate in \cite[Theorem 2.4(i)]{bb}, since the fields are smooth, homogeneous and bracket generating and the reference control balls have volume $c_Gh^{Q/2}$. Positivity and unit mass are the heat-flow properties stated also in \cite[Theorem 3.4]{bb}. For abelian groups they follow directly from the Gaussian kernel. The commuting central heat flow and $C_h$ are $L^1$ contractions, so the bound is uniform in $\eps,\kappa$. Finally $|T_\alpha c_h|\leq\pi c_h/(2\kappa h)$ proves the logarithmic bound.
+\end{proof}
+
+Set
+\[
+ w_h=P_hv,\quad g_h=P_hg,\quad
+ B_h=S_h(Av),\quad a_h=B_h/w_h,\quad F_h=U_h(bv).
+\]
+For $\kappa\geq\kappa_0(G,\lambda,\Lambda)$, positivity and the kernel bound give
+\begin{equation}\label{e:cone}
+ \frac\lambda2 I\leq a_h\leq2\Lambda I,
+ \qquad |F_h|\leq C_GB w_h.
+\end{equation}
+Indeed $\lambda w_hI\leq P_h(Av)\leq\Lambda w_hI$ and
+$P_h|Av|\leq\sqrt m\Lambda w_h$. Applying $P_h$ to \eqref{e:global} yields
+\begin{equation}\label{e:evolved-equation}
+ -\DD(a_hw_h)+\diver_H F_h-\eps\Delta_Zw_h\leq g_h.
+\end{equation}
+
+\section{The scalar power entropy}
+
+Fix $1<r\leq4/3$, put $\chi=r(r-1)$, and write
+\[
+ E(h)=\int w_h^r\dx,\qquad
+ I(h)=\chi\int w_h^{r-2}|Dw_h|_\eps^2\dx,
+ \qquad \mathcal I=\int_0^1 I(h)\dd h,
+ \qquad E_0=\int v^r\dx.
+\]
+At this stage $v$ is bounded and compactly supported, so $E_0<\infty$. Markov Jensen gives $E(h)\leq E_0$ before any entropy estimate. We work on $0<h<1$, so a cutoff of the power entropy at small values is unnecessary.
+
+\begin{lemma}\label{l:scalar}
+There is $C_G$, independent of $r,\eps,\kappa$, such that
+\begin{equation}\label{e:scalar}
+ \mathcal I\leq E_0,\qquad
+ E_0\leq E(1)+(1+C_G\kappa)\mathcal I.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For each central coordinate the logarithmic derivative of its Fourier multiplier is $-\kappa\tau\tanh(\kappa h\tau)$. It is the symbol of a symmetric jump generator with density
+\begin{equation}\label{e:levy}
+ N_h(t)=\frac{\pi\cosh\theta}{4\kappa h^2\sinh^2\theta},
+ \qquad \theta=\frac{\pi|t|}{2\kappa h}.
+\end{equation}
+One obtains this by differentiating
+\[
+ \log\cosh(a\tau)=\int_\R
+ \frac{1-\cos(\tau t)}{2|t|\sinh(\pi|t|/(2a))}\dd t.
+\]
+This identity follows, in turn, by the product expansion of $\cosh$ and the elementary integral for $\log(1+\tau^2/b^2)$.
+Thus
+\[
+ -E'(h)=I(h)+\sum_\alpha J_\alpha(h),\qquad J_\alpha(h)\geq0,
+\]
+where, writing $w=w_h$ and $\xi_t=\xi\circ\exp(tT_\alpha)$,
+\[
+ J_\alpha(h)=\frac r2\int\!\int_\R N_h(t)
+ (w(\xi_t)-w(\xi))
+ (w(\xi_t)^{r-1}-w(\xi)^{r-1})\dd t\dx.
+\]
+For $a,b>0$ and $1<r\leq4/3$,
+\begin{equation}\label{e:pair}
+ (a-b)(a^{r-1}-b^{r-1})
+ \leq C(r-1)(1+|\log(a/b)|)(a^{r/2}-b^{r/2})^2.
+\end{equation}
+To see this, put $a/b=e^\ell\geq1$. For $\ell\leq1$ use the mean value theorem. For $\ell\geq1$, use $e^{(r-1)\ell}-1\leq(r-1)\ell e^{(r-1)\ell}$ and $e^{r\ell/2}-1\geq(1-e^{-1/2})e^{r\ell/2}$.
+
+By \eqref{e:smoothing}, $|\log(w(\xi_t)/w(\xi))|\leq\theta$. Also $t^2N_h(t)(1+\theta)\leq C\kappa$. With $q=w^{r/2}$, the fractional-energy formula therefore gives
+\[
+ J_\alpha(h)\leq C\kappa\chi\langle q,|T_\alpha|q\rangle.
+\]
+The required bracket inequality is
+\begin{equation}\label{e:bracket}
+ \sum_\alpha\langle q,|T_\alpha|q\rangle
+ \leq C_G\int|\nabla_Hq|^2\,d\xi.
+\end{equation}
+Indeed, bracket spanning makes $\tau\mapsto(\sum_\alpha J^\alpha_{ij}\tau_\alpha)_{i<j}$ injective, so
+$|\tau|_1\leq C_G\sum_{i<j}|\sum_\alpha J^\alpha_{ij}\tau_\alpha|$.
+After central Fourier transform the commutator is multiplication by
+$i\sum_\alpha J^\alpha_{ij}\tau_\alpha$. Expanding a nonnegative square gives
+\[
+ \left|\sum_\alpha J^\alpha_{ij}\tau_\alpha\right|\|q_\tau\|_2^2
+ \leq\|Z_{i,\tau}q_\tau\|_2^2+\|Z_{j,\tau}q_\tau\|_2^2.
+\]
+Sum and use Plancherel. Thus $\sum_\alpha J_\alpha(h)\leq C_G\kappa I(h)$, and integration proves \eqref{e:scalar}.
+\end{proof}
+
+\section{The coefficient power entropy}
+
+The point of the tensor correction is that its derivative error is quadratic in $\kappa^{-1}$.
+
+\begin{lemma}\label{l:coefficient}
+For $1<r\leq4/3$ and $\kappa\geq\kappa_0$, there is $C=C(G,\Lambda)$, independent of $r,\eps,\kappa$, such that
+\begin{equation}\label{e:coefficient}
+ \chi\int_0^1\!\int w_h^r|Da_h|_\eps^2\dx\dd h
+ \leq C(\chi+\kappa^{-2})E_0+C\kappa^{-2}\mathcal I.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ q_h=H_hv,\quad R_h=H_h(Av),\quad b_h=R_h/q_h,
+ \qquad \bar a_h=P_h(Av)/w_h.
+\]
+For two functions $q,qb$ evolving by $\HH_\eps$, the quotient computation gives
+\begin{align*}
+ (\partial_h-\HH_\eps)(q^r|b|^2)
+ &=-r(r-1)q^{r-2}|b|^2|Dq|_\eps^2-2q^r|Db|_\eps^2\\
+ &\quad-4(r-1)q^{r-1}\sum_\alpha b_\alpha
+       \langle Dq,Db_\alpha\rangle_\eps\\
+ &\leq-c_rq^r|Db|_\eps^2,
+ \qquad c_r=\frac{2(2-r)}r\geq1.
+\end{align*}
+Young's inequality gives the last line. The same integrated inequality holds for the common scalar flow $P_h$: the extra jump contribution is nonpositive because
+\[
+ (q,R)\longmapsto q^{r-2}|R|^2
+\]
+is convex for $1\leq r\leq2$. It follows that
+\begin{equation}\label{e:ordinary-coefficients}
+ \int_0^1\!\int q_h^r|Db_h|_\eps^2\dx\dd h
+ +\int_0^1\!\int w_h^r|D\bar a_h|_\eps^2\dx\dd h
+ \leq 2m\Lambda^2 E_0.
+\end{equation}
+
+Let $\mathcal N_h$ be central convolution with $\mathsf M_h-c_hI$, and put
+\[
+ V_h=\mathcal N_hR_h,\qquad e_h=V_h/w_h,
+ \qquad a_h=\bar a_h+e_h.
+\]
+The central convolution commutes with all the fields in $D$. From \eqref{e:kernel-error},
+\begin{equation}\label{e:error-pointwise}
+ |e_h|\leq C\Lambda/\kappa,\qquad
+ \int w_h^{r-2}|DV_h|_\eps^2\dx
+ \leq C\kappa^{-2}\int q_h^{r-2}|DR_h|_\eps^2\dx.
+\end{equation}
+The second inequality is weighted Jensen. Explicitly, for a positive probability convolution $C$,
+\[
+ (Cq)^{r-2}(C|F|)^2\leq C(q^{r-2}|F|^2),
+\]
+by Cauchy--Schwarz and $C(q^{2-r})\leq(Cq)^{2-r}$. Apply this to $C_h$ and use $|\mathcal N_hF|\leq C\kappa^{-1}C_h|F|$.
+
+Since $DR_h=q_hDb_h+b_hDq_h$ and $|b_h|\leq\sqrt m\Lambda$, the quotient rule in \eqref{e:error-pointwise} gives
+\begin{align*}
+ \int w_h^r|De_h|_\eps^2\dx
+ &\leq C\kappa^{-2}\int q_h^r|Db_h|_\eps^2\dx\\
+ &\quad+C\kappa^{-2}\left(
+ \int q_h^{r-2}|Dq_h|_\eps^2\dx
+ +\int w_h^{r-2}|Dw_h|_\eps^2\dx\right).
+\end{align*}
+The ordinary heat power identity gives
+\[
+ \chi\int_0^1\!\int q_h^{r-2}|Dq_h|_\eps^2\dx\dd h\leq E_0.
+\]
+Multiply the preceding error estimate by $\chi$, integrate in $h$, and use \eqref{e:ordinary-coefficients}. Together with $|Da_h|^2\leq2|D\bar a_h|^2+2|De_h|^2$, this proves \eqref{e:coefficient}.
+\end{proof}
+
+\section{Proof of the estimate}
+
+Test \eqref{e:evolved-equation} with $rw_h^{r-1}$. After one integration by parts the diffusion terms are
+\[
+ \chi\int w_h^{r-2}\left(
+ a_h\nabla_Hw_h\cdot\nabla_Hw_h+\eps\sum_\alpha|T_\alpha w_h|^2
+ +w_h\nabla_Hw_h\cdot\diver_Ha_h\right)\,d\xi,
+\]
+and the drift term is $-\chi\int w_h^{r-2}F_h\cdot\nabla_Hw_h\,d\xi$.
+Here $(\diver_Ha)_i=Z_ja_{ij}$. By \eqref{e:cone} and Young's inequality,
+\begin{equation}\label{e:energy}
+ I(h)\leq C\chi\int w_h^r|Da_h|_\eps^2\,d\xi
+ +C\int w_h^{r-1}g_h\,d\xi+C\chi B^2E(h).
+\end{equation}
+The constants depend only on $G,\lambda,\Lambda$.
+
+For rigor, first integrate on $\delta<h<1$ with compact spatial cutoffs. Dilated cutoffs $\zeta_L$ satisfy $|\nabla_H\zeta_L|=O(L^{-1})$, $|T_\alpha\zeta_L|=O(L^{-2})$, and each jump kernel has second moment $\int t^2N_h(t)\,dt=2\kappa^2h$. Scalar and coefficient entropy cutoff errors vanish by Markov Jensen and $E_0<\infty$. These dissipation bounds then control the PDE flux cutoff errors by Cauchy--Schwarz; the drift error is bounded by a constant times $L^{-1}B E(h)$. Send $L\to\infty$ at fixed $\eps,\kappa,r$, then $\delta\downarrow0$. The resulting constants are exactly those displayed above.
+
+Dispersion and \eqref{e:mass} imply
+\[
+ E(h)\leq C_G^{r-1}M_B^r h^{-Q(r-1)/2},\qquad
+ \int w_h^{r-1}g_h\,d\xi\leq(C_GM_B)^{r-1}h^{-Q(r-1)/2}.
+\]
+Choose $r-1\leq1/Q$. Then $E(1)$, $\int_0^1E(h)\,dh$, and the integrated source are bounded in terms of $G,\lambda,B$. In particular the drift contribution is additive; it need not be absorbed into $E_0$.
+Combining \eqref{e:energy} and Lemma~\ref{l:coefficient} gives
+\begin{equation}\label{e:first-absorption}
+ \mathcal I\leq C_0(\chi+\kappa^{-2})E_0
+       +C_0\kappa^{-2}\mathcal I+C_1(B),
+\end{equation}
+where $C_0$ depends only on $G,\lambda,\Lambda$. Choose $\kappa\geq\kappa_0$ so that
+\[
+ C_0\kappa^{-2}\leq\tfrac12,\qquad
+ 2C_0(1+C_G\kappa)\kappa^{-2}\leq\tfrac14,
+\]
+and then choose $r>1$ so that
+\[
+ r\leq\tfrac43,\qquad r-1\leq1/Q,\qquad
+ 2C_0(1+C_G\kappa)r(r-1)\leq\tfrac14.
+\]
+The scalar entropy inequality now gives $E_0\leq C(B)+E_0/2$. This proves \eqref{e:adjoint-bound}. Homogeneity gives the corresponding bound for arbitrary nonnegative $g$; the exponent $p=r/(r-1)$ is independent of $B$.
+
+For the positive-part form, choose smooth convex $\varphi_\delta$ with $\varphi_\delta=0$ on $(-\infty,0]$, $0\leq\varphi_\delta'\leq1$, and $\varphi_\delta(t)\to t_+$. If $w\leq0$ on the boundary and $-\LL_\eps w\leq F$, the classical chain rule gives
+\[
+ -\LL_\eps\varphi_\delta(w)\leq F_+\mathbf1_{\{w>0\}}.
+\]
+Both $\varphi_\delta(w)$ and the adjoint solution $v$ vanish on the boundary. Hence
+\[
+ \int g\varphi_\delta(w)\dx
+ =\int v[-\LL_\eps\varphi_\delta(w)]\dx
+ \leq C\|F_+\mathbf1_{\{w>0\}}\|_{L^p}.
+\]
+Let $\delta\downarrow0$ and take the supremum over nonnegative smooth $g$ with $\int g=1$. We obtain
+\begin{equation}\label{e:regularized-maximum}
+ \|w_+\|_\infty\leq C\|F_+\mathbf1_{\{w>0\}}\|_{L^p}.
+\end{equation}
+
+We finish the a priori passage for Theorem~\ref{t:main}. At unit scale fix $a>0$. The compact set $\{u\geq a\}$ lies in $\Omega$. If nonempty, choose a smooth $D\Subset\Omega$ containing it, so $u-a<0$ on $\partial D$. Extend $A,b$ preserving their bounds and let $A_j,b_j$ be ordinary Euclidean mollifications. Then $A_j\to A$, $b_j\to b$ almost everywhere and
+\[
+ E_j:=|(A_j-A)_{i\ell}Z_iZ_\ell u|+|(b_j-b)_iZ_iu|\longrightarrow0
+ \quad\text{in }L^p(D),
+\]
+because $u$ is $C^2$ near $\overline D$. With $\LL_j=a^j_{i\ell}Z_iZ_\ell+b_i^jZ_i$, on $D$,
+\[
+ -(\LL_j+\eps\Delta_Z)(u-a)\leq f+E_j+\eps|\Delta_Zu|.
+\]
+Apply \eqref{e:regularized-maximum} and let $j\to\infty$, then $\eps\to0$. Since $D$ contains $\{u>a\}$,
+\[
+ \|(u-a)_+\|_{L^\infty(\Omega)}
+ \leq C\|f_+\mathbf1_{\{u>0\}}\|_{L^p(\Omega)}.
+\]
+The inequality is trivial if the compact set is empty. Let $a\downarrow0$.
+Finally, the change of variables $\xi=\xi_0\circ\delta_R\zeta$ multiplies the source by $R^2$, the drift by $R$, and volume by $R^Q$, proving \eqref{e:ABP}.
+
+
+\section{Changes of frame and contact distributions}
+
+\begin{proposition}\label{p:frame}
+Let $\psi:U\to V\subset G$ be a smooth coordinate diffeomorphism into a step-two group. Fix a smooth positive measure $d\mu$ on $U$ with $\psi_*d\mu=\rho\,d\xi$ and $\rho\geq\rho_->0$. Suppose smooth fields $W_1,\ldots,W_\ell$ satisfy
+\[
+ \psi_*W_i=\sum_{\alpha=1}^m S_{i\alpha}Z_\alpha,
+ \qquad s_-^2I\leq S^{\mathsf T}S\leq s_+^2I,\quad s_->0,
+\]
+and the first horizontal derivatives of $S$ are bounded. Let $A$ be a measurable symmetric $\ell\times\ell$ matrix with $\lambda I\leq A\leq\Lambda I$, and let $b$ be bounded measurable. For every bounded domain $\Omega\Subset U$ whose image lies in $B_R(\xi_0)$, the estimate \eqref{e:ABP}, with the source norm in $L^p(\Omega,d\mu)$, holds for
+$-a_{ij}W_iW_ju-b_iW_iu\leq f$, under the same assumptions on $u,f$ and boundary data. The exponent depends on $G,\lambda s_-^2,\Lambda s_+^2$; the constant also depends on $R$ times the transformed drift bound and the volume density in the chart.
+\end{proposition}
+
+\begin{proof}
+For $v=u\circ\psi^{-1}$ the operator becomes
+\[
+ \widetilde a_{\alpha\beta}Z_\alpha Z_\beta v
+ +\widetilde b_\beta Z_\beta v,
+ \qquad \widetilde A=S^{\mathsf T}AS,
+\]
+\[
+ \widetilde b_\beta
+ =\sum_{i,j,\alpha}a_{ij}S_{i\alpha}Z_\alpha S_{j\beta}
+ +\sum_i b_iS_{i\beta}.
+\]
+Thus $\lambda s_-^2 I\leq\widetilde A\leq\Lambda s_+^2 I$, and $\widetilde b$ is bounded in terms of the stated quantities. No coefficient of $A$ has been differentiated. Apply Theorem~\ref{t:main}. If $\psi_*d\mu=\rho\,d\xi$ with $\rho\geq\rho_->0$, then
+$\|f\circ\psi^{-1}\|_{L^p(d\xi)}\leq\rho_-^{-1/p}\|f\|_{L^p(d\mu)}$.
+\end{proof}
+
+\begin{corollary}\label{c:contact}
+Let $\mathcal H$ be a smooth corank-one distribution on an $N$-dimensional manifold. If its Levi form has constant rank $2q\geq2$ near a point, then the preceding estimate holds locally for every smooth frame of $\mathcal H$ and arbitrary measurable uniformly elliptic horizontal coefficients, with $Q=N+1$. In particular it holds for every smooth contact distribution of dimension at least three. The whole domain must lie in one controlled coordinate neighborhood.
+\end{corollary}
+
+\begin{proof}
+The precontact Darboux theorem \cite[Definition 2.1 and Theorem 2.4]{gg} gives coordinates in which
+\[
+ \mathcal H=\ker\left(ds-\sum_{i=1}^q p_i\,dq_i\right).
+\]
+Changing $s$ by $\tfrac12\sum p_iq_i$ identifies this with the horizontal distribution of $\mathbb H^q\times\R^{N-2q-1}$, where the Euclidean factor has weight one. Its homogeneous dimension is $N+1$. A smooth frame is a smooth invertible change of the standard frame. On a precompact smaller chart all required bounds hold, so Proposition~\ref{p:frame} applies.
+\end{proof}
+
+\section{Grushin systems}
+
+\begin{theorem}\label{t:grushin}
+Let $d,k\geq1$ and, on $\R_x^d\times\R_y^k$, use the $m=d+dk$ fields
+\[
+ X_i=\partial_{x_i},\qquad Y_{ij}=x_i\partial_{y_j}.
+\]
+Theorem~\ref{t:main} holds for operators formed from this list, with arbitrary measurable symmetric $\lambda I_m\leq A\leq\Lambda I_m$, bounded horizontal drift, $Q=d+2k$, and
+\[
+ \Omega\subset\{ |x|<R,\ |y-y_0|<R^2\}.
+\]
+The exponent depends only on $d,k,\lambda,\Lambda$; the constant additionally depends on $R\|b\|_\infty$. The estimate includes the rank-changing set $x=0$.
+\end{theorem}
+
+\begin{proof}
+Put $T_j=\partial_{y_j}$. These fields are divergence-free, $T_j$ are central, and
+$[X_i,Y_{\ell j}]=\delta_{i\ell}T_j$, with all other horizontal brackets zero. All the algebraic intertwining identities above therefore apply. The reference heat operator is
+\[
+ H=\Delta_x+|x|^2\Delta_y.
+\]
+After Fourier transform in $y$, its heat kernel is the Mehler kernel
+\[
+ \widehat K_h(x,x',\tau)=
+ \left(\frac{|\tau|}{2\pi\sinh(2h|\tau|)}\right)^{d/2}
+ \exp\left[-\frac{|\tau|\big((|x|^2+|x'|^2)\cosh(2h|\tau|)-2x\cdot x'\big)}{2\sinh(2h|\tau|)}\right].
+\]
+The formula follows by the Gaussian ansatz for $\partial_h-\Delta_x+|\tau|^2|x|^2$ and its delta initial condition. Its exponent is nonpositive. Fourier inversion and $\tau=\eta/h$ give
+\[
+ \|e^{hH}\|_{1\to\infty}\leq C_{d,k}h^{-(d+2k)/2}.
+\]
+This flow is positive and conservative: it is the diffusion with Brownian $x$ and conditional centered Gaussian $y$ of covariance $2\int_0^h|x_t|^2dt\,I_k$.
+Furthermore, expanding $0\leq\sum_i\|\partial_{x_i}q+|\tau|x_iq\|_2^2$ gives
+\[
+ d|\tau|\|q\|_2^2\leq\|\nabla_xq\|_2^2+|\tau|^2\||x|q\|_2^2.
+\]
+Plancherel proves \eqref{e:bracket}. The viscosity $\eps\Delta_y$ makes the original operator Euclidean uniformly elliptic on bounded sets, and the mass barrier uses $x_1$. Central convolution commutes with every field, and the cutoffs for dilations $(x,y)\mapsto(Rx,R^2y)$ satisfy the same derivative bounds. Thus every entropy, coefficient-energy and duality step above applies, with this value of $Q$. Finally use the displayed dilations and translations in $y$.
+\end{proof}
+
+The exact coordinate and frame calculation in Proposition~\ref{p:frame} also applies to these systems if the change of frame is uniformly invertible on the coefficient index space. It does not require the reference fields to be pointwise linearly independent.
+
+\section{A coefficient class in every Carnot step}
+
+Now let $G$ be a Carnot group of arbitrary step, with horizontal basis $Z_i$, homogeneous dimension $Q$, and $\Delta_H=\sum Z_i^2$. Write
+\[
+ [Z_i,Z_j]=\sum_\alpha J^\alpha_{ij}T_\alpha
+\]
+for a basis of the second layer; the $T_\alpha$ need not be central. Define
+\[
+ \mathcal C=\{M=M^{\mathsf T}:MJ^\alpha=J^\alpha M\text{ for every }\alpha\}.
+\]
+
+\begin{proposition}\label{p:class}
+For a constant symmetric matrix $M$, the operator $L_M=M_{ij}Z_iZ_j$ commutes with $\Delta_H$ if and only if $M\in\mathcal C$.
+\end{proposition}
+
+\begin{proof}
+Diagonalize $M$ orthogonally, with eigenvalues $\mu_i$, changing the horizontal basis and conjugating the $J^\alpha$. Then
+\[
+ [\Delta_H,L_M]=\sum_{k<i}(\mu_i-\mu_k)[Z_k^2,Z_i^2].
+\]
+Its ordinary third-order symbol, using cotangent coordinates dual to the first two layers, is
+\[
+ 4\sum_{k<i,\alpha}(\mu_i-\mu_k)J^\alpha_{ki}\xi_k\xi_i\eta_\alpha.
+\]
+These monomials are independent, so commutation forces every coefficient to vanish. Conversely those equalities imply $[Z_k,Z_i]=0$ whenever $\mu_i\ne\mu_k$, and every summand vanishes identically. This is exactly $MJ^\alpha=J^\alpha M$.
+\end{proof}
+
+\begin{theorem}\label{t:allstep}
+On any fixed Carnot group, Theorem~\ref{t:main} with $b=0$ holds for every measurable $A$ satisfying $\lambda I\leq A\leq\Lambda I$ and $A(\xi)\in\mathcal C$ almost everywhere. The constants and a finite exponent $p>1$ depend only on $G,\lambda,\Lambda$. This is a restricted coefficient theorem in steps greater than two.
+\end{theorem}
+
+\begin{proof}
+Choose a homogeneous basis of the full Lie algebra, with corresponding right-invariant fields $R_a$, and set $\Delta_R=\sum_aR_a^2$. Every $R_a$ commutes with every left-invariant field. Use the original viscosity $\eps\Delta_R$ and reference generator
+\[
+ \HH_\eps=\Delta_H+(\eps/\lambda)\Delta_R.
+\]
+On bounded domains $\Delta_R$ is Euclidean elliptic. The commuting Markov factorization of its reference heat flow gives
+$\|e^{h\HH_\eps}\|_{1\to\infty}\leq C_Gh^{-Q/2}$ uniformly in $\eps$. The fixed Carnot heat input is the one checked above. Both factors are conservative on the nilpotent group.
+
+The adjoint mass is bounded using $\Phi=(1-|x^{(1)}|^2)/(2m\lambda)$. The first-layer right-invariant fields act on $x^{(1)}$ as coordinate derivatives and the higher-layer ones annihilate it; hence $-(L_A+\eps\Delta_R)\Phi\geq1$. The zero-extended adjoint satisfies
+\[
+ -\DD(Av)-\eps\Delta_Rv\leq g,\qquad \int v\leq C.
+\]
+Set $H_h=e^{h\HH_\eps}$, $w=H_hv$, $a=H_h(Av)/w$. Positivity gives $\lambda I\leq a\leq\Lambda I$. Expanding a $\mathcal C$-valued tensor in a fixed basis and using Proposition~\ref{p:class} gives $\DD H_h(Av)=H_h\DD(Av)$. Therefore
+\[
+ -\DD(aw)-\eps\Delta_Rw\leq H_hg.
+\]
+With $|DF|^2=\sum_i|Z_iF|^2+(\eps/\lambda)\sum_a|R_aF|^2$, the ordinary heat identities give
+\[
+ E_0=E(1)+\mathcal I,\qquad
+ \int_0^1\!\int w^r|Da|^2\leq m\Lambda^2E_0.
+\]
+These are the scalar and coefficient computations above, with no central correction or jump term. Testing the evolved adjoint equation as before gives
+\[
+ \mathcal I\leq C\chi E_0+C,
+\]
+provided $Q(r-1)/2<1$. Choose $r>1$ sufficiently close to one and absorb, obtaining $E_0\leq C$. For cutoff justifications, a right-invariant field of degree $j$ applied to a dilated cutoff is $O(L^{-j})$, so the same argument applies at fixed $\eps$.
+
+Positive-part duality and the compact positive-level approximation finish the proof. Extension by $\lambda I$ and ordinary convolution preserve $\mathcal C$ and the ellipticity bounds. On each compact domain $\Delta_Ru$ is bounded, so the viscosity disappears in the a priori limit. Dilations are applied only after taking this limit; the artificial viscosity need not be homogeneous.
+\end{proof}
+
+Scalar matrices belong to $\mathcal C$, as do the block-scalar matrices from direct products. No restriction on the spatial measurable dependence inside $\mathcal C$ is imposed. On the Engel group, $m=2$ and the second-layer matrix is the standard skew matrix, so $\mathcal C$ consists only of scalar matrices.
+
+\section{Small perturbations in arbitrary Carnot step}
+
+A second, separate argument gives an all-step result for matrices close to a fixed matrix. Its smallness hypothesis is essential to this proof.
+
+\begin{theorem}\label{t:perturbation}
+Let $G$ be any fixed Carnot group with $Q>2$, let $A_0$ be a constant symmetric positive definite matrix, and fix any finite $p>Q/2$. There exist $\delta_p>0$ and $C_p<\infty$, depending only on $G,A_0,p$, such that \eqref{e:ABP} holds, with $C=C_p$, whenever $b=0$ and
+\[
+ \mathop{\rm ess\,sup}_{\Omega}|A-A_0|\leq\delta_p.
+\]
+The domain, solution, forcing and boundary assumptions are those in Theorem~\ref{t:main}. More generally, if $A=a(\xi)(A_0+B(\xi))$ with $a\geq a_*>0$ and $\|B\|_\infty\leq\delta_p$, the same estimate holds with constant $C_p/a_*$.
+\end{theorem}
+
+\begin{proof}
+Normalize to $\Omega\subset B_1$. Write $L_0=(A_0)_{ij}Z_iZ_j$ and let $\Gamma_0$ be the fundamental solution of $-L_0$. It is smooth away from the identity and homogeneous of degree $2-Q$ by \cite[Theorem 2.1, Corollary 2.8 and Example 2.10]{folland}. Set
+\[
+ Nq=q*\Gamma_0,\qquad
+ (f*g)(\xi)=\int f(\eta)g(\eta^{-1}\circ\xi)\,d\eta.
+\]
+Then $-L_0Nq=q$. The distributions $Z_iZ_j\Gamma_0$, including their possible delta term, are homogeneous kernels of type zero. Proposition 1.9 of \cite{folland} therefore gives
+\[
+ \|D_H^2Nq\|_{L^p}\leq K_p\|q\|_{L^p},\qquad 1<p<\infty.
+\]
+For $q$ supported in a fixed larger ball $B_2$, homogeneity and H\"older's inequality give
+\begin{equation}\label{e:potential}
+ \|Nq\|_\infty\leq C_p\|q\|_p,
+\end{equation}
+because $(Q-2)p'<Q$. The potential is continuous and tends to zero at infinity, by approximation in $L^p$ and the bound $|\Gamma_0(\xi)|\leq C|\xi|^{2-Q}$.
+
+First take smooth $A=A_0+B$ with $B$ compactly supported in $B_2$, and smooth compactly supported $F$. Choose
+\[
+ \delta_p=\min\{\lambda_{\min}(A_0)/2,(2K_p)^{-1}\}.
+\]
+The contraction
+\[
+ q=F+B:D_H^2Nq
+\]
+has a unique $L^p$ solution, with $\|q\|_p\leq2\|F\|_p$, supported in $B_2$ when $F$ is. Thus $w=Nq$ solves $-L_Aw=F$ in distributions and satisfies \eqref{e:potential}. At this stage $A,F$ are smooth. The positive square root of $A$ rewrites $L_A$ as a sum of squares of a smooth horizontal frame plus a smooth horizontal drift. That frame has the same bracket-generating distribution. H\"ormander hypoellipticity therefore makes $w$ smooth; see also \cite[Proposition 0.1]{folland}.
+
+Classical comparison is now legitimate. If $W\in C_c^2(B_1)$ and $-L_AW\leq F$, then $W\leq w$. Indeed, $W-w$ tends to zero at infinity and satisfies $L_A(W-w)\geq0$; a positive interior maximum is excluded by adding a sufficiently small multiple of $e^{x_1}$ on a bounded domain, since $L_Ae^{x_1}=a_{11}e^{x_1}>0$. Approximating the continuous compactly supported function $(-L_AW)_+$ from above by smooth nonnegative functions supported in $B_2$ yields
+\[
+ \|W_+\|_\infty\leq C_p\|(-L_AW)_+\|_p.
+\]
+
+For measurable $A$ extend $A-A_0$ by zero and mollify. The smallness and ellipticity bounds are preserved, and the preceding inequality passes to the limit for each fixed $W\in C_c^2(\Omega)$, by dominated convergence of $L_{A_j}W$. Apply it to $W=\varphi_\delta(u-a)$, extended by zero, where $a>0$ and the convex functions $\varphi_\delta$ are as in the positive-part argument above. Its support is compactly contained in $\Omega$, and
+\[
+ (-L_AW)_+\leq f_+\mathbf1_{\{u>a\}}.
+\]
+Let $\delta\downarrow0$ and then $a\downarrow0$, and scale. For the last assertion divide the nondivergence inequality by $a(\xi)$; no derivative of this scalar is taken. The positive-set proof just given uses only the $L^p$ positive source, so the resulting measurable source $f/a$ causes no change.
+\end{proof}
+
+\section{Arbitrary smooth H\"ormander fields, locally}
+
+The preceding perturbation argument has a local version without a group structure. The matrix smallness remains necessary for this argument.
+
+\begin{theorem}\label{t:hormander}
+Let $X_1,\ldots,X_m$ be smooth real fields near $x_0\in\R^N$, whose commutators of length at most $s$ span $\R^N$ at $x_0$. Fix a constant symmetric positive definite matrix $A_0$ and
+\[
+ p>\max\{1,Ns/2\}.
+\]
+There is $\delta_p>0$, depending only on the fixed fields, $A_0,p$, such that for every finite $B_0\geq0$ there are a neighborhood $U$ of $x_0$ and $C_p<\infty$ with the following property. For every bounded open $\Omega\subset U$, measurable symmetric $A$, and measurable $b$ satisfying
+\[
+ \|A-A_0\|_{L^\infty(\Omega)}\leq\delta_p,
+ \qquad \|b\|_{L^\infty(\Omega)}\leq B_0,
+\]
+every $u\in C^2(\Omega)\cap C(\overline\Omega)$ and $f\in C(\Omega)$ with
+\[
+ -a_{ij}X_iX_ju-b_iX_iu\leq f\quad\hbox{a.e. in }\Omega,
+ \qquad u\leq0\quad\hbox{on }\partial\Omega
+\]
+satisfy
+\begin{equation}\label{e:hormander}
+ \|u_+\|_\infty\leq C_p\|f_+\mathbf1_{\{u>0\}}\|_{L^p(\Omega)}.
+\end{equation}
+One can take $\delta_p\leq\lambda_{\min}(A_0)/2$. No equiregularity or exact Carnot coordinates are required. The neighborhood depends on $B_0$; no homogeneous scaling factor is asserted here.
+\end{theorem}
+
+\begin{proof}
+Choose a neighborhood where the same brackets span. Extend the fields smoothly to a torus, keeping them unchanged on an intermediate neighborhood $V$, and add fields $E_j=\eta\partial_j$ which vanish near $\overline V$ and span outside a slightly larger neighborhood. Choose the cutoffs so that everywhere either the original bracket condition holds or $\eta>0$. The resulting system is globally bracket generating with step at most $s$. Set
+\[
+ L_0=(A_0)_{ij}\widetilde X_i\widetilde X_j+\sum_jE_j^2.
+\]
+It is a smooth sum of squares. Rothschild--Stein's parametrix, \cite[Theorem 16(a),(d), equation (17.19)]{rs}, and a finite cover give
+\begin{equation}\label{e:reference-rs}
+ \|D_{\widetilde X}^2w\|_p+\|w\|_{W^{2/s,p}}
+ \leq C_p(\|L_0w\|_p+\|w\|_p).
+\end{equation}
+Here $W^{2/s,p}$ denotes the Bessel-potential Sobolev space. The norm estimate follows directly from that parametrix: its leading operator is smoothing of order two, and its remainder can have any prescribed smoothing order. The derivatives $\widetilde X_i\widetilde X_j$ are constant combinations of the corresponding square-field derivatives. The Euclidean Sobolev embedding also bounds $\|w\|_\infty$ by the right-hand side.
+
+Here are the needed positive resolvent bounds, including their uniformity. Write $L_0=\sum_\ell Z_\ell^2$ and $d_\ell=\diver Z_\ell$ for torus measure. Integration by parts gives
+\[
+ \int |w|^{p-2}wL_0w
+ =-(p-1)\sum_\ell\int |w|^{p-2}|Z_\ell w|^2
+ +\frac1p\int\sum_\ell(Z_\ell d_\ell+d_\ell^2)|w|^p
+ \leq c_p\|w\|_p^p.
+\]
+Use smooth convex approximations at zero when needed. For $\beta\geq2c_p+1$, with $c_p\geq0$, first solve
+$(\beta-L_0-\eps\Delta)w_\eps=F$ on the torus. The same identity gives
+$\|w_\eps\|_p\leq(\beta-c_p)^{-1}\|F\|_p$.
+A weak limit solves $(\beta-L_0)w=F$. For smooth $F$ it is smooth by hypoellipticity, and uniqueness and positivity follow from the maximum principle. The zeroth-order term causes no issue: apply H\"ormander's theorem to $L_0+\partial_t^2$ and $e^{i\sqrt\beta t}w$.
+Thus $R_\beta=(\beta-L_0)^{-1}$ is defined first on smooth data, and then on $L^p$ by density. From \eqref{e:reference-rs},
+\[
+ \|R_\beta F\|_p\leq2\beta^{-1}\|F\|_p,
+ \qquad \|D_{\widetilde X}^2R_\beta F\|_p+\|R_\beta F\|_\infty\leq K_p\|F\|_p,
+\]
+where $K_p$ is independent of $\beta$. The extension has a continuous representative by uniform convergence of smooth approximations.
+
+For a complete smooth field $Z$ with flow $\Phi_t$, Taylor's formula gives
+\[
+ Zw=\frac{w\circ\Phi_t-w}{t}
+ -\frac1t\int_0^t(t-a)(Z^2w)\circ\Phi_a\,da.
+\]
+The flow Jacobians on the torus are bounded for $|t|\leq1$. Taking $t=\beta^{-1/2}$ therefore gives
+\[
+ \|D_{\widetilde X}R_\beta F\|_p\leq K'_p\beta^{-1/2}\|F\|_p.
+\]
+Choose $\delta_pK_p\leq1/4$ and then $\beta$ so large that
+$B_0K'_p\beta^{-1/2}\leq1/4$.
+For smooth $B,b$, the equation
+\[
+ q=F+B:D_{\widetilde X}^2R_\beta q+b\cdot D_{\widetilde X}R_\beta q
+\]
+is a contraction. It yields
+\[
+ (\beta-L_{B,b})w=F,\quad
+ L_{B,b}=L_0+B_{ij}\widetilde X_i\widetilde X_j+b_i\widetilde X_i,
+ \qquad \|w\|_\infty\leq2K_p\|F\|_p.
+\]
+For smooth data the potential is smooth: taking the positive square root of $A_0+B$ preserves the bracket-generating distribution, and the resulting operator is a smooth sum of squares plus a smooth drift. The same extra-variable argument handles $\beta$. Classical comparison on the torus applies.
+
+As in Theorem~\ref{t:perturbation}, approximate the continuous source $((\beta-L_{B,b})W)_+$ from above by smooth sources and compare. For $W\in C^2$ this gives
+\[
+ \|W_+\|_\infty\leq2K_p\|(-L_{B,b}W)_+\|_p
+ +2K_p\beta\|W_+\|_p.
+\]
+Extend measurable $B=A-A_0,b$ by zero outside $\Omega$ and mollify on the torus. The inequality passes to these coefficients for each fixed $W\in C_c^2(\Omega)$ by dominated convergence. Shrink $U\Subset V$ so that
+\[
+ |U|\leq(4K_p\beta)^{-p}.
+\]
+The last term is then at most $\|W_+\|_\infty/2$. Apply the resulting estimate to $W=\varphi_\delta(u-a)$, whose support lies compactly in $\Omega$, and use the chain rule. Sending $\delta\downarrow0$ and then $a\downarrow0$ proves \eqref{e:hormander}, with $C_p=4K_p$.
+\end{proof}
+
+In particular, a positive definite coefficient matrix continuous at $x_0$ meets the matrix hypothesis after shrinking $U$. This does not give a modulus-independent estimate for arbitrary measurable matrices. As before one may divide by a measurable positive scalar amplitude bounded away from zero, provided the divided drift has a fixed bound, and may discard a nonpositive zeroth-order term on the positive set.
+
+\section{What remains beyond these results}
+
+For the Engel fields
+\[
+ X=\partial_x,\quad Y=\partial_y+x\partial_z+\tfrac12x^2\partial_t,
+ \quad Z=[X,Y]=\partial_z+x\partial_t,\quad W=[X,Z]=\partial_t,
+\]
+write $H=X^2+Y^2$. Direct calculation gives
+\[
+ [H,X]=-2YZ,\qquad [H,Y]=2XZ-W,\qquad [H,Z]=2XW.
+\]
+Thus the degree-two directions used for tensor correction are no longer central. The step-two proof does not apply. Nor can one replace \eqref{e:bracket} by
+$\langle q,|W|q\rangle\leq C\|\nabla_Hq\|_2^2$: dilation multiplies its two sides by $\rho^3$ and $\rho^2$, respectively. The scale-matching operator is $|W|^{2/3}$, but this observation alone does not control the generated vector flux in a higher-step intertwiner.
+
+Likewise, a nilpotent approximation of general smooth H\"ormander fields is not the exact coordinate/frame identity in Proposition~\ref{p:frame}. Squaring its residual fields produces second derivatives in additional directions; they are not automatically bounded horizontal drift. Accordingly, the higher-step and general H\"ormander estimates with unrestricted merely measurable coefficient matrices remain outside the conclusions here. The contact and precontact statements are local, and no boundary-free global estimate on an arbitrary manifold is implied.
+
+\begin{thebibliography}{9}
+\bibitem{bb}
+S.~Biagi and M.~Bramanti, \emph{Global Gaussian estimates for the heat kernel of homogeneous sums of squares}, arXiv:2003.09845, version 2, Theorems 2.4 and 3.4.\newline
+\url{https://arxiv.org/pdf/2003.09845}.
+\bibitem{folland}
+G.~B.~Folland, \emph{Subelliptic estimates and function spaces on nilpotent Lie groups}, Ark. Mat. \textbf{13} (1975), 161--207, Propositions 0.1 and 1.9, Theorem 2.1, Corollary 2.8.\newline
+\url{https://doi.org/10.1007/BF02386204}.
+\bibitem{rs}
+L.~P.~Rothschild and E.~M.~Stein, \emph{Hypoelliptic differential operators and nilpotent groups}, Acta Math. \textbf{137} (1976), 247--320, Theorem 16(a),(d) and equation (17.19).\newline
+\url{https://doi.org/10.1007/BF02392419}.
+\bibitem{gg}
+K.~Grabowska and J.~Grabowski, \emph{Reductions: precontact versus presymplectic}, Ann. Mat. Pura Appl. \textbf{202} (2023), 2803--2839, Definition 2.1 and Theorem 2.4.\newline
+\url{https://doi.org/10.1007/s10231-023-01341-y}.
+\end{thebibliography}
+\end{document}

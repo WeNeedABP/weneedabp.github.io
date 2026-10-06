@@ -1,0 +1,434 @@
+% This file was generated with ChatGPT Astra
+% The original proof was more complicated. Then we asked the model to match the style and exposition of a kinetic ABP proof that we wrote ourselves. It resulted in this article.
+
+\documentclass{article}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\allowdisplaybreaks[1]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Heis}{\mathbb H^n}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,d}
+\newcommand{\dx}{\,d\xi}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\KK}{\mathcal K}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diver}{div}
+\title{An adjoint proof of an ABP-like inequality on the Heisenberg group}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We obtain an ABP-like inequality for arbitrary uniformly elliptic horizontal coefficient matrices on the Heisenberg group. The proof uses adjoint power entropies along an auxiliary regularization. A central convolution allows scalar and matrix fields to evolve differently while preserving their double-divergence relation. Its matrix error is small enough to be absorbed. No commutation condition on the coefficient matrix, or smallness of the ellipticity ratio, is required.
+\end{abstract}
+
+\section{Our goal}
+
+Use coordinates $\xi=(x,y,s)$ on $\Heis$, and write $z=(x,y)$,
+\[
+ X_k=\partial_{x_k}-\frac{y_k}{2}\partial_s,
+ \qquad Y_k=\partial_{y_k}+\frac{x_k}{2}\partial_s,
+ \qquad T=\partial_s.
+\]
+Set $Z=(X_1,\ldots,X_n,Y_1,\ldots,Y_n)$, $m=2n$, $Q=2n+2$, and
+\[
+ J=\begin{pmatrix}0&I_n\\-I_n&0\end{pmatrix},\qquad
+ \Delta_H=\sum_i Z_i^2,\qquad
+ \DD B=\sum_{i,j}Z_iZ_jB_{ij}.
+\]
+Thus $[Z_i,Z_j]=J_{ij}T$. All these fields are divergence-free. Matrix norms are Frobenius norms. The group law, dilations and balls are
+\[
+ (z,s)\circ(z',s')=(z+z',s+s'+\tfrac12z^{\mathsf T}Jz'),\quad
+ \delta_R(z,s)=(Rz,R^2s),
+\]
+\[
+ B_R=\{|z|^4+16s^2<R^4\},\qquad B_R(\xi_0)=\xi_0\circ B_R.
+\]
+Consider $\LL_Au=a_{ij}Z_iZ_ju$, where
+\begin{equation}\label{e:ellipticity}
+ A=A^{\mathsf T},\qquad \lambda I\leq A\leq\Lambda I,
+ \qquad 0<\lambda\leq\Lambda<\infty.
+\end{equation}
+For symmetric $A$ one may equivalently use the symmetrized horizontal Hessian.
+
+\begin{theorem}\label{t:main}
+For every $n\geq1$ and $0<\lambda\leq\Lambda$, there exist $1<p<\infty$ and $C<\infty$, depending only on $n,\lambda,\Lambda$, with the following property. Let $R>0$, $\Omega\subset B_R(\xi_0)$ be bounded and open, and let $A$ be measurable and satisfy \eqref{e:ellipticity} almost everywhere. If $u\in C^2(\Omega)\cap C(\overline\Omega)$ and $f\in C(\Omega)$ satisfy
+\[
+ -\LL_Au\leq f\quad\text{a.e. in }\Omega,
+ \qquad u\leq0\quad\text{on }\partial\Omega,
+\]
+then
+\begin{equation}\label{e:ABP}
+ \|u_+\|_{L^\infty(\Omega)}
+ \leq C R^{2-Q/p}
+ \left(\int_{\Omega\cap\{u>0\}}f_+^p\dx\right)^{1/p}.
+\end{equation}
+The assertion is understood when the right-hand side is finite. No modulus of continuity of $A$, and no regularity of $\partial\Omega$, enters the constants.
+\end{theorem}
+
+Applying the theorem to $u$ and $-u$ gives
+\[
+ \|u\|_\infty\leq C R^{2-Q/p}\|f\|_{L^p(\Omega)}
+\]
+for $-\LL_Au=f$ with zero boundary data. We do not seek an optimal exponent.
+
+The proof uses two power entropies, as in the elliptic case: one for the adjoint density and one for the regularized coefficients. In the elliptic case, ordinary heat flow commutes with double divergence. On the Heisenberg group this commutation fails, so we construct scalar and tensor regularizations that together preserve the adjoint equation. We estimate the additional entropy and coefficient errors below and absorb them by choosing the power sufficiently close to one.
+
+\section{The adjoint equation}
+
+First suppose that $\Omega\subset B_1$ is smooth and $A$ is smooth near $\overline\Omega$. Introduce
+\[
+ \LL_{A,\eps}=\LL_A+\eps T^2,\qquad \eps>0.
+\]
+This operator is uniformly elliptic in Euclidean coordinates on the bounded domain. It is enough to prove, for some $1<r\leq4/3$,
+\begin{equation}\label{e:adjoint-bound}
+ \|v\|_{L^r(\Omega)}\leq C\|g\|_{L^1(\Omega)},\qquad
+ -\DD(Av)-\eps T^2v=g,\qquad v|_{\partial\Omega}=0,
+\end{equation}
+uniformly in $\eps$, in derivatives of $A$, and in $\Omega\subset B_1$.
+By positivity and homogeneity, take $g\geq0$, $\int g=1$, and $v\geq0$. Smooth data suffice. Testing with
+\[
+ \Phi(z,s)=\frac{1-|z|^2}{2m\lambda},\qquad
+ -\LL_{A,\eps}\Phi=\frac{\tr A}{m\lambda}\geq1,
+\]
+gives
+\begin{equation}\label{e:mass}
+ M:=\int_\Omega v\dx\leq\frac1{2m\lambda}.
+\end{equation}
+Indeed, the boundary term is $\Phi\beta$, where
+\[
+ \beta=(\nu_H\cdot A\nu_H+\eps\nu_T^2)\partial_\nu v\leq0,
+ \quad \nu_H=(Z_i\cdot\nu)_i,\quad \nu_T=T\cdot\nu.
+\]
+Extend $v,g$ by zero and extend $A$ preserving \eqref{e:ellipticity}. The same computation gives
+\begin{equation}\label{e:global}
+ -\DD(Av)-\eps T^2v=g+\beta\,\sigma_{\partial\Omega}\leq g
+ \quad\text{on }\Heis.
+\end{equation}
+All unspecified integrals below are over $\Heis$. Define
+\[
+ |DF|_\eps^2=\sum_i|Z_iF|^2+\frac\eps\lambda|TF|^2,
+ \qquad \HH_\eps=\Delta_H+\frac\eps\lambda T^2,
+ \qquad H_h=e^{h\HH_\eps}.
+\]
+For matrices the gradient norm is summed over all components.
+
+\section{Scalar and tensor regularization}
+
+Let $\kappa$ be a large constant, to be chosen later, and let $C_h$ denote central convolution with
+\begin{equation}\label{e:sech}
+ c_h(s)=\frac1{2\kappa h}\operatorname{sech}\frac{\pi s}{2\kappa h},
+ \qquad \widehat c_h(\tau)=\operatorname{sech}(\kappa h\tau).
+\end{equation}
+Write
+\begin{equation}\label{e:regularizers}
+ P_h=H_hC_h,\qquad
+ \KK B=JB-BJ,\qquad
+ S_h=H_h C_h e^{2hT\KK}.
+\end{equation}
+The last formula denotes the combined central multiplier; the isolated exponential need not define a bounded operator.
+
+\begin{lemma}\label{l:intertwining}
+For sufficiently large $\kappa$, the tensor operator $S_h$ is well defined, preserves symmetric matrix fields, and satisfies
+\begin{equation}\label{e:intertwining}
+ \DD S_hB=P_h\DD B,\qquad
+ |S_hB-P_hB|\leq\frac{C_n}{\kappa}P_h|B|.
+\end{equation}
+The scalar operator $P_h$ preserves positivity and mass. Moreover,
+\begin{equation}\label{e:smoothing}
+ \|P_hF\|_\infty\leq C_nh^{-Q/2}\|F\|_1,
+ \qquad |T\log P_hF|\leq\frac\pi{2\kappa h}\quad(F\geq0,\ F\not\equiv0).
+\end{equation}
+All constants are independent of $h,\eps,\kappa$ above a fixed threshold.
+\end{lemma}
+
+\begin{proof}
+The commutation relations give
+\[
+ [\Delta_H,Z_i]=-2T J_{ik}Z_k,\qquad
+ \HH_\eps\DD B=\DD(\HH_\eps B+2T\KK B).
+\]
+Exponentiating proves the first identity in \eqref{e:intertwining}. To justify the operator, $\KK$ is skew-adjoint on symmetric matrices and $\|\KK\|\leq2$. The central kernel of $C_he^{2hT\KK}$ is
+\[
+ M_h(s)=\frac1{2\kappa h}
+ \left[\cosh\left(\frac{\pi s}{2\kappa h}I+\frac\pi\kappa\KK\right)\right]^{-1}.
+\]
+On an eigenvector with eigenvalue $i\beta$, this is $c_h(s+2ih\beta)$. For real $t$ and small $\theta$,
+\[
+ |\cosh(t+i\theta)|\geq\cos\theta\cosh t,
+ \qquad
+ \left|\frac1{\cosh(t+i\theta)}-\frac1{\cosh t}\right|
+ \leq C|\theta|\operatorname{sech}t.
+\]
+Consequently
+\begin{equation}\label{e:kernel-error}
+ \|M_h(s)-c_h(s)I\|\leq\frac{C_n}{\kappa}c_h(s),
+ \qquad \int M_h(s)\dd s=I.
+\end{equation}
+The mass follows also by setting $\tau=0$ in the Fourier multiplier. This proves the pointwise estimate in \eqref{e:intertwining}. For the exponentiation, first impose compact central Fourier support and then remove the Fourier cutoff using the integrable combined kernel. This also proves the identities for compactly supported distributions.
+
+The heat bound $\|H_h\|_{1\to\infty}\leq C_nh^{-Q/2}$ is uniform in $\eps$, because the additional central heat flow is an $L^1$ contraction. Central convolution is also an $L^1$ contraction. Finally, $|c_h'|\leq\pi c_h/(2\kappa h)$ proves the logarithmic derivative bound.
+\end{proof}
+
+\begin{remark}\label{r:heat-kernel}
+For completeness, the only heat-kernel input in the proof is the preceding dispersion bound. With Fourier transform in $s$, the kernel of $e^{h\Delta_H}$ has transform
+\[
+ \widehat k_h(z,\tau)
+ =(4\pi h)^{-n}\left(\frac{h\tau}{\sinh(h\tau)}\right)^n
+ \exp\left(-\frac{|z|^2}{4h}\,h\tau\coth(h\tau)\right).
+\]
+It follows by the radial Gaussian ansatz for the Fourier-transformed heat equation. Fourier inversion and integrability of $(t/\sinh t)^n$ give $\|k_h\|_\infty\leq C_nh^{-n-1}$. Positivity and unit mass are the usual heat-flow properties. See also \cite[Section 2, equation (2.7)]{eldredge}.
+\end{remark}
+
+Set
+\begin{equation}\label{e:evolved}
+ w_h=P_hv,\qquad g_h=P_hg,\qquad
+ B_h=S_h(Av),\qquad a_h=B_h/w_h.
+\end{equation}
+For $\kappa\geq\kappa_0(n,\lambda,\Lambda)$, the pointwise tensor error and positivity imply
+\begin{equation}\label{e:cone}
+ \frac\lambda2 I\leq a_h\leq2\Lambda I.
+\end{equation}
+Indeed, $\lambda w_hI\leq P_h(Av)\leq\Lambda w_hI$ and $P_h|Av|\leq\sqrt m\Lambda w_h$.
+Applying $P_h$ to \eqref{e:global} gives the exact inequality
+\begin{equation}\label{e:evolved-equation}
+ -\DD(a_hw_h)-\eps T^2w_h\leq g_h.
+\end{equation}
+No derivatives of the original coefficients have been estimated.
+
+\section{The scalar power entropy}
+
+Fix $1<r\leq4/3$, put $\chi=r(r-1)$, and write
+\[
+ E(h)=\int w_h^r\dx,\qquad
+ I(h)=\chi\int w_h^{r-2}|Dw_h|_\eps^2\dx,
+ \qquad \mathcal I=\int_0^1 I(h)\dd h,
+ \qquad E_0=\int v^r\dx.
+\]
+At this stage $v$ is bounded and compactly supported, so $E_0<\infty$. Markov Jensen gives $E(h)\leq E_0$ before any entropy estimate. We work on $0<h<1$, so a cutoff of the power entropy at small values is unnecessary.
+
+\begin{lemma}\label{l:scalar}
+There is $C_n$, independent of $r,\eps,\kappa$, such that
+\begin{equation}\label{e:scalar}
+ \mathcal I\leq E_0,\qquad
+ E_0\leq E(1)+(1+C_n\kappa)\mathcal I.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The logarithmic derivative of $\widehat c_h$ is $-\kappa\tau\tanh(\kappa h\tau)$. It is the symbol of a symmetric jump generator with density
+\begin{equation}\label{e:levy}
+ N_h(t)=\frac{\pi\cosh\theta}{4\kappa h^2\sinh^2\theta},
+ \qquad \theta=\frac{\pi|t|}{2\kappa h}.
+\end{equation}
+One obtains this by differentiating
+\[
+ \log\cosh(a\tau)=\int_\R
+ \frac{1-\cos(\tau t)}{2|t|\sinh(\pi|t|/(2a))}\dd t.
+\]
+This identity follows, in turn, by the product expansion of $\cosh$ and the elementary integral for $\log(1+\tau^2/b^2)$.
+Thus
+\[
+ -E'(h)=I(h)+J(h),\qquad J(h)\geq0,
+\]
+where, writing $w=w_h$ and $\xi_t=\xi\circ(0,t)$,
+\[
+ J(h)=\frac r2\int\!\int_\R N_h(t)
+ (w(\xi_t)-w(\xi))
+ (w(\xi_t)^{r-1}-w(\xi)^{r-1})\dd t\dx.
+\]
+For $a,b>0$ and $1<r\leq4/3$,
+\begin{equation}\label{e:pair}
+ (a-b)(a^{r-1}-b^{r-1})
+ \leq C(r-1)(1+|\log(a/b)|)(a^{r/2}-b^{r/2})^2.
+\end{equation}
+To see this, put $a/b=e^\ell\geq1$. For $\ell\leq1$ use the mean value theorem. For $\ell\geq1$, use $e^{(r-1)\ell}-1\leq(r-1)\ell e^{(r-1)\ell}$ and $e^{r\ell/2}-1\geq(1-e^{-1/2})e^{r\ell/2}$.
+
+By \eqref{e:smoothing}, $|\log(w(\xi_t)/w(\xi))|\leq\theta$. Also $t^2N_h(t)(1+\theta)\leq C\kappa$. With $q=w^{r/2}$, the fractional-energy formula therefore gives
+\[
+ J(h)\leq C\kappa\chi\langle q,|T|q\rangle
+ \leq C_n\kappa\chi\int|\nabla_Hq|^2\dx
+ \leq C_n\kappa I(h).
+\]
+Here $|T|$ has central Fourier symbol $|\tau|$, and
+\begin{equation}\label{e:bracket}
+ n\langle q,|T|q\rangle\leq\int|\nabla_Hq|^2\dx.
+\end{equation}
+Indeed, after central Fourier transform, $[X_k,Y_k]=i\tau$ and integration by parts gives $|\tau|\|q\|_2^2\leq\|X_kq\|_2^2+\|Y_kq\|_2^2$. Sum in $k$ and integrate in $\tau$. Integrating the entropy identity proves \eqref{e:scalar}.
+\end{proof}
+
+\section{The coefficient power entropy}
+
+The point of the tensor correction is that its derivative error is quadratic in $\kappa^{-1}$.
+
+\begin{lemma}\label{l:coefficient}
+For $1<r\leq4/3$ and $\kappa\geq\kappa_0$, there is $C=C(n,\Lambda)$, independent of $r,\eps,\kappa$, such that
+\begin{equation}\label{e:coefficient}
+ \chi\int_0^1\!\int w_h^r|Da_h|_\eps^2\dx\dd h
+ \leq C(\chi+\kappa^{-2})E_0+C\kappa^{-2}\mathcal I.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ q_h=H_hv,\quad R_h=H_h(Av),\quad b_h=R_h/q_h,
+ \qquad \bar a_h=P_h(Av)/w_h.
+\]
+For two functions $q,qb$ evolving by $\HH_\eps$, the quotient computation gives
+\begin{align*}
+ (\partial_h-\HH_\eps)(q^r|b|^2)
+ &=-r(r-1)q^{r-2}|b|^2|Dq|_\eps^2-2q^r|Db|_\eps^2\\
+ &\quad-4(r-1)q^{r-1}\sum_\alpha b_\alpha
+       \langle Dq,Db_\alpha\rangle_\eps\\
+ &\leq-c_rq^r|Db|_\eps^2,
+ \qquad c_r=\frac{2(2-r)}r\geq1.
+\end{align*}
+Young's inequality gives the last line. The same integrated inequality holds for the common scalar flow $P_h$: the extra jump contribution is nonpositive because
+\[
+ (q,R)\longmapsto q^{r-2}|R|^2
+\]
+is convex for $1\leq r\leq2$. It follows that
+\begin{equation}\label{e:ordinary-coefficients}
+ \int_0^1\!\int q_h^r|Db_h|_\eps^2\dx\dd h
+ +\int_0^1\!\int w_h^r|D\bar a_h|_\eps^2\dx\dd h
+ \leq 2m\Lambda^2 E_0.
+\end{equation}
+
+Let $\mathcal N_h$ be central convolution with $M_h-c_hI$, and put
+\[
+ F_h=\mathcal N_hR_h,\qquad e_h=F_h/w_h,
+ \qquad a_h=\bar a_h+e_h.
+\]
+The central convolution commutes with all the fields in $D$. From \eqref{e:kernel-error},
+\begin{equation}\label{e:error-pointwise}
+ |e_h|\leq C\Lambda/\kappa,\qquad
+ \int w_h^{r-2}|DF_h|_\eps^2\dx
+ \leq C\kappa^{-2}\int q_h^{r-2}|DR_h|_\eps^2\dx.
+\end{equation}
+The second inequality is weighted Jensen. Explicitly, for a positive probability convolution $C$,
+\[
+ (Cq)^{r-2}(C|F|)^2\leq C(q^{r-2}|F|^2),
+\]
+by Cauchy--Schwarz and $C(q^{2-r})\leq(Cq)^{2-r}$. Apply this to $C_h$ and use $|\mathcal N_hF|\leq C\kappa^{-1}C_h|F|$.
+
+Since $DR_h=q_hDb_h+b_hDq_h$ and $|b_h|\leq\sqrt m\Lambda$, the quotient rule in \eqref{e:error-pointwise} gives
+\begin{align*}
+ \int w_h^r|De_h|_\eps^2\dx
+ &\leq C\kappa^{-2}\int q_h^r|Db_h|_\eps^2\dx\\
+ &\quad+C\kappa^{-2}\left(
+ \int q_h^{r-2}|Dq_h|_\eps^2\dx
+ +\int w_h^{r-2}|Dw_h|_\eps^2\dx\right).
+\end{align*}
+The ordinary heat power identity gives
+\[
+ \chi\int_0^1\!\int q_h^{r-2}|Dq_h|_\eps^2\dx\dd h\leq E_0.
+\]
+Multiply the preceding error estimate by $\chi$, integrate in $h$, and use \eqref{e:ordinary-coefficients}. Together with $|Da_h|^2\leq2|D\bar a_h|^2+2|De_h|^2$, this proves \eqref{e:coefficient}.
+\end{proof}
+
+\section{Proof of the estimate}
+
+Test \eqref{e:evolved-equation} with $rw_h^{r-1}$. One integration by parts gives
+\[
+ \chi\int w_h^{r-2}\left(
+ a_h\nabla_Hw_h\cdot\nabla_Hw_h+\eps|Tw_h|^2
+ +w_h\nabla_Hw_h\cdot\diver_Ha_h\right)\dx
+ \leq r\int w_h^{r-1}g_h\dx.
+\]
+Here $(\diver_Ha)_i=Z_ja_{ij}$. By \eqref{e:cone} and Young's inequality,
+\begin{equation}\label{e:energy}
+ I(h)\leq\frac{4m}{\lambda^2}\chi\int w_h^r|Da_h|_\eps^2\dx
+ +\frac{4r}{\lambda}\int w_h^{r-1}g_h\dx.
+\end{equation}
+All computations may first be integrated over $\delta<h<1$ with compact spatial cutoffs. For dilated cutoffs $\zeta_L$, $|\nabla_H\zeta_L|=O(L^{-1})$, $|T\zeta_L|=O(L^{-2})$, and $\int t^2N_h(t)\dd t=2\kappa^2h$. Thus the scalar and coefficient entropy cutoff errors vanish by Markov Jensen and $E_0<\infty$. Their dissipation bounds then control the PDE flux cutoff errors by Cauchy--Schwarz. Send $L\to\infty$ at fixed $\eps,\kappa,r$, and then $\delta\downarrow0$. The limiting estimates have exactly the uniform constants displayed above.
+
+By \eqref{e:mass} and \eqref{e:smoothing},
+\[
+ \|w_h\|_\infty\leq C(n,\lambda)h^{-Q/2},\qquad \int g_h\dx=1.
+\]
+Choose also $r-1\leq1/Q$. Then
+\begin{equation}\label{e:source}
+ E(1)\leq C(n,\lambda),\qquad
+ \int_0^1\!\int r w_h^{r-1}g_h\dx\dd h
+ \leq C\int_0^1h^{-Q(r-1)/2}\dd h\leq C(n,\lambda).
+\end{equation}
+Combining \eqref{e:energy} and Lemma~\ref{l:coefficient}, with constants uniform in $r,\eps,\kappa$, gives
+\begin{equation}\label{e:first-absorption}
+ \mathcal I\leq C_0(\chi+\kappa^{-2})E_0
+       +C_0\kappa^{-2}\mathcal I+C_1.
+\end{equation}
+Here and below $C_0,C_1$ depend only on $n,\lambda,\Lambda$.
+Choose $\kappa\geq\kappa_0$ so large that
+\[
+ C_0\kappa^{-2}\leq\tfrac12,
+ \qquad 2C_0(1+C_n\kappa)\kappa^{-2}\leq\tfrac14.
+\]
+With this $\kappa$ fixed, choose $r>1$ so close to one that
+\[
+ r\leq\tfrac43,\qquad r-1\leq1/Q,\qquad
+ 2C_0(1+C_n\kappa)r(r-1)\leq\tfrac14.
+\]
+These choices depend only on $n,\lambda,\Lambda$. Lemma~\ref{l:scalar}, \eqref{e:source}, and \eqref{e:first-absorption} now give
+\[
+ E_0\leq C+\tfrac12 E_0.
+\]
+Thus $\int v^r\leq C$. Homogeneity and positivity prove \eqref{e:adjoint-bound} for general $g$, and duality gives the regularized maximum estimate with $p=r/(r-1)$.
+
+For the positive-part form, choose smooth convex $\varphi_\delta$ with $\varphi_\delta=0$ on $(-\infty,0]$, $0\leq\varphi_\delta'\leq1$, and $\varphi_\delta(t)\to t_+$. If $w\leq0$ on the boundary and $-\LL_{A,\eps}w\leq F$, the classical chain rule gives
+\[
+ -\LL_{A,\eps}\varphi_\delta(w)\leq F_+\mathbf1_{\{w>0\}}.
+\]
+Both $\varphi_\delta(w)$ and the adjoint solution $v$ vanish on the boundary. Hence
+\[
+ \int g\varphi_\delta(w)\dx
+ =\int v[-\LL_{A,\eps}\varphi_\delta(w)]\dx
+ \leq C\|F_+\mathbf1_{\{w>0\}}\|_{L^p}.
+\]
+Let $\delta\downarrow0$ and take the supremum over nonnegative smooth $g$ with $\int g=1$. We obtain
+\begin{equation}\label{e:regularized-maximum}
+ \|w_+\|_\infty\leq C\|F_+\mathbf1_{\{w>0\}}\|_{L^p}.
+\end{equation}
+
+We finish the a priori passage for Theorem~\ref{t:main}. At unit scale fix $a>0$. The compact set $\{u\geq a\}$ lies in $\Omega$. If nonempty, choose a smooth $D\Subset\Omega$ containing it, so $u-a<0$ on $\partial D$. Extend $A$ preserving its bounds and let $A_j$ be ordinary Euclidean mollifications. Then $A_j\to A$ almost everywhere and
+\[
+ E_j:=|(A_j-A)_{i\ell}Z_iZ_\ell u|\longrightarrow0
+ \quad\text{in }L^p(D),
+\]
+because $u$ is $C^2$ near $\overline D$. On $D$,
+\[
+ -\LL_{A_j,\eps}(u-a)\leq f+E_j+\eps|T^2u|.
+\]
+Apply \eqref{e:regularized-maximum} and let $j\to\infty$, then $\eps\to0$. Since $D$ contains $\{u>a\}$,
+\[
+ \|(u-a)_+\|_{L^\infty(\Omega)}
+ \leq C\|f_+\mathbf1_{\{u>0\}}\|_{L^p(\Omega)}.
+\]
+The inequality is trivial if the compact set is empty. Let $a\downarrow0$.
+Finally, the change of variables $\xi=\xi_0\circ\delta_R\zeta$ multiplies the equation by $R^2$ and volume by $R^Q$, proving \eqref{e:ABP}.
+
+\begin{remark}
+If $AJ=JA$, the tensor correction disappears because $\KK(Av)=0$. For general $A$, applying the same scalar heat flow to $v$ and $Av$ is insufficient: already on $\mathbb H^1$,
+\[
+ [\Delta_H,X^2](sxy)=-4.
+\]
+The proof above replaces exact componentwise commutation by exact scalar--tensor intertwining. The two estimates that permit this replacement are the $O(\kappa)$ scalar entropy cost and the $O(\kappa^{-2})$ coefficient energy error. After choosing $\kappa$, a power sufficiently close to one absorbs the remaining coefficient entropy.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem{eldredge}
+N.~Eldredge, \emph{Gradient estimates for the subelliptic heat kernel on H-type groups}, J. Funct. Anal. \textbf{258} (2010), 504--533.\newline
+\url{https://arxiv.org/abs/0904.1781}.
+\end{thebibliography}
+\end{document}

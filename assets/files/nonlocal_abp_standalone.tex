@@ -1,0 +1,327 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={An ABP estimate for nonlocal equations}}
+\allowdisplaybreaks[1]
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,d}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\one}{\mathbf 1}
+\title{An ABP estimate for nonlocal equations}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+We prove an $L^p$ maximum estimate for uniformly elliptic nonlocal equations with even kernels. The kernel coefficients are represented by an integral of nonnegative spatial densities against bounded jump profiles, subject to a uniform moment bound. Integrable corrections are permitted, and the constants are uniform as the order approaches two.
+\end{abstract}
+
+\section{The estimate}
+
+For $n\ge1$ and $0<\sigma<2$, write
+\[
+ \nu_\sigma(dz)=(2-\sigma)|z|^{-n-\sigma}\dd z,
+ \qquad\delta_z u(x)=u(x+z)+u(x-z)-2u(x),
+ \qquad Lu(x)=\frac12\int\delta_z u(x)a(x,z)\nu_\sigma(dz).
+\]
+Let $w:[0,\infty)\to[0,\infty)$ be increasing and convex, with $w(0)=0$, $w(t)>0$ for $t>0$, and
+\begin{equation}\label{weight}
+ w(2t)\le d\,w(t)\quad(t\ge1),\qquad
+ \ell:=\int_1^\infty\frac{\dd t}{w(t)}<\infty.
+\end{equation}
+Let $(\Omega,\mu)$ be a standard probability space, $0<\lambda\le\Lambda_0<\infty$, and $\lambda\le\Lambda<\infty$. We assume
+\begin{equation}\label{class}
+ \begin{gathered}
+ a=a_0+b,\qquad
+ a_0(x,z)=\int_\Omega\rho(x,t)\phi(z,t)\mu(dt),\\
+ \rho\ge0,\qquad|\phi|\le1,\qquad\phi(-z,t)=\phi(z,t),\qquad b(x,-z)=b(x,z),\\
+ E:=\sup_x\int_\Omega w(1+\rho(x,t))\mu(dt)<\infty,
+ \qquad K:=\sup_x\int|b(x,z)|\nu_\sigma(dz)<\infty,\\
+ \lambda\le a_0(x,z)\le\Lambda_0,\qquad
+ \lambda\le a(x,z)\le\Lambda.
+ \end{gathered}
+\end{equation}
+All coefficient maps are jointly Borel measurable. The bounds hold at every spatial point and almost every jump. The parameters $E$ and $K$ are part of the hypotheses.
+
+Fix $\sigma_0\in(0,2)$ and set
+\begin{equation}\label{exponents}
+ \eps=\min\left\{\frac14,\frac{\sigma_0}{2n},
+                  \frac{\lambda^2}{32(d+1)E^2\ell^2}\right\},
+ \qquad q=1+\eps,\qquad p=\frac q{q-1}.
+\end{equation}
+
+\begin{theorem}\label{main}
+Let $R>0$, $\sigma\in[\sigma_0,2)$, and assume \eqref{weight}--\eqref{class}. If $u\in C^2(\R^n)\cap L^\infty(\R^n)$, $f\in L^p(B_R)$, and
+\[
+ -Lu\le f\quad\hbox{a.e. in }B_R,\qquad
+ u\le0\quad\hbox{on }\R^n\setminus B_R,
+\]
+then
+\begin{equation}\label{abp}
+ \|u_+\|_{L^\infty(B_R)}
+ \le C\left(1+\frac{C_nR^\sigma K}{\lambda}\right)
+ R^{\sigma-n/p}
+ \|f_+\one_{\{u>0\}}\|_{L^p(B_R)}.
+\end{equation}
+Here $C$ depends only on $n,\sigma_0,\lambda,E,d,\ell$. In particular, $p$ and $C$ are independent of $(\Omega,\mu)$ and uniform for $\sigma\in[\sigma_0,2)$.
+\end{theorem}
+
+\section{Proof}
+
+Put $D=E\ell^2$ and $S=(d+1)E$. Define the coefficient entropy by
+\[
+ j(a)=\left(\int_{1+a}^\infty\frac{\dd t}{w(t)}\right)^{-1},
+ \qquad J(a)=\int_0^a j(t)\dd t,
+ \qquad P(A)=E+\int_\Omega J(A)\dd\mu.
+\]
+Since $j(0)=\ell^{-1}$,
+\[
+ J''(a)=\frac{j(a)^2}{w(1+a)},\qquad
+ \frac{J'(a)^2}{J''(a)}=w(1+a),\qquad
+ \frac1{J''(a)}\le\ell^2w(1+a).
+\]
+Also $\int_r^{2r}\dd t/w(t)\ge r/(d\,w(r))$, so $j(a)\le d\,w(1+a)/(1+a)$. The ratio $w(r)/r$ is nondecreasing, giving $J(a)\le d\,w(1+a)$. Thus, whenever $\int w(1+A)\dd\mu\le E$,
+\begin{equation}\label{entropy-bounds}
+ \begin{gathered}
+ E\le P(A)\le S,\qquad
+ |DP(A)[H]|^2\le P(A)\mathcal Q_A(H),\\
+ \left|\int H\phi(z,\cdot)\dd\mu\right|^2\le D\mathcal Q_A(H),
+ \qquad\mathcal Q_A(H)=\int J''(A)H^2\dd\mu.
+ \end{gathered}
+\end{equation}
+The last two inequalities are weighted Cauchy--Schwarz.
+
+For $r>0$ and $B\ge0$, set $F(r,B)=r^qP(B/r)$. Along an affine segment $Z_t=(r_t,B_t)$, write $A_t=B_t/r_t$. Since $\ddot A_t=-2\dot r_t\dot A_t/r_t$,
+\begin{align*}
+ \frac{\dd^2}{\dd t^2}F(Z_t)
+ &=q(q-1)r_t^{q-2}\dot r_t^2P(A_t)
+   +2(q-1)r_t^{q-1}\dot r_tDP(A_t)[\dot A_t]
+   +r_t^q\mathcal Q_{A_t}(\dot A_t)\\
+ &\ge q(q-1)(a-b/q)^2+b^2/q,
+\end{align*}
+where $a=r_t^{(q-2)/2}|\dot r_t|\sqrt{P(A_t)}$ and $b=r_t^{q/2}\sqrt{\mathcal Q_{A_t}(\dot A_t)}$. Consequently
+\begin{equation}\label{quotient}
+ \mathcal D_F(Z_0,Z_1)
+ :=\langle DF(Z_1)-DF(Z_0),Z_1-Z_0\rangle
+ \ge\frac1q\int_0^1r_t^q\mathcal Q_{A_t}(\dot A_t)\dd t.
+\end{equation}
+Only segments within the coefficient constraints are used; these constraints are convex.
+
+Choose a smooth $0\le\chi\le1$, zero on $[0,1]$ and one on $[2,\infty)$, and define
+\[
+ \eta(0)=\eta'(0)=0,\qquad\eta''(r)=q(q-1)r^{q-2}\chi(r).
+\]
+Then $\eta=0$ below $1$, $\eta'(r)\le q(r^{q-1}-1)_+$, $r^2\eta''(r)\le q(q-1)r^q$, and $r^q\le\eta(r)+2qr$.
+If $B_i=r_iA_i$ and $\int A_i\phi(z,\cdot)\dd\mu\ge\lambda_*$, interpolation, Young's inequality, and \eqref{entropy-bounds}--\eqref{quotient} give
+\begin{equation}\label{two-point}
+ \begin{split}
+ &\left(\int(B_1-B_0)\phi(z,\cdot)\dd\mu\right)
+       (\eta'(r_1)-\eta'(r_0))\\
+ &\qquad\ge\frac{\lambda_*}{2}\mathcal D_\eta
+       -\frac{q^2(q-1)D}{2\lambda_*}\mathcal D_F,
+ \end{split}
+\end{equation}
+where $\mathcal D_\eta=(r_1-r_0)(\eta'(r_1)-\eta'(r_0))$. Indeed, the interpolation error costs at most
+\[
+ \frac{q(q-1)}{2\lambda_*}
+ \int_0^1 r_t^q\left|\int\dot A_t\phi\dd\mu\right|^2\dd t.
+\]
+
+\begin{lemma}[Bounded-density adjoint estimate]\label{adjoint}
+Suppose \eqref{class} holds with $0\le\rho\le T$ and lower bounds $\lambda_*:=\lambda/2$. If $v\ge0$ is a finite measure supported in $\overline{B_1}$, $G\ge0$ is a finite measure, and $-L^*v\le G$ globally, then
+\[
+ \|v\|_{L^q(\R^n)}\le C(1+C_nK/\lambda)G(\R^n).
+\]
+The constant is independent of $T$.
+\end{lemma}
+
+\begin{proof}
+First take $b=0$. Choose $0\le\psi\le(4-|x|^2)_+$, smooth and compactly supported, equal to $4-|x|^2$ on $B_{3/2}$. For $x\in\overline{B_1}$, $\delta_z\psi\le0$ for all $z$, and $\delta_z\psi=-2|z|^2$ for $|z|<1/2$. Hence $-L\psi\ge c_n\lambda_*$ and testing gives
+\begin{equation}\label{mass}
+ v(\R^n)\le C_nG(\R^n)/\lambda_*.
+\end{equation}
+Normalize $G(\R^n)=1$; the zero-mass case follows from \eqref{mass}.
+
+Evolve $v$, $B=\rho v$, and $G$ by $\partial_hW_h=\HH W_h$, where
+$\HH W=\frac12\int\delta_zW\nu_\sigma(dz)$. Its positive convolution kernel preserves mass and satisfies
+\[
+ \|W_h\|_\infty\le C(n,\sigma_0)h^{-n/\sigma}\|W\|_{\mathcal M}.
+\]
+Indeed, the Fourier symbol is $-d_{n,\sigma}|\xi|^\sigma$, with $d_{n,\sigma}$ uniformly positive and bounded; Fourier inversion bounds the kernel by $C h^{-n/\sigma}$. Set $A_h=B_h/v_h$ when $v\ne0$. It is an average of $\rho$, so all coefficient constraints persist. The adjoint expression
+\[
+ L_0^*v=\mathcal T B,\qquad
+ \mathcal T B=\frac12\int\int_\Omega\delta_zB(\cdot,t)\phi(z,t)\mu(dt)\nu_\sigma(dz)
+\]
+commutes with the heat flow. Thus $-\mathcal T B_h\le G_h$.
+
+Put $I_1(h)=\int\eta(v_h)\dd x$ and $I_2(h)=q(q-1)\int F(v_h,B_h)\dd x$. Differentiation and symmetrization give
+\[
+ -I_1'=\frac12\iint\mathcal D_\eta\dd x\nu_\sigma(dz),\qquad
+ -I_2'=\frac{q(q-1)}2\iint\mathcal D_F\dd x\nu_\sigma(dz),
+\]
+with states at $x,x+z$. Testing the evolved inequality with $\eta'(v_h)$ and using \eqref{two-point} yields
+\begin{equation}\label{scale}
+ -I_1'\le\frac{qD}{\lambda_*^2}(-I_2')
+             +\frac2{\lambda_*}\int\eta'(v_h)G_h\dd x.
+\end{equation}
+By \eqref{mass} and heat dispersion, $\|v_h\|_\infty\le C h^{-n/\sigma}$. Hence $I_1(h)=0$ for large $h$, and
+\[
+ \int_0^\infty\int\eta'(v_h)G_h\dd x\dd h
+ \le\int_0^\infty q((Ch^{-n/\sigma})^{q-1}-1)_+\dd h\le C,
+\]
+since $n(q-1)/\sigma\le1/2$. Integrating \eqref{scale} from $\delta>0$ and using \eqref{entropy-bounds} gives
+\[
+ I_1(\delta)\le\frac{q^2(q-1)DS}{\lambda_*^2}
+                    \int v_\delta^q\dd x+C
+ \le\frac{25}{128}I_1(\delta)+C.
+\]
+Absorption and weak $L^q$ compactness show that $v$ has the claimed density.
+
+Here $B$ is a finite Bochner $L^2(\mu)$-valued measure. At fixed $T$, extend $J$ outside $[0,T]$ with a Lipschitz derivative; on the cone $0\le B\le Tr$, set $F(0,0)=0$ and note $\|DF(r,B)\|\le C_T r^{q-1}$. First truncate the jumps, symmetrize, and then use convergence of the generators in $L^1$ and nonnegativity of the entropy dissipation. Heat-smoothed finite measures have integrable spatial derivatives, so these passages and differentiation are valid. Compact spatial cutoffs justify convolving the distributional inequality. These regularizations introduce no quantitative constant depending on $T$.
+
+For general $b$, let $J_b=L-L_0$. Its adjoint applied to $v$ is the signed measure
+\[
+ \gamma(E)=\int v(dx)\int
+             (\one_E(x+z)-\one_E(x))b(x,z)\nu_\sigma(dz).
+\]
+It has total mass zero and variation at most $2Kv(\R^n)$; thus $\gamma_+(\R^n)\le Kv(\R^n)$. Since $-L_0^*v\le G+\gamma_+$, apply the principal-part estimate and the mass bound for the full operator.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+First let $R=1$, $\rho\le T$, and mollify coefficients in $x$. Fix $x_0\in B_1$. Truncate jumps to $|z|>r$ and set
+\[
+ k_r(x)=\int_{|z|>r}a(x,z)\nu_\sigma(dz),\qquad
+ P_rF(x)=k_r(x)^{-1}\int_{\substack{|z|>r\\x+z\in B_1}}
+                      F(x+z)a(x,z)\nu_\sigma(dz).
+\]
+Jumps with $|z|>\max(2,r)$ leave the ball, so $\|P_r\|_\infty<1$. The positive inverse of $-L_r$ with zero exterior values is
+$S_rF=\sum_{j\ge0}P_r^j(F/k_r)$. Represent $F\mapsto S_rF(x_0)$ on $C(\overline{B_1})$ by a positive measure $v_r$. For a nonnegative global test $\psi$, exterior positivity gives $S_r(-L_r\psi)\le\psi$, hence
+\[
+ \int(-L_r\psi)\dd v_r\le\psi(x_0).
+\]
+The quadratic barrier used in \eqref{mass} bounds $v_r(\R^n)$ uniformly as $r\downarrow0$ at fixed $\sigma$. Taking a weak limit and using uniform convergence $L_r\psi\to L\psi$ gives $-L^*v\le\delta_{x_0}$. Lemma~\ref{adjoint} bounds $\|v\|_q$.
+
+For a smooth convex approximation $\zeta$ of the positive part, zero on $(-\infty,0]$ and with $0\le\zeta'\le1$, the function $u_\zeta=\zeta(u)$ vanishes outside $B_1$. Thus $S_r(-L_ru_\zeta)=u_\zeta$, and passage to the limit gives
+\[
+ u_\zeta(x_0)=\int(-Lu_\zeta)\dd v
+ \le\|v\|_q\|(-Lu)_+\one_{\{u>0\}}\|_p.
+\]
+Here $Lu_\zeta\ge\zeta'(u)Lu$, and $Lu_\zeta\ge0$ wherever $u\le0$. Let $\zeta(u)\to u_+$. Spatial mollification preserves the moment, rate and ellipticity bounds, and $L_\epsilon u\to Lu$ in $L^p(B_1)$ by dominated convergence, so the estimate holds for measurable bounded densities.
+
+For unbounded $\rho$, use $\rho_T=\min(\rho,T)$. Convexity of $w$ and \eqref{weight} imply $w(t)/t\to\infty$, and therefore
+\[
+ \sup_{x,z}|a_{0,T}-a_0|
+ \le\sup_x\int\rho\one_{\{\rho>T\}}\dd\mu
+ \le E\frac{1+T}{w(1+T)}=:d_T\longrightarrow0.
+\]
+For $d_T\le\lambda/2$, both truncated kernels retain the lower bound $\lambda_*$. Lemma~\ref{adjoint} and the preceding proof are uniform in $T$. For the fixed bounded $C^2$ function $u$,
+\[
+ \sup_{B_1}|L_Tu-Lu|
+ \le\frac{d_T}{2}\sup_{B_1}\int|\delta_z u|\nu_\sigma(dz)\longrightarrow0.
+\]
+Apply the truncated estimate with right-hand side $f+o(1)$ and pass to the limit. Finally, $x=Ry$ preserves the representation and moment bounds, multiplies the rate by $R^\sigma$, and gives the factor $R^{\sigma-n/p}$ in \eqref{abp}.
+\end{proof}
+
+\section{Examples of kernels}
+
+All maps in the examples below are Borel measurable. Ellipticity means the two positive bounds in \eqref{class}.
+
+\subsection*{Moment weights}
+For every $\alpha>0$, the weight $w(t)=t[\log(\mathrm e+t)]^{1+\alpha}$ satisfies \eqref{weight}. Thus a uniform $L\log^{1+\alpha}L$ moment of $\rho$ suffices. For $\beta>0$, the convex doubling weight
+\[
+ w_\beta(t)=\int_0^t\log(\mathrm e+s)
+             [\log\log(\mathrm e^{\mathrm e}+s)]^{1+\beta}\dd s
+\]
+is comparable at infinity to $t\log t(\log\log t)^{1+\beta}$ and also satisfies \eqref{weight}.
+
+\subsection*{Finite profiles}
+Every even translation-invariant kernel $\lambda\le a_0(z)\le\Lambda_0$ has the representation \eqref{class}: take a one-point probability space, $\rho=\Lambda_0$ and $\phi=a_0/\Lambda_0$.
+
+More generally, suppose
+\[
+ a_0(x,z)=\sum_{j=1}^N c_j(x)k_j(z),\qquad
+ |c_j|\le M,\quad |k_j|\le1,\quad k_j(-z)=k_j(z),
+\]
+and $a_0$ is elliptic. On $\Omega=\{1,\ldots,N\}\times\{-1,1\}$ with uniform probability, set
+\[
+ \rho(x,j,\tau)=2N(\tau c_j(x))_+,
+ \qquad\phi(z,j,\tau)=\tau k_j(z).
+\]
+Then $a_0=\int\rho\phi\dd\mu$ and $E\le w(1+2NM)$. This includes kernels constant on a finite symmetric Borel partition $D_1,\ldots,D_N$ of $\R^n\setminus\{0\}$,
+\[
+ a_0(x,z)=a_j(x)\quad(z\in D_j),\qquad
+ \lambda\le a_j(x)\le\Lambda_0,
+\]
+and quadratic angular kernels
+\[
+ a_0(x,z)=\frac{z^TQ(x)z}{|z|^2},\qquad
+ Q(x)=Q(x)^T,\quad\lambda I\le Q(x)\le\Lambda_0 I.
+\]
+For the latter, use the $n^2$ profiles $z_i z_j/|z|^2$. The jump cells may depend on both direction and length; no regularity of their boundaries is required.
+
+\subsection*{Mixtures and integrable corrections}
+Let $k(t,z)$ be even in $z$, with $\lambda\le k\le\Lambda_0$, and let $r_x\ge0$ satisfy $\int r_x\dd\mu=1$. The mixture
+\[
+ a_0(x,z)=\int_\Omega r_x(t)k(t,z)\mu(dt)
+\]
+satisfies \eqref{class} whenever $\sup_x\int w(1+r_x)\dd\mu<\infty$: take $\rho=\Lambda_0r_x$ and $\phi=k/\Lambda_0$, and use doubling to bound the rescaled moment. The profiles in the general representation may be signed and need not be individually elliptic.
+
+The correction $b$ may depend arbitrarily on $x,z$, subject to its rate bound and ellipticity. For example, suppose $a=a_0$ for $|z|<r_0$, while $a,a_0$ are even and lie between $\lambda$ and $\Lambda$ elsewhere. Then
+\[
+ K\le2\Lambda\frac{(2-\sigma)|\mathbb S^{n-1}|}{\sigma}r_0^{-\sigma}.
+\]
+Thus the theorem allows arbitrary measurable kernels on jumps of length at least $r_0$.
+
+The estimate also holds for $-\sup_jL_ju\le f$ when the countable family has a common probability space and profiles, with uniform bounds in \eqref{class}: select a measurable $j(x)$ within $\epsilon$ of the supremum, apply the theorem with $f+\epsilon$, and let $\epsilon\downarrow0$.
+
+\subsection*{Countably many profiles}
+Take $\Omega=\{0,1,\ldots\}$ with $\mu_0=1/2$ and $\mu_i=c(i+1)^{-2}$ for $i\ge1$, choosing $c$ so that $\sum_i\mu_i=1$. Put $\beta_i=[\log(\mathrm e/\mu_i)]^{-2}$. Choose disjoint Borel cells $E_0,E_1,\ldots\subset B_1$ of positive measure. For each $N\ge1$ and $\theta\in\{-1,1\}^N$, choose a disjoint symmetric Borel jump cell $D_{N,\theta}$ of infinite $\nu_\sigma$ measure. Such cells are obtained by partitioning the dyadic annuli approaching zero into countably many infinite subfamilies.
+
+Set
+\[
+ \rho(x,0)=4,\qquad
+ \rho(x,i)=\frac{\beta_i}{\mu_i}\one_{E_i}(x)\quad(i\ge1).
+\]
+Set $\phi(z,0)=1$ everywhere. On $D_{N,\theta}$ set $\phi(z,i)=\theta_i$ for $i\le N$ and zero for $i>N$; outside these jump cells set all positive-index profiles to zero. Then
+\[
+ a(x,z)=2+\beta_i\theta_i
+ \quad(x\in E_i,\ z\in D_{N,\theta},\ i\le N),
+ \qquad a=2\quad\hbox{otherwise}.
+\]
+This kernel is even, $1\le a\le3$, and has $b=0$. For $w(t)=t\log^2(\mathrm e+t)$ its moment is uniform, since
+\[
+ \mu_iw(1+\beta_i/\mu_i)
+ \le C(1+\mu_i\log^2(\mathrm e/\mu_i)).
+\]
+For this representation, $\sup_x\int\rho^s\dd\mu=\infty$ for every $s>1$, because $\mu_i^{1-s}\beta_i^s\to\infty$.
+
+\subsection*{Ellipticity does not imply the representation}
+Define another kernel on the same cells by
+\[
+ \widetilde a(x,z)=2+\theta_i
+ \quad(x\in E_i,\ z\in D_{N,\theta},\ i\le N),
+ \qquad\widetilde a=2\quad\hbox{otherwise}.
+\]
+It is even and satisfies $1\le\widetilde a\le3$, but admits no representation \eqref{class}, even with a correction of finite rate.
+
+To prove this, average a hypothetical representation over $E_i$, obtaining densities $r_i$ and corrections $b_i$ with uniform moment and rate bounds. Put
+\[
+ \epsilon_T=\sup_{i\ge0}\int(r_i-\min(r_i,T))\dd\mu\longrightarrow0,
+ \qquad h_i=r_i-r_0.
+\]
+The limit follows from $w(t)/t\to\infty$. For fixed $N,\theta$ and $0<\delta<1/2$, choose $z\in D_{N,\theta}$ with $|b_i(z)|\le\delta$ for $0\le i\le N$; their bad sets have finite jump measure. Subtracting the baseline row gives
+\[
+ \left\|\sum_{i\le N}\theta_i h_i\right\|_{L^1(\mu)}
+ \ge(1-2\delta)N.
+\]
+Truncate $r_i$ at $T$ and average over the signs. The truncated sum has expected $L^1$ norm at most $T\sqrt N$, and the tails cost at most $2N\epsilon_T$. Hence
+\[
+ (1-2\delta)N\le T\sqrt N+2N\epsilon_T,
+\]
+a contradiction as $N\to\infty$ and then $T\to\infty$. This example concerns the kernel hypotheses; it does not assert failure of a maximum estimate for $\widetilde a$.
+\end{document}

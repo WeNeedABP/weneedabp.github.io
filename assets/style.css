@@ -170,7 +170,10 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", m
 .resource-box + .resource-box { margin-top: 16px; }
 .resource-box h3 { margin: 0 0 14px; font-size: inherit; line-height: inherit; }
 .resource-box .resource-links { margin: 0; font: inherit; }
-.resource-box .resource-links a { display: inline; text-decoration: underline; padding: 0; border-bottom: 0; }
+.resource-box a {
+  display: inline; padding: 0; border-bottom: 0;
+  text-decoration: underline solid currentColor 1px; text-underline-offset: .2em;
+}
 .resource-box > :last-child { margin-bottom: 0; }
 .back-link { display: inline-block; margin-bottom: 28px; font: 12px/1.6 var(--sans); text-decoration: none; }
 main:has(> .prompt) { max-width: 900px; margin: auto; }

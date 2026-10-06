@@ -93,7 +93,7 @@ strong { font-weight: 600; }
 .theory > p:first-child strong { color: var(--accent); font-weight: 500; }
 .math-display {
   max-width: 100%; min-width: 0; overflow: auto hidden;
-  padding: 2px; margin: 12px 0; font-size: 18px;
+  padding: 2px; margin: 12px 0; font-size: inherit;
 }
 .math-display mjx-container[display="true"] {
   width: max-content; min-width: 100%; margin: .25em 0 !important; padding: 0;

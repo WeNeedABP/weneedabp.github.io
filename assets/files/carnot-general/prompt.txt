@@ -1,0 +1,57 @@
+Initial prompt
+
+Generalize the adjoint ABP estimate in kinetic ABP-adjoint.tex from the kinetic group to a general stratified Carnot group, focusing on the actual proof mechanism: the smoothing kernel K_h, the identities behind \partial_tQ and \partial_hQ, the auxiliary energy F, and the key differential inequality yielding the adjoint L^q bound and then ABP by duality, and identify what replaces the kinetic Gaussian. Give a rigorous theorem for the ABP for general Carnot group
+
+-----
+
+Follow-up prompt 1
+
+Focus on the time independent case with fully general symmetric matrix A. Look for a replacement mechanism, and consider all layer scale diffusion. We have to derive a closed scale entropy inequality. Do not hide commutator, do not use coefficient derivatives quantitatively. Keep going until you produce an unconditional proof.
+
+-----
+
+Follow-up prompt 2
+
+What is the main obstruction? We can still consider the adjoint evolution forward if needed. We don’t need equation or estimate in h pointwisely, instead considering the integrated h quantities could be better
+
+-----
+
+Follow-up prompt 3
+
+IC and Pucci are useless. Focus on the tensor evolution. First check the Heisenberg group case, then the general one. Keep going until you produce a complete proof
+
+-----
+
+Follow-up prompt 4
+
+Continue
+
+-----
+
+Follow-up prompt 5
+
+Develop the ABP for Heisenberg group and generalize it to Carnot case
+
+-----
+
+Follow-up prompt 6
+
+Continue
+
+-----
+
+Follow-up prompt 7
+
+On the Engel group, the third layer estimate could be independent of the smoothing in this layer? We must be able to continue to complete the proof for the most general case
+
+-----
+
+Follow-up prompt 8
+
+We need energy estimate at a layer to be independent of the current and higher smoothing weights. Keep going until you crack the obstruction and produce a complete proof
+
+-----
+
+Follow-up prompt 9
+
+Ok now provide also a zip file with only the main tex file and again with SHA and send the link and the zip file

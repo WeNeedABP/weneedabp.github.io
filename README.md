@@ -24,11 +24,12 @@ All internal links are relative, so the same files also work at a project-site U
 - `prompt-pucci-conjecture.html`: Pucci conjecture prompt and research-procedure downloads.
 - `prompt-pucci-conjecture-d3.html`: dimension-three Pucci conjecture prompt and research-procedure downloads.
 - `prompt-adjoint-llogl.html`: adjoint L log L prompt and research-procedure downloads.
+- `prompt-carnot-abp-general.html`: initial and follow-up prompts for the Carnot-group adjoint ABP proof.
 - `assets/style.css`: shared styling.
 - `assets/mathjax-config.js`: shared formula-rendering configuration.
 - `assets/files/`: original source ZIPs, exposition PDFs and LaTeX sources, research-procedure Markdown files, and plain-text prompts.
 
-The source ZIPs and research-procedure Markdown files are preserved byte for byte. The AI-assisted expositions are provided as PDF and LaTeX pairs: `carnot_abp`, `heisenberg_abp_general`, and `nonlocal_abp_standalone`. The elliptic, parabolic, and kinetic entropy-ABP resource links currently point to the arXiv homepage. The research-procedure files are published as `mathematical_research_goal.md` to match their names in the prompts. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed. The Pucci entry’s supplied procedure is stored at `assets/files/pucci/mathematical_research_goal.md`, renamed from `attached_research_procedure.md`. The dimension-three Pucci entry’s prompt, procedure, and original source ZIP are stored in `assets/files/pucci-d3/`.
+The previously published source ZIPs and research-procedure Markdown files are preserved byte for byte. The new `carnot-general/carnot_abp_complete.tex` matches the SHA-256 stated in the shared chat; its ZIP was packaged from that TeX file, and its PDF was compiled from it. The AI-assisted expositions are provided as PDF and LaTeX pairs: `carnot_abp`, `heisenberg_abp_general`, and `nonlocal_abp_standalone`. The elliptic, parabolic, and kinetic entropy-ABP resource links currently point to the arXiv homepage. The research-procedure files are published as `mathematical_research_goal.md` to match their names in the prompts. The prompt pages preserve the text, LaTeX, and literal backslash escapes from the supplied prompts. The Heisenberg entry uses a different research-procedure version, stored at `assets/files/heisenberg/mathematical_research_goal.md` with the uploaded `01-` filename prefix removed. The Pucci entry’s supplied procedure is stored at `assets/files/pucci/mathematical_research_goal.md`, renamed from `attached_research_procedure.md`. The dimension-three Pucci entry’s prompt, procedure, and original source ZIP are stored in `assets/files/pucci-d3/`.
 
 Source ZIP SHA-256 checksums:
 
@@ -38,6 +39,7 @@ Source ZIP SHA-256 checksums:
 | `elliptic_maximum_estimates_tex.zip` | `022b05692ecff0fef1a7cdc711760699a0f3503b31686ca0dc0c61aafd359966` |
 | `adjoint_entropy_tex_manuscripts.zip` | `2ee2faf15d5bf621f9862dc5825c8d6d8833fafd5383186a9569c285e42d34f9` |
 | `pucci-d3/complete_solution_tex.zip` | `4c04415841758eb98eb8afa506ce1abbe2d385c011a83fc68db8f280c774ba45` |
+| `carnot-general/carnot_abp_complete_tex_only.zip` | `191e2cae99c156b0f25cdc50c4d11c860549288ae0827e323105623350cc4d02` |
 
 ## Updating the collection
 

@@ -1,0 +1,691 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=24mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\G}{\mathbb G}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\Mom}{\mathsf M}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,d}
+\allowdisplaybreaks[1]
+\title{A scale--tensor proof of an ABP estimate on stratified Carnot groups}
+\date{October 6, 2026}
+\begin{document}
+\begin{abstract}
+We develop a large-$p$ ABP estimate for arbitrary bounded measurable symmetric
+horizontal coefficient matrices on a stratified Carnot group. The regularizer is
+an all-layer, time-dependent left-invariant diffusion. Its exact tensor lift is
+renormalized by its finite-dimensional zero-order moment evolution. The
+normalized nonhorizontal blocks have zero scale-boundary data and positive
+scale damping. Their energies at layer $k$ have constants depending only on
+smoothing weights strictly below $k$. Two integrations by parts pair the
+remaining fluxes with scalar gradient dissipation and yield an inverse current-
+layer smoothing factor. A finite graded parameter selection, followed by a
+small choice of $q-1$, closes the forward adjoint entropy inequality. The
+elliptic maximum estimate follows by resolvent duality, a horizontal quadratic
+barrier, and smooth approximation of the coefficients.
+\end{abstract}
+\maketitle
+
+\section{The result and the role of the new correction}
+Let $\mathfrak g=V_1\oplus\cdots\oplus V_s$ be a stratified Lie algebra,
+$r=\dim V_1$, and $D=\sum_{j=1}^s j\dim V_j$. Fix orthonormal bases
+$Z_{j,\alpha}$ of the layers and write $X_\alpha=Z_{1,\alpha}$. All fields
+are left invariant. Haar measure is understood. Let
+\[
+ L_Au=\sum_{\alpha,\beta=1}^r a_{\alpha\beta}X_\alpha X_\beta u.
+\]
+Symmetry of $A$ means that this is contraction with the symmetrized horizontal
+Hessian. A fixed left-invariant homogeneous distance defines the balls below.
+
+\begin{theorem}\label{thm:abp}
+For every stratified Carnot group $\G$ and $E\ge1$, there is a finite
+$p_0=p_0(\G,E)>1$ with the following property. Let $\Omega\subset B_R(g_0)$
+be bounded and open. Suppose $A:\Omega\to\Sym_r$ is Borel measurable,
+$\lambda I\le A\le\Lambda I$ almost everywhere, and $E=\Lambda/\lambda$.
+If $u\in C^2(\Omega)\cap C(\overline\Omega)$ and $L_Au\ge f$ almost
+everywhere, then, for $p_0\le p\le\infty$,
+\begin{equation}\label{eq:abp}
+ \sup_\Omega u\le b+
+ \frac{C(\G,E,p)}\lambda R^{2-D/p}
+ \norm{f^-\mathbf1_{\{u>b\}}}_{L^p(\Omega)},
+ \qquad b=\sup_{\partial\Omega}u^+.
+\end{equation}
+The constants do not involve coefficient derivatives or a modulus of
+continuity. No lattice or boundary regularity assumption is required.
+\end{theorem}
+
+The common-flow entropy calculation comes from the supplied kinetic and
+Heisenberg notes \cite{Kinetic,Heisenberg}. The additional mechanism here is to
+remove the full tensor's zero-order moment evolution before estimating its
+higher blocks. This is different from either discarding the tensor commutator
+or requiring the complete regularized tensor to be pointwise elliptic.
+
+Normalize $\lambda=R=1$ until the final section. Initially $A$ is smooth,
+$I\le A\le EI$, and is constant outside a compact set. Let
+\begin{equation}\label{eq:physical}
+ m_t=L_A^*m=\sum_{\alpha,\beta}X_\alpha X_\beta(a_{\alpha\beta}m),
+ \qquad m>0,\qquad\int m=1.
+\end{equation}
+The a priori estimates are uniform over these smooth coefficients. Smooth
+positive data with sufficiently rapid polynomial decay can be used initially;
+Section~\ref{sec:analytic} explains the analytic reduction and approximation.
+
+\section{The scalar regularizer and the exact entropy rule}
+Choose $a_1=1$ and $a_j\ge1$, $2\le j\le s$, to be fixed before choosing $q$.
+Put
+\begin{equation}\label{eq:scalegen}
+ \cA_h=\frac12\sum_{j=1}^s a_jh^{j-1}\sum_\alpha Z_{j,\alpha}^2,
+ \qquad \partial_h S_h=\cA_hS_h,\qquad S_0=I.
+\end{equation}
+The evolution is nonautonomous; $S_h$ is not being identified with
+$\exp(h\cA_h)$. It is positive and preserves mass. It is a convolution
+regularizer with a smooth positive kernel $K_h$, with convolution order fixed
+by \eqref{eq:scalegen}. Homogeneous scaling gives
+\begin{equation}\label{eq:kernel}
+ K_h(g)=h^{-D/2}K_1(\delta_{h^{-1/2}}g),\qquad \int K_h=1,
+ \qquad\norm{S_h}_{1\to\infty}\le C_\G h^{-D/2}.
+\end{equation}
+The last constant can be taken independent of the $a_j\ge1$. Indeed, the
+horizontal Nash inequality and
+\[
+ \frac d{dh}\norm{S(h,h_0)v}_2^2
+ =-\sum_j a_jh^{j-1}\norm{\nabla_jS(h,h_0)v}_2^2
+ \le-\norm{\nabla_HS(h,h_0)v}_2^2
+\]
+give the $1\to2$ bound. Applying the same argument to the reverse-time adjoint
+evolution gives $2\to\infty$; composition gives \eqref{eq:kernel}. The
+horizontal Nash inequality follows from the fixed-sub-Laplacian heat bound by
+$\norm{v}_2^2\le h\norm{\nabla_Hv}_2^2+C h^{-D/2}\norm{v}_1^2$ and
+optimization. Only fixed-operator heat facts are used here; see \cite{GTHeat}.
+
+At a fixed physical time, put
+\[
+ \rho=S_hm,\quad g=\log\rho,\quad q=1+\eps,\quad 0<\eps\le\tfrac12,
+ \quad Q(t,h)=\int\rho^q.
+\]
+For a scalar or vector $v$, define
+\begin{align}
+ \cD_q(v)=\sum_{j,\alpha}a_jh^{j-1}\int\rho^q
+ \bigg[&\frac{2-q}{q}|Z_{j,\alpha}v|^2\\[-2mm]
+ &+\frac{q\eps}{2}\left|vZ_{j,\alpha}g+\frac2q Z_{j,\alpha}v\right|^2
+ \bigg].\label{eq:Dq}
+\end{align}
+If $U_h=\cA_hU+F$ and $v=U/\rho$, then
+\begin{equation}\label{eq:entropy-rule}
+ \frac d{dh}\int\rho^{q-2}|U|^2
+ =-\cD_q(v)+2\int\rho^{q-2}\ip UF.
+\end{equation}
+In addition to $\cD_q(v)\ge\frac13\sum a_jh^{j-1}\int\rho^q|Z_jv|^2$,
+we will repeatedly use the exact second form
+\begin{equation}\label{eq:second-square}
+ \cD_q(v)=\sum_{j,\alpha}a_jh^{j-1}\int\rho^q
+ \left[|Z_{j,\alpha}v+\eps vZ_{j,\alpha}g|^2
+ +\frac{\eps(1-\eps)}2|v|^2(Z_{j,\alpha}g)^2\right].
+\end{equation}
+This is why no loss $1/(q-1)$ is needed in the source estimates below.
+
+Write
+\begin{align}
+ I_j(h)&=\sum_\alpha\int\rho^q(Z_{j,\alpha}g)^2,&
+ J_j&=\int_0^1h^{j-1}I_j(h)\dd h,\label{eq:J}\\
+ L_j&=\sum_\alpha\int_0^1h^j\cD_q(Z_{j,\alpha}g)\dd h,&
+ J_*&=\sum_jJ_j,\quad L=\sum_jL_j.\label{eq:L}
+\end{align}
+Then
+\begin{equation}\label{eq:Qgap}
+ Q(t,0)-Q(t,1)=\frac{q\eps}{2}\sum_ja_jJ_j.
+\end{equation}
+
+\section{Uniform scalar estimates and finite parameter selection}
+All constants in this section are uniform for $1<q\le3/2$.
+
+\begin{lemma}\label{lem:scalar}
+Given finitely many polynomials $P_k(a_1,\ldots,a_{k-1})$ with nonnegative
+coefficients, and $\delta>0$, the weights can be chosen so that
+\begin{equation}\label{eq:scalar-targets}
+ J_*\le2J_1,\qquad L\le C_\G J_1,\qquad
+ \sum_{k=2}^sP_k(a_{<k})J_k\le\delta J_1.
+\end{equation}
+One may impose simultaneously any finite collection of conditions
+$P_k(a_{<k})/a_k\le\delta$. The constant $C_\G$ does not depend on the
+values of the weights selected in this way or on $q$.
+\end{lemma}
+
+\begin{proof}
+For $U\in V_i$, $V\in V_j$, write $g_U=Ug$. In the entropy of $U\rho$, the
+commutator with $a_jh^{j-1}V^2/2$ has source
+\begin{align}
+ -2a_jh^{j-1}\int\rho^q
+   (Vg_U+\eps g_Vg_U)[U,V]g
+ +a_jh^{j-1}\int\rho^q g_U[[U,V],V]g.\label{eq:scalar-source}
+\end{align}
+This follows from $[U,V^2]=2V[U,V]+[[U,V],V]$ and one integration by parts.
+Use \eqref{eq:second-square}, multiply by $h^i$, integrate, and discard the
+nonnegative upper endpoint. Summing the basis fields gives
+\begin{equation}\label{eq:scalar-upper}
+ L_i\le C_\G\left[iJ_i+
+ \sum_{j:i+j\le s}a_jJ_{i+j}+
+ \sum_{j:i+2j\le s}a_j\sqrt{J_iJ_{i+2j}}\right].
+\end{equation}
+
+Represent a basis of $V_k$ by fixed linear combinations of
+$[X,Y]$, $X\in V_1$, $Y\in V_{k-1}$. The identity
+\[
+ \int\rho^q(Z_kg)^2
+ =\sum c\int\rho^q\big[(Xg)Y(Z_kg)-(Yg)X(Z_kg)\big]
+\]
+has no derivative-of-weight remainder. Integrating with weight $h^{k-1}$ and
+commuting $Y$ and $X$ to the right of $Z_k$ yields
+\begin{equation}\label{eq:scalar-transfer}
+ J_k\le C_\G\left[
+ \sqrt{J_1\left(L_{k-1}/a_k+J_{2k-1}\right)}+
+ \sqrt{J_{k-1}\left(L_1/a_k+J_{k+1}\right)}\right],
+\end{equation}
+where $J_l=0$ for $l>s$. The weights match exactly: the $Z_k$-dissipation in
+$L_{k-1}$ has scale power $h^{2k-2}$, and that in $L_1$ has power $h^k$.
+
+Here is the parameter argument. If $J_*>0$, set $z_k=J_k/J_*$ and
+$\ell=L/J_*$. Using $z_k\le1$ in \eqref{eq:scalar-transfer} and descending
+from $k=s$ gives a finite sum of bounds
+\begin{equation}\label{eq:scalar-descent}
+ z_k\le C_\G\sum_{r=k}^s\sum_{\theta\in\Theta_{kr}}
+       (\ell/a_r)^\theta,\qquad
+ 2^{-s}\le\theta\le\tfrac12.
+\end{equation}
+The finite sets $\Theta_{kr}$ depend only on the step. Equation
+\eqref{eq:scalar-upper}, summed in $i$, gives
+\[
+ \ell\le C_\G\left[1+\sum_{j<k}a_j(z_k+\sqrt{z_k})\right].
+\]
+Take $a_1=1$ and, for $k\ge2$,
+\begin{equation}\label{eq:hierarchy}
+ a_k=M^{B^{k-2}}.
+\end{equation}
+Choose the integer $B$ sufficiently large compared with $2^s$ and the degrees
+of all the prescribed polynomials. Inserting \eqref{eq:scalar-descent} gives
+\[
+ \ell\le C_\G\left[1+M^{-c_s}\sum_{\theta\in\Theta}\ell^\theta\right],
+ \qquad 0<\theta<1,\quad c_s>0.
+\]
+For sufficiently large $M$, this gives $\ell\le C_\G$, independently of $M$.
+Then \eqref{eq:scalar-descent} gives $z_k\le C_\G a_k^{-c_s}$, after reducing
+$c_s$ if needed. Since $a_k=a_{k-1}^B$, increasing $B$ first and then $M$
+makes all $P_k(a_{<k})z_k$ and $P_k(a_{<k})/a_k$ as small as prescribed.
+Also $\sum_{k\ge2}z_k\le1/2$, so $J_*\le2J_1$ and
+$L\le C_\G J_1$. The case $J_*=0$ is immediate. For $s=1$, there are no
+higher layers and $L_1\le J_1$ directly.
+\end{proof}
+
+This lemma is an existence statement for a separated hierarchy, not a claim
+that raw gradient energies have uniform bounds for every arbitrary unordered
+choice of diffusion weights. Its uniform constant is what permits subsequent
+weights to be made larger without restarting the estimates.
+
+\section{The exact tensor lift and removal of zero-order moments}
+Use one index $\alpha$ for the full homogeneous basis and write $d_\alpha$ for
+its degree. For a symmetric tensor $M$ on $\mathfrak g$, set
+\[
+ \cH M=\sum_{\alpha,\beta}Z_\alpha Z_\beta M_{\alpha\beta},\qquad
+ C_\alpha=\ad_{Z_\alpha},\qquad
+ \cC_\alpha M=C_\alpha M+MC_\alpha^T.
+\]
+A direct expansion gives
+\begin{equation}\label{eq:first-intertwine}
+ [Z_\alpha,\cH]=\cH\cC_\alpha.
+\end{equation}
+Therefore the exact tensor scale generator is
+\begin{align}
+ \cD_h^{\rm ten}
+ &=\frac12\sum_\alpha a_{d_\alpha}h^{d_\alpha-1}
+                         (Z_\alpha+\cC_\alpha)^2\notag\\
+ &=\cA_h+\sum_\alpha a_{d_\alpha}h^{d_\alpha-1}
+                  \cC_\alpha Z_\alpha+\cV_h,\label{eq:tensorgen}\\
+ \cV_h&=\frac12\sum_\alpha a_{d_\alpha}h^{d_\alpha-1}\cC_\alpha^2.
+\end{align}
+Let $A_H$ be the horizontal embedding of $A$, and solve
+\[
+ N_h=\cD_h^{\rm ten}N,\qquad N(0)=mA_H.
+\]
+Equation \eqref{eq:first-intertwine} implies
+\begin{equation}\label{eq:physical-lift}
+ \cA_h\cH=\cH\cD_h^{\rm ten},\qquad
+ S_h\cH(mA_H)=\cH N,\qquad \rho_t=\cH N.
+\end{equation}
+There is no residual commutator in the physical equation.
+
+Define a finite-dimensional moment evolution
+\begin{equation}\label{eq:moment}
+ \Mom_h'=\cV_h\Mom_h,\qquad \Mom_0=I,
+ \qquad \widehat N=\Mom_h^{-1}N.
+\end{equation}
+Each $C_\alpha$ raises degree, so $\Mom_h$ and $\Mom_h^{-1}$ are finite
+polynomials in $h$ and the weights. This removes the zero-order forcing:
+\begin{equation}\label{eq:renormalized-N}
+ \widehat N_h=\cA_h\widehat N+
+ \sum_\alpha a_{d_\alpha}h^{d_\alpha-1}
+     \Mom_h^{-1}\cC_\alpha\Mom_h Z_\alpha\widehat N.
+\end{equation}
+
+The moment map preserves the positive-semidefinite cone. Indeed,
+\[
+ e^{\tau\cC_\alpha^2/2}M
+ =\mathbb E\big[e^{\sqrt\tau\,\xi C_\alpha}M
+                     e^{\sqrt\tau\,\xi C_\alpha^T}\big],
+ \qquad \xi\sim N(0,1),
+\]
+and products and time limits preserve this property. Put
+\[
+ D_h^{\rm gr}=\operatorname{diag}(h^{(d_\alpha-1)/2}).
+\]
+For horizontal input $M_H$,
+\begin{equation}\label{eq:moment-scaling}
+ \Mom_h(M_H)=D_h^{\rm gr}\Mom_1(M_H)D_h^{\rm gr}.
+\end{equation}
+The $V_k\times V_k$ block of $\Mom_1(I_H)$ is bounded by a polynomial in
+$a_1,\ldots,a_{k-1}$. Its horizontal block is exactly $I_r$.
+
+\section{The layerwise tensor energy with strict weight independence}
+For an unordered tensor block $\alpha=(i,k)$, $i\le k$, put
+\[
+ n_\alpha=i+k-2,\qquad
+ B_\alpha=h^{-n_\alpha/2}\widehat N_{ik}/\rho.
+\]
+The horizontal block is
+\[
+ B_0=B_{11}=S_h(Am)/\rho,\qquad I\le B_0\le EI.
+\]
+It has the exact common-flow estimate
+\begin{equation}\label{eq:base-F}
+ F_0(h)=\int\rho^q|B_0|^2,\qquad F_0'=-\cD_q(B_0),\qquad
+ \int_0^1\cD_q(B_0)\dd h\le rE^2Q(t,0).
+\end{equation}
+
+Order the remaining blocks by increasing total degree, refining ties in any
+way. In \eqref{eq:renormalized-N}, a source into $B_\alpha$ has the form
+\begin{equation}\label{eq:block-source}
+ c_{\alpha\beta j}(a_{<k})\,h^{j/2-1}
+       \big(Z_jB_\beta+B_\beta Z_jg\big),
+ \qquad n_\beta<n_\alpha,\quad\max\beta\le k,\quad j<k.
+\end{equation}
+The coefficients are fixed linear maps and polynomials in weights strictly
+below $k$. To verify the power of $h$, a conjugated term with degree increment
+$n_\alpha-n_\beta$ has, before normalization, coefficient
+$h^{(n_\alpha-n_\beta+j)/2-1}$. Normalization leaves $h^{j/2-1}$.
+The restriction $j<k$ follows because $\ad_{Z_j}$ raises a nonzero input
+index by $j$, so its output index is at least $j+1$. The same argument applies
+to every factor in the moment maps.
+
+In addition to the scalar quotient generator, $B_\alpha$ has the drift
+$-n_\alpha B_\alpha/(2h)$. Set $F_\alpha=\int\rho^q|B_\alpha|^2$.
+Its exact energy identity is
+\begin{equation}\label{eq:block-energy}
+ F_\alpha'+\cD_q(B_\alpha)+\frac{n_\alpha}{h}F_\alpha
+ =2\sum_{\beta,j}h^{j/2-1}\int\rho^q
+  \ip{B_\alpha}{c_{\alpha\beta j}(Z_jB_\beta+B_\beta Z_jg)}.
+\end{equation}
+The normalized nonhorizontal blocks have zero boundary value at $h=0$ for
+smooth data: the moment forcing has been removed, and each remaining source
+has at least one spatial derivative and an additional positive power
+$h^{j/2}$ after time integration. Thus $F_\alpha(0)=0$.
+
+\begin{lemma}\label{lem:tensor-energy}
+For every $\alpha=(i,k)\ne(1,1)$ there is a polynomial
+$K_\alpha(a_1,\ldots,a_{k-1})$ with nonnegative coefficients such that
+\begin{equation}\label{eq:tensor-independent}
+ F_\alpha(1)+\int_0^1\left[\cD_q(B_\alpha)+h^{-1}F_\alpha\right]\dd h
+ \le K_\alpha(a_{<k})E^2\left[Q(t,0)+\sum_{j<k}J_j\right].
+\end{equation}
+The constants are independent of $a_k,\ldots,a_s$, of $q\in(1,3/2]$, and
+of all coefficient derivatives.
+\end{lemma}
+
+\begin{proof}
+For a nonhorizontal input block $\beta$, integrate its source in
+\eqref{eq:block-energy} by parts:
+\begin{equation}\label{eq:key-ibp}
+ \int\rho^q\ip{B_\alpha}{c(Z_jB_\beta+B_\beta Z_jg)}
+ =-\int\rho^q\ip{Z_jB_\alpha+\eps B_\alpha Z_jg}{cB_\beta}.
+\end{equation}
+Using \eqref{eq:second-square} and Young's inequality, this is bounded, after
+including $2h^{j/2-1}$, by a small part of $\cD_q(B_\alpha)$ plus
+\[
+ C\norm c^2 a_j^{-1}h^{-1}F_\beta.
+\]
+For the horizontal input block, instead use $|B_0|\le\sqrt r E$ and the
+positive damping $n_\alpha F_\alpha/h$. Its source is bounded by a small
+part of that damping plus
+\[
+ C\norm c^2h^{j-1}\int\rho^q
+          (|Z_jB_0|^2+rE^2|Z_jg|^2).
+\]
+Upon integration, \eqref{eq:base-F} controls the first term and the second is
+$C\norm c^2rE^2J_j$. All $j$ occurring here are below $k$. Absorb the chosen
+small parts in \eqref{eq:block-energy}, integrate, and induct in the strictly
+increasing total degree. Since $a_j\ge1$, inverse $a_j$ factors may be
+bounded by one. Squaring the finitely many source coefficients and multiplying
+by previously obtained constants produces a polynomial only in $a_{<k}$.
+This proves \eqref{eq:tensor-independent}.
+\end{proof}
+
+Define the physical remainder
+\begin{equation}\label{eq:remainder}
+ \cE_h=N-\Mom_h((\rho B_0)_H),\qquad
+ E_{ik}=h^{-(i+k-2)/2}(\cE_h)_{ik}/\rho.
+\end{equation}
+By the polynomial scaling of $\Mom_h$, each $E_{ik}$ is a finite linear
+combination of lower normalized blocks. Thus, enlarging the polynomials,
+\begin{equation}\label{eq:remainder-energy}
+ \int_0^1\frac1h\int\rho^q|E_{ik}|^2\dd h
+ \le K_k(a_{<k})E^2\left[Q(t,0)+\sum_{j<k}J_j\right].
+\end{equation}
+Again there is no dependence on current or higher weights in $K_k$.
+
+\section{Engel: the correction in explicit coordinates}
+For $[X,Y]=Z$, $[X,Z]=W$, $[Y,Z]=0$, with $W$ central, use
+\[
+ \cA_h=\tfrac12(X^2+Y^2)+\tfrac12a_2hZ^2+\tfrac12a_3h^2W^2.
+\]
+Write the full tensor as
+\[
+ N=\begin{pmatrix}
+ H_{11}&H_{12}&u_1&v_1\\
+ H_{12}&H_{22}&u_2&v_2\\
+ u_1&u_2&z&r\\
+ v_1&v_2&r&w
+ \end{pmatrix}.
+\]
+Put $V_1=(\cC_X^2+\cC_Y^2)/2$ and $V_2=\cC_Z^2/2$. All products of total
+raising degree at least six vanish. Hence
+\[
+ \Mom_h=I+hV_1+\tfrac12h^2(V_1^2+a_2V_2),\qquad
+ \Mom_h^{-1}=I-hV_1+\tfrac12h^2(V_1^2-a_2V_2).
+\]
+The renormalized blocks are
+\begin{align}
+ \widehat H&=H,& \widehat u&=u,\notag\\
+ \widehat v&=v-\tfrac h2(H_{12},H_{22})^T,&
+ \widehat z&=z-h\tr H,\notag\\
+ \widehat r&=r-\tfrac32h u_2,&
+ \widehat w&=w-h(v_2+z)+\tfrac14h^2(2H_{11}+3H_{22})
+                         -\tfrac12a_2h^2H_{11}.\label{eq:engel-corrections}
+\end{align}
+Normalize $\widehat u,\widehat v,\widehat z,\widehat r,\widehat w$ by,
+respectively, $\sqrt h\rho,h\rho,h\rho,h^{3/2}\rho,h^2\rho$.
+The layer-two energy has a constant independent of both $a_2,a_3$; the
+layer-three energy has a constant depending on $a_2$ but independent of $a_3$.
+This is exactly the strict dependency required for choosing the weights.
+
+For horizontal constant input $A$, the positive deterministic moment tensor is
+\[
+ \Mom_h(A_H)=
+ \begin{pmatrix}
+ A_{11}&A_{12}&0&hA_{12}/2\\
+ A_{12}&A_{22}&0&hA_{22}/2\\
+ 0&0&h\tr A&0\\
+ hA_{12}/2&hA_{22}/2&0&h^2(2a_2A_{11}+2A_{11}+3A_{22})/4
+ \end{pmatrix}.
+\]
+Thus all renormalized nonhorizontal blocks vanish for spatially constant
+$m,A$. The nonintegrable geometric variance in an uncorrected running-scale
+energy has been removed, not estimated in absolute value.
+
+\section{Physical-time coupling and closure}
+Put $\cU(t)=\int_0^1Q(t,h)\dd h$. Split the exact physical flux as
+\[
+ \rho_t=\cH\big(\Mom_h((\rho B_0)_H)\big)+\cH\cE_h.
+\]
+We now estimate both parts. All parameter choices in this section precede the
+choice of $\eps$.
+
+\subsection{The positive moment part}
+In the scaled covector frame $\widehat g_j=h^{(j-1)/2}\nabla_jg$, put
+$M=\Mom_1((B_0)_H)$. Positivity of $\Mom_1$ gives $M\ge0$,
+$M_{11}=B_0\ge I$, and
+\[
+ M_{kk}\le E P_k(a_{<k})I
+\]
+for fixed polynomials $P_k$. Positivity and a block Cauchy--Schwarz estimate give
+\begin{equation}\label{eq:moment-good}
+ \ip{M\widehat g}{\widehat g}
+ \ge\tfrac12|\nabla_Hg|^2
+       -C_\G E\sum_{k\ge2}P_k(a_{<k})h^{k-1}|\nabla_kg|^2.
+\end{equation}
+After one integration by parts, the other term differentiates $B_0$ only.
+The norm of the fixed linear map $\Mom_1$, \eqref{eq:base-F}, and
+$J_*\le2J_1$ give
+\begin{equation}\label{eq:base-derivative-error}
+ \left|\int_0^1\!\int\rho^q
+ \sum_{\alpha,\beta}\widehat g_\alpha
+ \big[\Mom_1((\widehat Z_\beta B_0)_H)\big]_{\alpha\beta}\right|
+ \le\tfrac1{16}J_1+C_aQ(t,0),
+\end{equation}
+where $\widehat Z_\beta=h^{(d_\beta-1)/2}Z_\beta$ and $C_a$ is finite and
+independent of $q$ and coefficient derivatives. Dependence of $C_a$ on all
+weights is harmless: it multiplies $q\eps Q(t,0)$, and $\eps$ is chosen last.
+Lemma~\ref{lem:scalar} makes the higher-layer sum in
+\eqref{eq:moment-good} at most $J_1/16$.
+
+\subsection{The corrected tensor remainder}
+This is where two integrations by parts, rather than a pointwise tensor bound,
+are decisive. For a block with degrees $i\le k$, its contribution to $Q_t$ is a
+finite sum of terms
+\begin{equation}\label{eq:two-ibp}
+ q\eps\int\rho^q h^{(i+k-2)/2}E_{ik}
+          \big(Z_k(Z_ig)+\eps(Z_kg)(Z_ig)\big),
+\end{equation}
+plus terms with $[Z_i,Z_k]g$. Indeed, interchange the two derivatives in the
+symmetrized Hessian so that the higher-layer derivative is outside; the
+resulting bracket has degree $i+k$.
+
+Let $\mathfrak E_{ik}=\int_0^1h^{-1}\int\rho^q|E_{ik}|^2\dd h$.
+Equation \eqref{eq:second-square} and Cauchy--Schwarz in space and scale give
+\begin{equation}\label{eq:flux-estimate}
+ \left|\int_0^1\text{the $(i,k)$ remainder in $Q_t$}\dd h\right|
+ \le C_\G q\eps\sqrt{\mathfrak E_{ik}}
+       \left(\sqrt{L_i/a_k}+\sqrt{J_{i+k}}\right),
+\end{equation}
+where $J_{i+k}=0$ if $i+k>s$. The weights are exact:
+$h^{(i+k-2)/2}=h^{-1/2}h^{(i+k-1)/2}$.
+
+Using \eqref{eq:remainder-energy} and the scalar lemma, the first part of
+\eqref{eq:flux-estimate} is bounded by
+\[
+ C_\G q\eps E\sqrt{K_k(a_{<k})/a_k}
+             \sqrt{Q(t,0)+J_1}\sqrt{J_1}.
+\]
+Make $E^2K_k(a_{<k})/a_k$ small. For the bracket terms prescribe in
+Lemma~\ref{lem:scalar} the finitely many polynomials
+\[
+ \widetilde P_l(a_{<l})=E^2\sum_{i+k=l}K_k(a_{<k}).
+\]
+Their dependency is strictly lower because $k<i+k=l$. Choose their weighted
+sum times $J_l$ small. The lemma and its simultaneous ratio conditions give
+one finite choice of weights satisfying all these requirements. Consequently
+all remainder terms together are bounded by
+\begin{equation}\label{eq:small-flux}
+ q\eps\left(\tfrac1{16}J_1+C_aQ(t,0)\right),
+\end{equation}
+after enlarging $C_a$.
+
+\subsection{The closed entropy inequality}
+Combining \eqref{eq:moment-good}--\eqref{eq:small-flux} gives
+\begin{equation}\label{eq:time-J1}
+ \cU'(t)\le-\tfrac14q\eps J_1+C_aq\eps Q(t,0).
+\end{equation}
+All constants and smoothing weights have already been fixed. From
+\eqref{eq:Qgap} and $J_*\le2J_1$,
+\[
+ Q(t,0)-Q(t,1)\le q\eps C_{\rm gap}J_1,
+ \qquad C_{\rm gap}=\max_ja_j.
+\]
+Choose
+\begin{equation}\label{eq:eps-choice}
+ 0<\eps\le\min\left\{\tfrac12,\frac1D,
+               \frac1{12C_{\rm gap}(1+C_a)}\right\}.
+\end{equation}
+Then
+\begin{equation}\label{eq:closed}
+ \boxed{\displaystyle
+ \cU'(t)+\frac1{8C_{\rm gap}}Q(t,0)
+       \le\frac1{4C_{\rm gap}}Q(t,1).}
+\end{equation}
+The coefficient error is absorbed only now, by choosing $q-1$ small. No
+smoothing weight was chosen using a coefficient derivative or $1/(q-1)$.
+
+\section{Adjoint estimate and the elliptic maximum estimate}\label{sec:analytic}
+By mass preservation and \eqref{eq:kernel},
+\[
+ Q(t,h)\le C_\G^\eps h^{-D\eps/2}.
+\]
+Integrate \eqref{eq:closed} on $0<t<1$, use $\cU(1)\ge0$, and note that
+$D\eps/2<1$. It follows that
+\begin{equation}\label{eq:adjoint}
+ \norm{P_t^*m_0}_{L^q((0,1)\times\G)}
+ \le C(\G,E,q)\norm{m_0}_1.
+\end{equation}
+This is first proved for smooth $A$ and good positive initial data, uniformly
+in all coefficient derivatives, and then for nonnegative $L^1$ initial data by
+approximation and adjoint $L^1$ contraction. The same proof holds for every
+smaller $\eps>0$ than the fixed choice in \eqref{eq:eps-choice}.
+
+\subsection{Analytic justification for the smooth calculation}
+For smooth $A$ equal to $I$ outside a compact set, the operator $L_A$ is a
+smooth horizontal diffusion satisfying H\"ormander's condition. Its conservative
+positive semigroup and smooth solutions are standard smooth-coefficient
+inputs; no quantitative constant from such results is used in
+\eqref{eq:closed}. For example, smooth coefficients are included in the
+fundamental-solution theory in \cite{BLU,Faini}.
+
+Conservativity can also be checked directly: in exponential coordinates the
+coefficients of the equation for a coordinate in layer $k$ are polynomials in
+strictly lower-layer coordinates, multiplied by bounded entries of $A$ or its
+square root. The first-layer process has bounded covariance. Induction in $k$
+and stopped moment estimates give finite moments on every finite time interval
+and rule out explosion. This argument does not bound a derivative of $A$.
+
+For the a priori calculation one may take a smooth positive initial density
+with sufficiently fast polynomial decay and with its derivatives bounded by
+an integrable polynomial weight. Smooth-coefficient kernel bounds and local
+regularity, or the Duhamel formula against the fixed sub-Laplacian outside the
+compact perturbation, justify spatial cutoffs and all integrations by parts.
+The scalar and finite triangular tensor scale equations have the same
+admissible decay. At $h=0$, the renormalized higher blocks tend to zero at a
+positive power of $h$ for smooth inputs. Coefficient derivatives are used only
+qualitatively for these endpoint limits. None enters the bounds proved before
+passing to the limits. Initial densities in this class approximate arbitrary
+nonnegative $L^1$ data. These whole-group arguments avoid any lattice issue.
+
+\subsection{Resolvent duality and comparison}
+For smooth nonnegative compactly supported $a$, duality in \eqref{eq:adjoint}
+gives
+\[
+ \left\|\int_0^1P_ta\dd t\right\|_\infty\le C\norm a_{p_0},
+ \qquad p_0=1+1/\eps.
+\]
+Positivity and $L^\infty$ contraction give, by splitting the time integral into
+unit intervals,
+\begin{equation}\label{eq:resolvent}
+ v=(1-L_A)^{-1}a=\int_0^\infty e^{-t}P_ta\dd t\ge0,
+ \qquad\norm v_\infty\le C_R\norm a_{p_0},\qquad L_Av=v-a.
+\end{equation}
+The solution is smooth by smooth hypoellipticity. Let $x_H$ denote first-layer
+coordinates. On $B_1$ choose
+\[
+ b_0=(K-|x_H|^2)/(2r)>0.
+\]
+Then $L_Ab_0=-\tr A/r\le-1$. The usual interior-maximum argument applied to
+$w-\tau b_0$ proves comparison on every open subset of $B_1$, without boundary
+regularity: at an interior maximum the full Euclidean gradient vanishes and
+$L_A(w-\tau b_0)\le0$.
+
+\subsection{Measurable coefficients and the active set}
+After subtracting the upper boundary value, fix $\delta>0$ and
+$O_\delta=\{u>\delta\}\Subset\Omega$. Choose $\chi\in C_c^\infty(\Omega)$,
+$0\le\chi\le1$, equal to one near $\overline O_\delta$ and supported in
+$\{u>\delta/2\}$. Extend and mollify $A$ to obtain smooth $A_\nu$ equal to
+$I$ outside a fixed compact set, with $I\le A_\nu\le EI$ and local convergence
+in every finite $L^p$. Set $a_\nu=\chi(-L_{A_\nu}u)^+$. Then
+\begin{equation}\label{eq:rough-limit}
+ \norm{a_\nu}_{p_0}
+ \le\norm{f^-\mathbf1_{\{u>\delta/2\}}}_{p_0}+o(1).
+\end{equation}
+The error on the fixed compact support is bounded by
+$|A_\nu-A|\,|D_H^{2,*}u|$; this tends to zero in $L^{p_0}$.
+
+Approximate each continuous compactly supported $a_\nu$ uniformly from above
+by smooth nonnegative functions supported in a fixed slightly larger compact
+set. Let $v=(1-L_{A_\nu})^{-1}a$ and $M=\norm v_\infty$. On $O_\delta$,
+\[
+ L_{A_\nu}(u-\delta-v-Mb_0)\ge-a-(v-a)+M\ge0,
+\]
+and the boundary values are nonpositive. Comparison and
+\eqref{eq:resolvent} give
+\[
+ \sup_{O_\delta}(u-\delta)\le(1+\norm{b_0}_\infty)C_R\norm a_{p_0}.
+\]
+Pass through the smooth majorant approximation, then $\nu\to\infty$, then
+$\delta\downarrow0$. This proves the normalized maximum estimate with the
+active-set indicator. It uses no existence or uniqueness assertion for a
+rough-coefficient resolvent or adjoint evolution.
+
+Finally use $\Phi(g)=g_0\delta_Rg$, $\bar A=\lambda^{-1}A\circ\Phi$,
+$\bar u=u\circ\Phi$. The forcing rescales as
+\[
+ \norm{\lambda^{-1}R^2f\circ\Phi}_p
+ =\lambda^{-1}R^{2-D/p}\norm f_p.
+\]
+For $p\ge p_0$, use H\"older's inequality and $|\Omega|\le C_\G R^D$.
+This proves Theorem~\ref{thm:abp}.
+
+\section{Summary of the noncircular dependencies}
+At tensor layer $k$, \eqref{eq:tensor-independent} and
+\eqref{eq:remainder-energy} depend only on $a_1,\ldots,a_{k-1}$. The current
+weight $a_k$ supplies the denominator in \eqref{eq:flux-estimate}; higher
+weights remain available for the bracket term of degree $i+k$. The scalar
+lemma handles any finite list of these strictly lower-dependent polynomials.
+The coefficients of $Q(t,0)$ may depend on all weights, because $q-1$ is
+chosen only after the weights have been fixed. This separates geometric
+absorption from coefficient absorption and closes the scale entropy.
+
+The argument uses neither an assumed rough-coefficient Gaussian kernel nor a
+pointwise full-rank bound on the transported tensor. The replacement for the
+kinetic Gaussian is the scalar all-layer kernel \eqref{eq:kernel}, its exact
+tensor lift \eqref{eq:tensorgen}, and the finite moment correction
+\eqref{eq:moment}.
+
+\begin{thebibliography}{9}
+\bibitem{Kinetic} \emph{Kinetic ABP through adjoint estimate}, supplied
+unpublished manuscript, \texttt{kinetic ABP-adjoint.tex}.
+\bibitem{Heisenberg} \emph{A short analytic proof of a Heisenberg ABP estimate},
+supplied unpublished manuscript, \texttt{heisenberg-abp.tex}.
+\bibitem{GTHeat} N. Garofalo and G. Tralli, \emph{A universal heat semigroup
+characterisation of Sobolev and BV spaces in Carnot groups},
+arXiv:2205.04574, 2022.
+\bibitem{BLU} A. Bonfiglioli, E. Lanconelli and F. Uguzzoni,
+\emph{Fundamental solutions for non-divergence form operators on stratified
+groups}, Trans. Amer. Math. Soc. \textbf{356} (2004), 2709--2737.
+\bibitem{Faini} M. Faini, \emph{Non-divergence evolution operators modeled on
+H\"ormander vector fields with Dini continuous coefficients}, Mathematics in
+Engineering \textbf{8} (2026), 477--517, doi:10.3934/mine.2026015.
+\end{thebibliography}
+\end{document}

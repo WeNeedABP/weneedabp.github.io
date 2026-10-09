@@ -186,9 +186,10 @@ main:has(> .prompt) .intro { font-size: 19px; }
 }
 .prompt code { font: inherit; }
 /* Copyable BibTeX citation, matching the resource boxes. */
-.citation-box { margin-top: 36px; }
-.citation-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
-.citation-header .related-label { margin: 0; }
+.citation-section { margin-top: 36px; }
+.citation-section > h2 { margin: 0 0 18px; font-size: clamp(28px, 3vw, 32px); }
+.citation-box { margin-top: 0; }
+.citation-header { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 12px; }
 .citation-actions { display: flex; align-items: center; gap: 10px; }
 .citation-status { color: var(--muted); font: 12px/1.5 var(--sans); }
 .citation-copy {

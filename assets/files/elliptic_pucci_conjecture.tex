@@ -75,11 +75,10 @@ trace-normalized elliptic operators}
 \begin{document}
 
 \begin{abstract}
-We give a unified proof of the sharp maximum estimate for uniformly elliptic operators in nondivergence form with measurable, trace-one coefficients. If $d\ge3$ and $A\ge\delta I$, the estimate from $L^p$ to $L^\infty$ holds precisely for
+We give a proof of the sharp maximum estimate for uniformly elliptic operators in nondivergence form with measurable coefficient matrices of trace one. If $d\ge3$ and $A\ge\delta I$, the estimate from $L^p$ to $L^\infty$ holds precisely for
 \[
  p>\max\left\{\frac d2,\ d\bigl[1-(d-1)\delta\bigr]\right\}.
 \]
-A radial construction explains both restrictions and gives failure at the critical exponent. Above exponent two, the proof proceeds through a shifted-determinant inequality, positive corrections for the double divergence, and an adjoint measure estimate. The remaining three-dimensional range is obtained from a positive-source inequality for Newtonian potentials, proved by a projection argument and a spectral calculation. A whole-space obstacle transfers this inequality to general elliptic operators. The argument requires no global Sobolev assumption on the solution.
 \end{abstract}
 
 \maketitle
@@ -116,42 +115,42 @@ if and only if $p>\pcrit$.
 
 The constant is uniform over all admissible coefficient fields; no modulus of continuity of $A$ is involved. Moreover, $D^2u$ need not belong to any global $L^p$ space. The word \emph{sharp} refers to the range of exponents, not to the numerical value of $C$.
 
-The two terms in $\pcrit$ have different meanings. The term $d/2$ is the potential-theoretic obstruction already present for the Laplacian. The term $d\lam$ measures the additional concentration allowed by anisotropy. As $\delta$ decreases to zero, this second term approaches the classical exponent $d$; near the isotropic matrix $I/d$, the Newtonian threshold is the decisive one. Rescaling also gives, on a ball $B_R$ and for zero boundary values,
+The two terms in $\pcrit$ have different meanings. The term $d/2$ is the potential-theoretic obstruction already present for the Laplacian. The term $d\lam$ measures the additional concentration allowed by anisotropy. As $\delta$ decreases to zero, this second term approaches the classical exponent $d$; near the isotropic matrix $I/d$, the threshold $d/2$ is the decisive one. Rescaling also gives, on a ball $B_R$ and for zero boundary values,
 \[
  \norm{u}_{L^\infty(B_R)}
  \le C R^{2-d/p}\norm{L_Au}_{L^p(B_R)}.
 \]
-Thus the result identifies exactly when an integrable forcing term controls the amplitude of the solution, uniformly with respect to all measurable arrangements of the coefficients.
+Thus the result identifies exactly when an integrable forcing term controls the amplitude of the solution, uniformly with respect to all measurable coefficient fields.
 
 \subsection{Historical background}
 The modern theory of maximum estimates for rough coefficients begins with the geometric arguments of Aleksandrov and Bakel'man \cite{Aleksandrov1960,Bakelman1961}. In the classical Aleksandrov--Bakel'man--Pucci estimate, one first controls the gradient image of a contact set by a Hessian determinant. The arithmetic--geometric mean inequality then converts the determinant into the elliptic operator, giving an $L^d$ maximum estimate without continuity of the coefficients. These two steps appear explicitly in Pucci's paper \cite[\S1, Propositions~V--VI, pp.~18--19; \S2, Lemma and Theorem~I, pp.~20--21]{PucciBounds1966}. In his addition in proof, Pucci also acknowledges the earlier work of Aleksandrov and Bakel'man \cite[p.~30]{PucciBounds1966}.
 
-The question addressed here is stated precisely in \cite[\S9, Observation~II, p.~166]{PucciExtremal1966}, immediately after the failure estimate~(84). With Pucci's notation $m=d$ and $\alpha=\delta$, his proposed threshold is exactly $\pcrit$. The radial counterexamples are developed in Theorem~XIII, pp.~164--165, and the conjecture is restated in \cite[\S4(a), p.~27]{PucciBounds1966}. Thus the two restrictions in Theorem~\ref{thm:main} were already identified in the original formulation.
+The question addressed here is stated precisely in \cite[\S9, Observation~II, p.~166]{PucciExtremal1966}, immediately after inequality~(84), which shows failure of the estimate. With Pucci's notation $m=d$ and $\alpha=\delta$, his proposed threshold is exactly $\pcrit$. The radial counterexamples are developed in Theorem~XIII, pp.~164--165, and the conjecture is restated in \cite[\S4(a), p.~27]{PucciBounds1966}. Thus the two restrictions in Theorem~\ref{thm:main} were already identified in the original formulation.
 
-Pucci also proved a positive estimate above this threshold, but in a different norm. The space $D_\mu$ introduced in \cite[\S7, pp.~160--161]{PucciExtremal1966} is defined through superpositions of radial majorants and satisfies $\norm f_{L^\mu}\le\norm f_{D_\mu}$; see equation~(71) there. His Theorem~XII in \S8, pp.~162--163, bounds the solution by $\norm{L_Au}_{D_\mu}$ when $\mu>\pcrit$. This stronger norm is essential to distinguish that result from the conjectured estimate with the ordinary $L^\mu$ norm.
+Pucci also proved an a priori estimate above this threshold, but in a different norm. The space $D_\mu$ introduced in \cite[\S7, pp.~160--161]{PucciExtremal1966} is defined through superpositions of radial majorants and satisfies $\norm f_{L^\mu}\le\norm f_{D_\mu}$; see equation~(71) there. His Theorem~XII in \S8, pp.~162--163, bounds the solution by $\norm{L_Au}_{D_\mu}$ when $\mu>\pcrit$. This stronger norm is essential to distinguish that result from the conjectured estimate with the ordinary $L^\mu$ norm.
 
-There is an important contrast with the perturbative theory. The singular-integral estimates of Calder\'on and Zygmund \cite{CZ1952} control the Hessian of a Newtonian potential in $L^p$, while Cordes \cite{Cordes1956} obtained second-derivative estimates for coefficient matrices sufficiently close to the isotropic regime. Such estimates give another route to bounds on solutions, through Sobolev embedding. They do not, by themselves, determine the optimal maximum-estimate exponent for an arbitrary fixed ellipticity class. In particular, the present question concerns control of $u$, rather than a uniform estimate for all of $D^2u$.
+There is an important contrast with the perturbative theory. The singular-integral estimates of Calder\'on and Zygmund \cite{CZ1952} control the Hessian of a Newtonian potential in $L^p$, while Cordes \cite{Cordes1956} obtained second-derivative estimates for coefficient matrices sufficiently close to the isotropic regime. Such estimates give another route to bounds on solutions, through Sobolev embedding. They do not, by themselves, determine the optimal integrability threshold for the maximum estimate for an arbitrary fixed ellipticity class. In particular, the present question concerns control of $u$, rather than a uniform estimate for all of $D^2u$.
 
-The regularity theory of Krylov and Safonov \cite{KrylovSafonov1980} showed that measurable coefficients are compatible with Harnack inequalities and interior H\"older regularity. A different but closely connected advance was the work of Fabes and Stroock \cite{FabesStroock1984}, who proved higher integrability of Green functions. By duality, their estimates improve the maximum principle from $L^d$ to $L^p$ for $p>d-\varepsilon$, where $\varepsilon>0$ depends on ellipticity. This is a qualitative improvement: it does not identify the exact critical exponent. Cabr\'e \cite{Cabre1995} further developed the relation between the Aleksandrov--Bakel'man--Pucci estimate and reverse H\"older inequalities. More recently, Jung and Woo \cite{JungWoo2025} revisited the Fabes--Stroock method in the presence of critical-integrability drift terms. Those extensions concern a broader operator class than the drift-free one considered here.
+The regularity theory of Krylov and Safonov \cite{KrylovSafonov1980} showed that measurable coefficients are compatible with Harnack inequalities and interior H\"older regularity. A different but closely connected advance was the work of Fabes and Stroock \cite{FabesStroock1984}, who proved higher integrability of Green functions. By duality, their estimates improve the maximum principle from $L^d$ to $L^p$ for $p>d-\varepsilon$, where $\varepsilon>0$ depends on ellipticity. This is a qualitative improvement: it does not identify the exact critical exponent. Cabr\'e \cite{Cabre1995} further developed the relation between the Aleksandrov--Bakel'man--Pucci estimate and reverse H\"older inequalities. More recently, Jung and Woo \cite{JungWoo2025} revisited the Fabes--Stroock method in the presence of drift terms in $L^d$. Those extensions concern a broader operator class than the drift-free one considered here.
 
-These linear estimates also enter fully nonlinear regularity theory. Caffarelli's interior theory \cite{Caffarelli1989} and Escauriaza's subsequent $W^{2,n}$ estimates \cite{Escauriaza1993} form a related line of development. In particular, Escauriaza used the improvement below the dimension in nonlinear estimates. It is useful to distinguish this nonlinear application from the earlier Green-function and maximum-principle improvement of Fabes and Stroock.
+These linear estimates also enter fully nonlinear regularity theory. Caffarelli's interior theory \cite{Caffarelli1989} and Escauriaza's subsequent $W^{2,n}$ estimates \cite{Escauriaza1993} form a related line of development. In particular, Escauriaza used the improvement to right-hand-side integrability exponents below $d$ in nonlinear estimates. It is useful to distinguish this nonlinear application from the earlier Green-function and maximum-principle improvement of Fabes and Stroock.
 
 In two dimensions, the sharp problem admits a special approach through quasiconformal mappings. Astala's area-distortion theorem \cite{Astala1994} supplied a fundamental tool, and Astala, Iwaniec, and Martin resolved the planar Pucci problem in \cite[Theorem~3.5]{AIM2006}. For the trace-normalized class, the corresponding threshold is $2(1-\delta)$. The argument exploits structures specific to the plane, and does not directly provide the higher-dimensional estimate in Theorem~\ref{thm:main}.
 
 A higher-dimensional approach was developed by Kuo and Trudinger \cite[Theorem~1.1]{KuoTrudinger2007}, using cones associated with the elementary symmetric functions of the eigenvalues. Their estimates replace the determinant underlying the classical maximum principle by the $k$-Hessian structure. Trudinger subsequently related these cones more explicitly to Pucci's problem \cite{Trudinger2020}; see also the quantitative cone inclusion in \cite[Section~5]{Trudinger2024}. For the class \eqref{eq:parameters}, an integer $k$ satisfying $k>d\lam$ gives an $L^k$ maximum estimate when $k>d/2$, and estimates for every $p>d/2$ when $k\le d/2$. These results recover important parts of the conjectured range, but their integer parameter does not in general reach the continuously varying threshold $d\lam$.
 
-The adjoint argument below belongs to another development: integrability created by combining a differential constraint with positivity. Serre proved a determinant estimate for positive symmetric tensors whose row-wise divergence vanishes \cite[Theorem~2.1]{Serre2018}. Its proof uses a Monge--Amp\`ere equation and integration by parts. Guerra, Rai\c{t}\u{a}, and Schrecker developed related estimates for higher-order constraints and dual Hessian cones \cite[Theorem~D]{GRS2024}. This distinction in the constraint is essential: the adjoint equation here controls the \emph{double divergence}, not the row-wise divergence. We use a scalar shifted-determinant bound adapted to that weaker constraint. The required periodic Monge--Amp\`ere existence result is Li's \cite[Theorem~2.2, p.~248]{Li1990}; see also \cite[Theorem~0.2, p.~99]{CaffarelliLi2004}.
+The adjoint argument below belongs to another development: integrability created by combining a differential constraint with positivity. Serre proved a determinant estimate for symmetric positive semidefinite tensors whose row-wise divergence vanishes \cite[Theorem~2.1]{Serre2018}. Its proof uses a Monge--Amp\`ere equation and integration by parts. Guerra, Rai\c{t}\u{a}, and Schrecker developed related estimates for higher-order constraints and dual G{\aa}rding cones \cite[Theorem~D]{GRS2024}. This distinction in the constraint is essential: the adjoint equation here controls the \emph{double divergence}, not the row-wise divergence. We use a scalar shifted-determinant bound for $B+tI$, $t>0$, adapted to that weaker constraint. The required periodic Monge--Amp\`ere existence result is Li's \cite[Theorem~2.2, p.~248]{Li1990}; see also \cite[Theorem~0.2, p.~99]{CaffarelliLi2004}.
 
-The three-dimensional argument has a different ancestry. Its elementary cutoff integrand is the Hilbert-space form of an integrand introduced by Burkholder \cite{Burkholder1989} and independently studied by \v{S}ver\'ak \cite{Sverak1990}. The broader homogeneous-function method goes back to Burkholder's sharp martingale inequalities \cite{Burkholder1984}. The passage from the cutoff integrand to homogeneous integrands by integration over scales is recorded explicitly by Baernstein and Montgomery-Smith \cite[equations~(1.2a)--(1.2b)]{BaernsteinMS1999}. Guerra's recent result \cite[Theorem~1.1]{Guerra2026} establishes a related quasiconvexity statement on symmetric $2\times2$ matrices. That theorem is not used as a substitute for the three-dimensional estimate: the projection and spectral arguments needed here are given in full.
+The three-dimensional argument has a different ancestry. Its piecewise-defined integrand $\mathcal B$ is the Hilbert-space form of an integrand introduced by Burkholder \cite{Burkholder1989} and independently studied by \v{S}ver\'ak \cite{Sverak1990}. The broader method based on homogeneous auxiliary functions goes back to Burkholder's sharp martingale inequalities \cite{Burkholder1984}. The passage from $\mathcal B$ to homogeneous integrands by integration over scales is recorded explicitly by Baernstein and Montgomery-Smith \cite[equations~(1.2a)--(1.2b)]{BaernsteinMS1999}. Guerra's recent result \cite[Theorem~1.1]{Guerra2026} establishes a related quasiconvexity statement on symmetric $2\times2$ matrices. That theorem is not used as a substitute for the three-dimensional estimate: the projection and spectral arguments needed here are given in full.
 
-Finally, the transfer from a positive Newtonian source to a general elliptic equation uses a variational obstacle. This draws on the classical theory of variational inequalities \cite{LionsStampacchia1967} and the obstacle regularity work of Lewy and Stampacchia \cite{LewyStampacchia1969,LewyStampacchia1970}. Frehse's scalar bounded-second-derivative result \cite{Frehse1972} is credited by Br\'ezis and Kinderlehrer \cite[p.~831 and reference~5, p.~844]{BrezisKinderlehrer1974}, who also prove a nonlinear extension. Frehse's subsequent work on systems \cite[Theorem and Corollary, p.~424]{Frehse1973} gives Morrey-space bounds for second derivatives and, in two dimensions, a H\"older-continuous gradient. These conclusions are distinct from the bounded Hessian needed here. In our whole-space setting, translation comparison proves the latter directly under a one-sided semiconvexity assumption on the obstacle.
+Finally, the transfer of the estimate for Newtonian potentials with nonnegative sources to a general elliptic equation uses a variational obstacle problem. This draws on the classical theory of variational inequalities \cite{LionsStampacchia1967} and the obstacle regularity work of Lewy and Stampacchia \cite{LewyStampacchia1969,LewyStampacchia1970}. Frehse's scalar bounded-second-derivative result \cite{Frehse1972} is credited by Br\'ezis and Kinderlehrer \cite[p.~831 and reference~5, p.~844]{BrezisKinderlehrer1974}, who also prove a nonlinear extension. Frehse's subsequent work on systems \cite[Theorem and Corollary, p.~424]{Frehse1973} gives Morrey-space bounds for second derivatives and, in two dimensions, a H\"older-continuous gradient. These conclusions are distinct from the bounded Hessian needed here. In our whole-space setting, comparison with averages of translates proves the latter directly under a semiconvexity assumption on the obstacle.
 
 \subsection{Organization of the proof}
-The proof is guided by the two obstructions in the critical exponent. First, a radial coefficient field reduces the equation to a one-dimensional problem with an effective dimension. Its Green kernel yields both restrictions on $p$ and an explicit logarithmic sequence at the endpoint; see Section~\ref{sec:radial}.
+The proof is guided by the two obstructions in the critical exponent. First, a radial coefficient field reduces the equation to a one-dimensional problem with effective dimension $\kappa=1/\lam$. Its Green kernel yields both restrictions on $p$ and an explicit cutoff sequence yielding logarithmic divergence at the endpoint; see Section~\ref{sec:radial}.
 
-For sufficiency above exponent two, we pass to the adjoint equation. A positive matrix measure $M$ satisfying a double-divergence equation is shown to have an $L^q$ density, with $q$ conjugate to the exponent in the maximum estimate. The main ingredient is a family of homogeneous functions obtained by integrating shifted determinants. Their positivity on $\Cdelta$ gives the ellipticity restriction, while the singularity of two explicit correction kernels gives the Newtonian restriction. A positive functional representation then supplies the required adjoint measure without presupposing a Green-function construction. These steps occupy Sections~\ref{sec:determinants}--\ref{sec:adjoint}.
+For sufficiency when $p>2$, we pass to the adjoint equation. A positive semidefinite matrix-valued measure $M$ satisfying a double-divergence equation is shown to have an $L^q$ density, with $q$ conjugate to the exponent in the maximum estimate. The main ingredient is a family of homogeneous functions obtained by integrating shifted determinants. Their positivity on $\Cdelta$ gives the restriction $p>d\lam$, while the singularity of two explicit correction kernels gives the restriction $p>d/2$. A representation of point evaluation by positive measures then supplies the required adjoint matrix-valued measure without presupposing a Green-function construction. These steps occupy Sections~\ref{sec:determinants}--\ref{sec:adjoint}.
 
-Only dimension three can require exponents below two. There we prove an inequality for a Newtonian potential with a nonnegative source. A projection onto functions with constrained gradient gives an integral calibration, and a concavity calculation reduces its upper bound to the smallest Hessian eigenvalue. The coefficient that remains is positive exactly when $p>3\lam$. A whole-space obstacle concentrates the Laplacian on the contact set and transfers this estimate to $L_Au$; see Sections~\ref{sec:positive}--\ref{sec:obstacle}. The final localization step avoids any assumption on the integrability of the Hessian up to the boundary.
+Only dimension three can require exponents below two. There we prove an inequality for a Newtonian potential with a nonnegative source. An $L^2$ projection onto a convex set of functions with constrained gradient yields an auxiliary integrand with a nonnegative Hessian integral. A concavity calculation bounds this integrand in terms of the smallest Hessian eigenvalue. The coefficient that remains is positive exactly when $p>3\lam$. The solution of a whole-space obstacle problem concentrates the Laplacian on the contact set and transfers this estimate to $L_Au$; see Sections~\ref{sec:positive}--\ref{sec:obstacle}. The final localization step avoids any assumption on the integrability of the Hessian up to the boundary.
 
 \paragraph{Source material.}
 This paper reorganizes and expands the theorem and proofs recorded in \cite{Source}.
@@ -270,12 +269,12 @@ Because $\pcrit>1$, their ratio diverges. This disproves \eqref{eq:main} at $p=\
 At $\kappa=2$ the weight has an additional logarithm, but the lower bound \eqref{eq:weight-lower} already suffices for failure of the strong $L^{\pcrit}$ estimate. No assertion about alternative endpoint spaces is needed here.
 \end{remark}
 
-\section{Shifted determinants and positivity on the ellipticity cone}\label{sec:determinants}
+\section{Shifted determinants and positivity on the cone \texorpdfstring{$\Cdelta$}{C-delta}}\label{sec:determinants}
 Throughout this section,
 \[
  \sigma=\frac1{d-1},\qquad \beta=\frac d{d-1}=1+\sigma.
 \]
-The starting point is a Monge--Amp\`ere duality argument of the type used by Serre \cite[Theorem~2.1 and its proof]{Serre2018}. We only assume vanishing double divergence, and therefore use a scalar bound involving the average trace. The link between higher-order differential constraints and Hessian-cone estimates is developed in \cite[Theorem~D]{GRS2024}.
+The starting point is a Monge--Amp\`ere duality argument of the type used by Serre \cite[Theorem~2.1 and its proof]{Serre2018}. We only assume vanishing double divergence, and therefore use a scalar bound involving the average trace. The link between higher-order differential constraints and estimates associated with the dual G{\aa}rding cones is developed in \cite[Theorem~D]{GRS2024}.
 
 \subsection{A periodic determinant inequality}
 We use the following periodic solvability statement. If $f>0$ is smooth on $Q$ and $J=\avg f$, then there is a smooth periodic function $\varphi$ such that
@@ -284,7 +283,7 @@ We use the following periodic solvability statement. If $f>0$ is smooth on $Q$ a
 \end{equation}
 On the unit torus, this is \cite[Theorem~2.2, p.~248]{Li1990}, applied with the constant matrix $J^{1/d}I$. Its compatibility condition is equation~(45) in Li's Lemma~2.1, p.~247: the integral of the prescribed determinant must equal the integral of the determinant of the constant matrix. Here both are $J$, since the unit torus has volume one. Li's theorem gives a smooth periodic solution, unique up to an additive constant, with positive definite shifted Hessian.
 
-For completeness, if $Q=\R^d/(\ell\mathbb Z)^d$, set $\widetilde f(y)=f(\ell y)$ on the unit torus. Then $\int_{[0,1]^d}\widetilde f\dd y=\avg f=J$. Apply the unit-period theorem to obtain $\widetilde\varphi$, and define $\varphi(x)=\ell^2\widetilde\varphi(x/\ell)$. Since $D_x^2\varphi(x)=D_y^2\widetilde\varphi(x/\ell)$, this gives exactly \eqref{eq:periodic-MA}, with the average $J$ rather than the unnormalized integral.
+For completeness, if $Q=\R^d/(\ell\mathbb Z)^d$, set $\widetilde f(y)=f(\ell y)$ on the unit torus. Then $\int_{[0,1]^d}\widetilde f\dd y=\avg f=J$. Apply the theorem on the unit torus to obtain $\widetilde\varphi$, and define $\varphi(x)=\ell^2\widetilde\varphi(x/\ell)$. Since $D_x^2\varphi(x)=D_y^2\widetilde\varphi(x/\ell)$, this gives exactly \eqref{eq:periodic-MA}, with the average $J$ rather than the unnormalized integral.
 
 \begin{lemma}[Scalar shifted-determinant bound]\label{lem:determinant}
 Let $B$ be a smooth periodic positive semidefinite matrix field satisfying $\Div^2B=0$. Set $m=\avg{\tr B}/d$. For every $t>0$,
@@ -324,7 +323,7 @@ At zero the determinant term is bounded, and the two subtracted terms are integr
  \Phi_q(sM)=s^q\Phi_q(M)\quad(s\ge0),\qquad
  |\Phi_q(M)|\le C(d,q)|M|^q.
 \end{equation}
-The function is not asserted to be nonnegative on the whole positive cone.
+The function is not asserted to be nonnegative on the whole cone of positive semidefinite matrices.
 
 For $b\ge0$, introduce the scalar integral
 \begin{equation}\label{eq:J-definition}
@@ -339,7 +338,7 @@ The last equality follows by scaling, and $c_{d,q}=J_q(1)>0$ by strict convexity
 \end{equation}
 All integrals can first be restricted to a compact interval in $t$; the bounds just proved then justify passage to $(0,\infty)$ and the exchange of integrals.
 
-\begin{lemma}[Cone coercivity]\label{lem:coercivity}
+\begin{lemma}[Coercivity on $\Cdelta$]\label{lem:coercivity}
 Assume
 \begin{equation}\label{eq:cone-q-range}
  \beta<q<\min\left\{2,\frac{d\lam}{d\lam-1}\right\}.
@@ -386,10 +385,10 @@ This proves \eqref{eq:cone-positive}, including $M=0$ by continuity.
 To obtain \eqref{eq:robust-positive}, use uniform continuity of $\Phi_q$ on a compact neighborhood of $\{M\in\Cdelta:\tr M=1\}$. There is $\varepsilon_0>0$ such that the lower bound remains at least $c/2$ whenever $|T|\le\varepsilon_0$ and $T\ge0$. Scaling proves the desired lower bound when $|T|\le\varepsilon_0\tr M$. In the complementary case, \eqref{eq:Phi-growth} and $|M|\le\tr M<|T|/\varepsilon_0$ give $\Phi_q(M+T)\ge-C|T|^q$. Enlarging $C$ absorbs $c_0(\tr M)^q$. The case $M=0$ follows directly from \eqref{eq:Phi-growth}.
 \end{proof}
 
-\section{Positive corrections and adjoint measures}\label{sec:adjoint}
-We now convert the integral inequality of Section~\ref{sec:determinants} into a maximum estimate. The first step removes a prescribed double divergence by adding a positive tensor. The second step uses positivity of the elliptic operator to construct the adjoint measure to which this estimate applies.
+\section{Positive semidefinite corrections and adjoint measures}\label{sec:adjoint}
+We now convert the integral inequality of Section~\ref{sec:determinants} into a maximum estimate. The first step removes a prescribed double divergence by adding a positive semidefinite tensor. The second step uses the maximum principle for the elliptic operator to construct the adjoint matrix-valued measure to which this estimate applies.
 
-\subsection{Two positive fundamental tensors}
+\subsection{Two positive semidefinite tensor kernels}
 Let $\omega_d=|\mathbb S^{d-1}|$ and, for $x\ne0$, define
 \begin{equation}\label{eq:fundamental-tensors}
  J_-(x)=\frac{|x|^{2-d}}{(d-2)\omega_d}I,
@@ -406,7 +405,7 @@ The first identity is the fundamental-solution identity for the Laplacian. For t
 \]
 There is no extra distribution at this first differentiation: the boundary term on a sphere of radius $r$ is $O(r)$. The vector field on the right has flux one across every such sphere and zero divergence away from zero, so its distributional divergence is $\delta_0$. This proves both signs in \eqref{eq:tensor-signs}.
 
-\begin{lemma}[Positive correction on a torus]\label{lem:positive-correction}
+\begin{lemma}[Positive semidefinite correction on a torus]\label{lem:positive-correction}
 Let $\nu$ be a finite signed measure on $Q$ with $\nu(Q)=0$. If
 \begin{equation}\label{eq:kernel-q-range}
  1<q<\frac d{d-2},
@@ -451,7 +450,7 @@ which is \eqref{eq:positive-correction}.
 \end{proof}
 
 \subsection{An integrability estimate for cone-valued measures}
-\begin{proposition}[Adjoint measure estimate]\label{prop:measure}
+\begin{proposition}[Integrability estimate for cone-valued measures]\label{prop:measure}
 Assume
 \begin{equation}\label{eq:full-q-range}
  \frac d{d-1}<q<\min\left\{2,\frac{d\lam}{d\lam-1},\frac d{d-2}\right\}.
@@ -484,7 +483,7 @@ Convexity preserves $M_\varepsilon\in\Cdelta$ and $T_\varepsilon\ge0$. Thus $N_\
 \]
 where the second bound follows from \eqref{eq:mass-bound} and H\"older's inequality for $T_\varepsilon$.
 
-Apply the robust inequality \eqref{eq:robust-positive} pointwise, and then \eqref{eq:Phi-average} to $N_\varepsilon$. This gives
+Apply the perturbed coercivity inequality \eqref{eq:robust-positive} pointwise, and then \eqref{eq:Phi-average} to $N_\varepsilon$. This gives
 \begin{align*}
  c_0\int_Q(\tr M_\varepsilon)^q\dd x
  &\le\int_Q\Phi_q(N_\varepsilon)\dd x
@@ -496,8 +495,8 @@ Apply the robust inequality \eqref{eq:robust-positive} pointwise, and then \eqre
 Since $q>1$, weak compactness in $L^q(Q)$ yields a subsequential weak limit $g$. On the other hand, $\tr M_\varepsilon$ converges in distributions to $\tr M$. Hence $\tr M=g\dd x$, with the asserted norm bound by weak lower semicontinuity. Positivity passes to the limit. The density vanishes almost everywhere outside $\overline{B_1}$, and its zero extension proves \eqref{eq:adjoint-density}. In particular, $\tr M$ gives no mass to $\partial B_1$.
 \end{proof}
 
-\subsection{A positive representation of evaluation}
-\begin{theorem}[Maximum estimates above exponent two]\label{thm:above-two}
+\subsection{Representation of point evaluation by positive measures}
+\begin{theorem}[Maximum estimates for $p>2$]\label{thm:above-two}
 The estimate \eqref{eq:main} holds whenever
 \begin{equation}\label{eq:p-above-two}
  p>\max\{2,d/2,d\lam\}.
@@ -548,11 +547,12 @@ Testing with $1$ and $b_R$ yields
  \qquad \mu_x(\overline{B_R})=b_R(x).
 \end{equation}
 
-Extend the matrix measure $M_x=A\mu_x$ by zero outside $\overline{B_R}$. It belongs to $\Cdelta$, and \eqref{eq:positive-representation}, tested against smooth functions, gives
+Extend the matrix-valued measure $M_x=A\mu_x$ by zero outside $\overline{B_R}$. It belongs to $\Cdelta$, and \eqref{eq:positive-representation}, tested against smooth functions, gives
 \[
  \Div^2M_x=\omega_x-\delta_x,
  \qquad \tr M_x=\mu_x.
 \]
+We call $M_x$ the adjoint matrix-valued measure; its trace $\mu_x$ is the scalar representing measure.
 Since $\TV{\omega_x-\delta_x}\le2$, Proposition~\ref{prop:measure} gives
 \[
  \mu_x=g_x\dd y,\qquad
@@ -567,17 +567,17 @@ Using \eqref{eq:representation-masses} and H\"older's inequality proves \eqref{e
 \end{proof}
 
 \begin{remark}
-The three upper bounds on $q$ have separate origins. The restriction $q<2$ comes from the renormalized scale integral; $q<d\lam/(d\lam-1)$ comes from positivity on the ellipticity cone; and $q<d/(d-2)$ comes from the correction kernels. Passing to the conjugate exponent gives, respectively, $r>2$, $r>d\lam$, and $r>d/2$. This explains both the sharp restrictions and the range left for the next section.
+The three upper bounds on $q$ have separate origins. The restriction $q<2$ comes from the integral defining $\Phi_q$, with its constant and linear terms subtracted; $q<d\lam/(d\lam-1)$ comes from positivity on $\Cdelta$; and $q<d/(d-2)$ comes from the correction kernels. Passing to the conjugate exponent gives, respectively, $r>2$, $r>d\lam$, and $r>d/2$. This explains both the sharp restrictions and the range left for the next section.
 \end{remark}
 
-\section{A positive-source inequality in dimension three}\label{sec:positive}
+\section{Newtonian estimates for nonnegative sources in dimension three}\label{sec:positive}
 In this section $d=3$, so $\lam=1-2\delta$. We use the sign convention
 \[
  \Gamma(x)=-\frac1{4\pi|x|},\qquad \Delta\Gamma=\delta_0.
 \]
-The additional estimate needed below exponent two concerns only Newtonian potentials with nonnegative sources.
+The additional estimate needed for exponents less than two concerns only Newtonian potentials with nonnegative sources.
 
-\begin{proposition}[One-sided Newtonian estimate]\label{prop:source}
+\begin{proposition}[Newtonian estimate for nonnegative sources]\label{prop:source}
 Let $3/2\le s<2$, let $g\ge0$ be bounded and compactly supported on $\R^3$, and let $v=\Gamma*g$. Define almost everywhere
 \[
  \tau=\lambda_{\max}\bigl((\Delta v)I-D^2v\bigr)
@@ -608,7 +608,7 @@ Thus $\lam g\le(\Pdelta(D^2v))_++(1-3\delta)\tau$, and the triangle inequality t
 \]
 The bracket equals $(s-3\lam)/(3(s-1))$, which proves \eqref{eq:source-residual}. It remains to prove \eqref{eq:source-norm}.
 
-\subsection{The cutoff integrand and a scalar projection}
+\subsection{The integrand \texorpdfstring{$\mathcal B$}{B} and an \texorpdfstring{$L^2$}{L2} projection}
 For vectors $h,v\in\R^3$, put
 \[
  a_0=\frac{|h+v|}{2},\qquad b_0=\frac{|h-v|}{2},
@@ -621,7 +621,7 @@ and define
   |h+v|-1,&a_0+b_0>1.
  \end{cases}
 \end{equation}
-Under the linear substitution $(h,v)\mapsto((h+v)/2,(h-v)/2)$, this is the Hilbert-space cutoff integrand of Burkholder \cite{Burkholder1989}; see also \v{S}ver\'ak \cite{Sverak1990} and the explicit formulation and historical attribution in \cite[Section~1]{BaernsteinMS1999}. We write out the property required for our differential constraint.
+Under the linear substitution $(h,v)\mapsto((h+v)/2,(h-v)/2)$, this is the Hilbert-space form of the piecewise-defined integrand of Burkholder \cite{Burkholder1989}; see also \v{S}ver\'ak \cite{Sverak1990} and the explicit formulation and historical attribution in \cite[Section~1]{BaernsteinMS1999}. We write out the property required for our differential constraint.
 
 Let
 \[
@@ -692,10 +692,10 @@ Summing over $i$ and using the zero mean of a periodic gradient, we find
  \int_Q z\cdot(h-z)\dd x
  =\int_QD\zeta\cdot D\rho\dd x\ge0.
 \]
-Furthermore, $\int_Qz\cdot v\dd x=0$, by the zero mean and vanishing divergence of $v$. The support formula \eqref{eq:support-formula} now proves \eqref{eq:projection-conclusion}.
+Furthermore, $\int_Qz\cdot v\dd x=0$, by the zero mean and vanishing divergence of $v$. The supremum representation \eqref{eq:support-formula} now proves \eqref{eq:projection-conclusion}.
 \end{proof}
 
-\subsection{A Hessian calibration in three fixed directions}
+\subsection{A Hessian integral inequality in three fixed directions}
 For $H\in\Sym_3$, set
 \[
  \mathcal N(H)=(\tr H)I-H.
@@ -727,7 +727,7 @@ For a smooth periodic $\varphi$, the first argument in \eqref{eq:calibration-def
  \int_{\R^3}F_s(D^2\varphi)\dd x\ge0
  \qquad\text{for every }\varphi\in C_c^\infty(\R^3).
 \end{equation}
-The calibration need not be invariant under rotations. Three fixed orthonormal directions suffice; the spectral upper bound proved next is independent of that choice.
+The integrand $F_s$ need not be invariant under rotations. Three fixed orthonormal directions suffice; the spectral upper bound proved next is independent of that choice.
 
 \subsection{Reduction to the smallest eigenvalue}
 We now bound $F_s(H)$ from above when $\tr H\ge0$. First assume $f=\tr H>0$. For a unit vector $e$, write
@@ -766,7 +766,7 @@ Summing over the fixed basis $e_1,e_2,e_3$, for which $\sum_j(e_j\cdot u_i)^2=1$
  F_s(H)\le\frac13\sum_{i=1}^3V_f(\lambda_i).
 \end{equation}
 
-It remains to understand a scalar function. For an eigenvalue argument, the branch polynomial factors as
+It remains to understand a scalar function. For $h=\lambda$ and $k=\lambda^2$, the quadratic polynomial determining the branch transition factors as
 \[
  t^2-(f+\lambda)t+2(f\lambda-\lambda^2)
    =(t-(f-\lambda))(t-2\lambda).
@@ -807,7 +807,7 @@ Since $\lambda\le f/3$ and $m\ge f/3$, both scalar terms have the same transitio
  \frac{\tau^{s-1}\bigl[2sf-3(s-1)\tau\bigr]}
       {3(2-s)s(s-1)}.
 \end{equation}
-For completeness, the constant, linear, and quadratic numerators in the sum of the three vertex terms are respectively $-3\tau^s$, $4f\tau^{s-1}$, and $(2f\tau-3\tau^2/2)\tau^{s-2}$, with the denominators appearing in \eqref{eq:vertex-integral}. Combining them gives \eqref{eq:one-eigenvalue}. If $\tr H=0$, apply the inequality to $H+\varepsilon I$ and let $\varepsilon\downarrow0$. Continuity of $F_s$ and of the eigenvalues proves \eqref{eq:one-eigenvalue} for every matrix with nonnegative trace.
+For completeness, the constant, linear, and quadratic numerators in the sum of the three contributions $V_f(\lambda)$, $V_f(m)$, and $V_f(m)$ are respectively $-3\tau^s$, $4f\tau^{s-1}$, and $(2f\tau-3\tau^2/2)\tau^{s-2}$, with the denominators appearing in \eqref{eq:vertex-integral}. Combining them gives \eqref{eq:one-eigenvalue}. If $\tr H=0$, apply the inequality to $H+\varepsilon I$ and let $\varepsilon\downarrow0$. Continuity of $F_s$ and of the eigenvalues proves \eqref{eq:one-eigenvalue} for every matrix with nonnegative trace.
 
 \subsection{Passage to Newtonian potentials}
 \begin{proof}[Proof of \eqref{eq:source-norm}]
@@ -825,9 +825,9 @@ Choose a smooth cutoff $\chi_R$ equal to one on $B_R$, supported in $B_{2R}$, wi
 \[
  D^2(\chi_Rv)\longrightarrow D^2v\quad\text{in }L^s(\R^3).
 \]
-Mollifying each compactly supported cutoff and choosing a diagonal sequence produces $\varphi_j\in C_c^\infty(\R^3)$ with $D^2\varphi_j\to D^2v$ strongly in $L^s$.
+Mollifying each compactly supported function $\chi_Rv$ and choosing a diagonal sequence produces $\varphi_j\in C_c^\infty(\R^3)$ with $D^2\varphi_j\to D^2v$ strongly in $L^s$.
 
-By continuity and the homogeneous bound \eqref{eq:calibration-growth}, this implies $F_s(D^2\varphi_j)\to F_s(D^2v)$ in $L^1$; a detailed general justification is given in Lemma~\ref{lem:homogeneous-continuity}. Consequently, \eqref{eq:calibration-integral} passes to $v$:
+By continuity and the growth bound \eqref{eq:calibration-growth}, this implies $F_s(D^2\varphi_j)\to F_s(D^2v)$ in $L^1$; a detailed general justification is given in Lemma~\ref{lem:homogeneous-continuity}. Consequently, \eqref{eq:calibration-integral} passes to $v$:
 \[
  \int_{\R^3}F_s(D^2v)\dd x\ge0.
 \]
@@ -840,17 +840,17 @@ Since $\tr D^2v=g\ge0$, inequality \eqref{eq:one-eigenvalue} applies almost ever
 If $\norm\tau_{L^s}=0$, there is nothing to prove. Otherwise, divide by its $(s-1)$st power. This proves \eqref{eq:source-norm}, and hence Proposition~\ref{prop:source}.
 \end{proof}
 
-\section{The whole-space obstacle and completion of the proof}\label{sec:obstacle}
+\section{The whole-space obstacle problem and completion of the proof}\label{sec:obstacle}
 The source estimate applies only to $g\ge0$. To use it for $L_Au$, we construct a superharmonic majorant whose Laplacian is concentrated where it touches the negative part of $u$. For the scalar $C^{1,1}$ regularity background, see \cite[Theorem~1, p.~832]{BrezisKinderlehrer1974}. Rather than apply that bounded-domain theorem, the lemma below proves the precise whole-space statement needed here, allowing an obstacle that is merely Lipschitz and semiconvex. In particular, the proof does not require a bounded-Hessian conclusion from the systems result cited in the introduction.
 
-\subsection{Translation comparison and the Hessian bound}
+\subsection{Comparison with averages of translates and the Hessian bound}
 We use the homogeneous Sobolev space
 \[
  \dot H^1(\R^3)=\{w\in L^6(\R^3):Dw\in L^2(\R^3;\R^3)\},
 \]
 with Hilbert norm $\norm{Dw}_{L^2}$. Equivalently, it is the completion of $C_c^\infty(\R^3)$ in that norm. A function is called $K_0$-semiconvex when $D^2w\ge-K_0I$ in distributions, or equivalently when $w(x)+K_0|x|^2/2$ has a convex representative.
 
-\begin{lemma}[Whole-space obstacle bound]\label{lem:obstacle}
+\begin{lemma}[Hessian bound for the whole-space obstacle problem]\label{lem:obstacle}
 Let $\psi\ge0$ be compactly supported and Lipschitz on $\R^3$. Suppose that $D^2\psi\ge-K_0I$ in distributions for some $K_0\ge0$. The minimization problem
 \begin{equation}\label{eq:obstacle-minimization}
  \min\left\{\int_{\R^3}|Dw|^2\dd x:
@@ -871,7 +871,7 @@ The admissible set is nonempty, since $\psi\in\dot H^1(\R^3)$, and is convex. It
 \end{equation}
 The lower bound $w\ge0$ is part of the constraint. Truncating at $\max\psi$ does not increase the energy, so uniqueness gives the upper bound. Nonnegative upward variations give $-\Delta w\ge0$ in distributions.
 
-We first establish a least-majorant comparison that permits a constant at infinity. Suppose that $z\in H^1_{\mathrm{loc}}(\R^3)$, $Dz\in L^2$, $z\ge\psi$, and $-\Delta z\ge0$. Since $z\ge\psi\ge0$, the function $\eta=(w-z)_+$ satisfies
+We first establish the least superharmonic majorant property in a form that permits a constant at infinity. Suppose that $z\in H^1_{\mathrm{loc}}(\R^3)$, $Dz\in L^2$, $z\ge\psi$, and $-\Delta z\ge0$. Since $z\ge\psi\ge0$, the function $\eta=(w-z)_+$ satisfies
 \[
  D\eta\in L^2,\qquad 0\le\eta\le w\in L^6,
 \]
@@ -896,7 +896,7 @@ The preceding comparison applies, even though the constant term in $z_h$ need no
 \]
 Testing this second-difference inequality and letting $h$ tend to zero in each fixed direction proves $D^2w\ge-K_0I$ in distributions.
 
-The positive matrix-valued distribution
+The positive semidefinite matrix-valued distribution
 \[
  S=D^2w+K_0I\dd x
 \]
@@ -904,7 +904,7 @@ is a matrix-valued Radon measure. Its trace satisfies
 \[
  0\le\tr S=\Delta w+3K_0\dd x\le3K_0\dd x.
 \]
-A positive matrix-valued measure is bounded above by its trace times the identity, so $0\le S\le3K_0I\dd x$. Therefore $D^2w$ has a bounded density and
+A positive semidefinite matrix-valued measure is bounded above by its trace times the identity, so $0\le S\le3K_0I\dd x$. Therefore $D^2w$ has a bounded density and
 \[
  -K_0I\le D^2w\le2K_0I,
  \qquad 0\le-\Delta w\le3K_0
@@ -913,7 +913,7 @@ almost everywhere. The bounded Hessian implies $w\in W^{2,\infty}_{\mathrm{loc}}
 \end{proof}
 
 \subsection{Concentration of the source on the contact set}
-\begin{proposition}[The three-dimensional range below two]\label{prop:below-two}
+\begin{proposition}[The three-dimensional range $3/2<s<2$]\label{prop:below-two}
 In dimension three, \eqref{eq:main} holds whenever
 \begin{equation}\label{eq:s-range}
  \frac32<s<2,\qquad s>3\lam.
@@ -956,7 +956,7 @@ is closed. Because $w>0$ and $\psi=0$ outside $B_R$ and on its boundary, $K$ is 
 \end{equation}
 Here and below support statements for densities may be understood in the essential or distributional sense.
 
-The finite-energy solution of the Poisson equation is unique. More explicitly, $\Gamma*g\in\dot H^1(\R^3)$, and the difference between $-w$ and $\Gamma*g$ is harmonic in $\dot H^1$; testing its equation by itself shows that the difference is zero. Hence
+The solution of the Poisson equation in $\dot H^1(\R^3)$ is unique. More explicitly, $\Gamma*g\in\dot H^1(\R^3)$, and the difference between $-w$ and $\Gamma*g$ is harmonic in $\dot H^1$; testing its equation by itself shows that the difference is zero. Hence
 \[
  v=-w=\Gamma*g.
 \]
@@ -965,7 +965,7 @@ Since $w\ge\psi$ and $w\le\max\psi=M$, it attains this maximum wherever $\psi$ d
  \norm v_{L^\infty(\R^3)}=M.
 \end{equation}
 
-Inside $B_R$ we have $u-b-v=u-b+w\ge0$. At every contact point, $\psi=b-u>0$, so equality holds. At almost every such point the $C^{1,1}$ function $v$ has a second-order expansion. The minimum test then gives $D^2v\le D^2u$. Consequently, on $K$,
+Inside $B_R$ we have $u-b-v=u-b+w\ge0$. At every contact point, $\psi=b-u>0$, so equality holds. At almost every such point the $C^{1,1}$ function $v$ has a second-order expansion. The second-derivative test at a local minimum then gives $D^2v\le D^2u$. Consequently, on $K$,
 \[
  \Pdelta(D^2v)\le A:D^2v\le A:D^2u=f.
 \]
@@ -997,7 +997,7 @@ Section~\ref{sec:radial} excludes every $p\le\pcrit$. Let $p>\pcrit$. If $p>2$, 
 \[
  s=\frac{\pcrit+p}{2}.
 \]
-Then $3/2<s<2$, $s>3\lam$, and $s<p$. Proposition~\ref{prop:below-two} proves the estimate at exponent $s$, and H\"older's inequality raises the exponent to $p$. This also covers $p=2$ whenever it lies strictly above $\pcrit$; no limiting argument at degree two is needed.
+Then $3/2<s<2$, $s>3\lam$, and $s<p$. Proposition~\ref{prop:below-two} proves the estimate at exponent $s$, and H\"older's inequality raises the exponent to $p$. This also covers $p=2$ whenever it lies strictly above $\pcrit$; no limiting argument at exponent two is needed.
 \end{proof}
 
 \appendix
@@ -1016,7 +1016,7 @@ Continuity on the unit sphere and homogeneity imply $|F(X)|\le C|X|^q$. For ever
 \end{equation}
 Indeed, put $r=\max\{|X|,|Y|\}$. If $r=0$, there is nothing to prove. If $|X-Y|\le\eta r$, divide by $r$, use uniform continuity on the unit ball, and multiply by $r^q$. If $|X-Y|>\eta r$, the growth bound gives the second term with $C_\varepsilon=2C\eta^{-q}$.
 
-Apply \eqref{eq:homogeneous-continuity} pointwise to $H_j,H$ and integrate. The $L^q$ norms are bounded and the last integral tends to zero. Hence the upper limit of the $L^1$ difference is at most a fixed constant times $\varepsilon$. Letting $\varepsilon\downarrow0$ proves the assertion.
+Apply \eqref{eq:homogeneous-continuity} pointwise to $H_j,H$ and integrate. The quantities $\int_\Omega |H_j|^q\dd x$ are uniformly bounded and the last integral tends to zero. Hence the upper limit of the $L^1$ difference is at most a fixed constant times $\varepsilon$. Letting $\varepsilon\downarrow0$ proves the assertion.
 \end{proof}
 
 \begin{thebibliography}{99}

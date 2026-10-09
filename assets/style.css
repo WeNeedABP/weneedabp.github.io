@@ -185,6 +185,27 @@ main:has(> .prompt) .intro { font-size: 19px; }
   font: 13px/1.75 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 .prompt code { font: inherit; }
+/* Copyable BibTeX citation, matching the resource boxes. */
+.citation-box { margin-top: 36px; }
+.citation-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.citation-header .related-label { margin: 0; }
+.citation-actions { display: flex; align-items: center; gap: 10px; }
+.citation-status { color: var(--muted); font: 12px/1.5 var(--sans); }
+.citation-copy {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 44px; height: 44px; padding: 10px; border: 1px solid var(--rule); border-radius: 4px;
+  background: transparent; color: var(--accent); cursor: pointer;
+}
+.citation-copy:hover { background: var(--rose); color: var(--accent-dark); }
+.citation-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.citation-copy .copied-icon, .citation-copy[data-copied="true"] .copy-icon { display: none; }
+.citation-copy[data-copied="true"] .copied-icon { display: block; }
+.citation-code {
+  max-width: 100%; margin: 0; overflow-x: auto; white-space: pre;
+  font: 13px/1.75 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+.citation-code code { font: inherit; }
+@media print { .citation-actions { display: none; } .citation-code { white-space: pre-wrap; overflow-wrap: anywhere; } }
 @media (max-width: 1050px) {
   .shell { padding: 0 34px; }
   .site-header { gap: 24px; }
